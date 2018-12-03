@@ -2,16 +2,16 @@ package clientServerConnection;
 
 import java.net.*;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 import java.io.*;
 
 public class client {
 public static void main(String[]args) throws UnknownHostException, IOException {
-      Scanner input = new Scanner(System.in);
+      //Scanner input = new Scanner(System.in); --> For upcoming Scanner
       int port = 9090;
       String host= "192.168.2.107";
       String answer; 
-      String sendMessage; 
-      String receivedMessage;
+      String sendMessage;
       InetAddress address = InetAddress.getByName(host);
   
       Socket socket= new Socket(address,port);
@@ -21,7 +21,8 @@ public static void main(String[]args) throws UnknownHostException, IOException {
       BufferedWriter bw = new BufferedWriter(osw);
 
       System.out.println("Start...");
-      answer = "<0x7c><0x04<0x0f><0x00>";
+      RmXCalls rmx = new RmXCalls();
+      answer = rmx.postitivquittung;
       //Server answer must be fixed
 
       sendMessage = answer;
@@ -33,7 +34,8 @@ public static void main(String[]args) throws UnknownHostException, IOException {
       InputStream is = socket.getInputStream();
       InputStreamReader isr = new InputStreamReader(is);
       BufferedReader br = new BufferedReader(isr);
-      System.out.println("Message received from server : " + br);
+      String output = br.lines().collect(Collectors.joining());
+      System.out.println("Message received from server : " + output);
       
       socket.close();
       }
