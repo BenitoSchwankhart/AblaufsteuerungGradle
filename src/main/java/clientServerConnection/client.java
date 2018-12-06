@@ -9,25 +9,24 @@ public class client {
 public static void main(String[]args) throws UnknownHostException, IOException {
       //Scanner input = new Scanner(System.in); --> For upcoming Scanner
       int port = 9090;
-      String host= "192.168.2.107";
-      String answer; 
-      String sendMessage;
+      String host= "192.168.178.29";
+      byte[] answer; 
+      byte[] sendMessage;
       InetAddress address = InetAddress.getByName(host);
   
       Socket socket= new Socket(address,port);
 
       OutputStream os = socket.getOutputStream();
       OutputStreamWriter osw = new OutputStreamWriter(os);
-      BufferedWriter bw = new BufferedWriter(osw);
 
       System.out.println("Start...");
-      RmXCalls rmx = new RmXCalls();
-      answer = rmx.postitivquittung;
+      RmxCalls rmx = new RmxCalls();
+      answer = rmx.ZugInfo;
       //Server answer must be fixed
 
       sendMessage = answer;
-      bw.write(sendMessage);
-      bw.newLine();
+      DataOutputStream bw = new DataOutputStream(os);
+	  bw.write(sendMessage);
       bw.flush();
       System.out.println("Message sent to server: "+sendMessage);
       
