@@ -2,11 +2,6 @@ package clientServerConnection;
 
 import java.net.*;
 import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
-import org.apache.commons.codec.DecoderException;
-import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -36,6 +31,7 @@ public static void main(String[]args) throws UnknownHostException, IOException{
       byte[] bytes = IOUtils.toByteArray(is);
       System.out.println("Message received from server : " + Arrays.toString(bytes));
 
+      if(Arrays.toString(bytes) == "[124, 4, 0, 0]")
       
       socket.close();
       }
