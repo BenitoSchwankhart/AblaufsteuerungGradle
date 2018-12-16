@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestController">
+   <children>
+      <Pane fx:id="black_pane" layoutY="39.0" prefHeight="357.0" prefWidth="721.0" style="-fx-background-color: #000000;">
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+         <children>
+            <JFXButton fx:id="ziel" alignment="CENTER" layoutX="6.0" layoutY="14.0" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text=" " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ziel1" alignment="CENTER" layoutX="539.0" layoutY="14.0" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text=" " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ziel2" alignment="CENTER" layoutX="361.0" layoutY="14.0" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text=" " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="ziel3" alignment="CENTER" layoutX="182.0" layoutY="14.0" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text=" " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="717.0" layoutY="39.0" prefHeight="411.0" prefWidth="183.0" style="-fx-background-color: #F0F7FF;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <JFXButton fx:id="licht" alignment="CENTER" layoutX="8.0" layoutY="14.0" onDragDetected="#handleDragRichtung" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Licht" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="speed" alignment="CENTER" layoutX="8.0" layoutY="86.0" onDragDetected="#handleDragRichtungSpeed" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Geschwindigkeit" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="funktion3" alignment="CENTER" layoutX="8.0" layoutY="158.0" onDragDetected="#handleDragRichtungFunktion3" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Funktion3" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="funktion4" alignment="CENTER" layoutX="8.0" layoutY="237.0" onDragDetected="#handleDragRichtungFunktion4" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Funktion4" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane prefHeight="39.0" prefWidth="900.0" style="-fx-background-color: #F0F7FF;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text layoutX="346.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablaufssteuerung">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXToggleButton layoutX="75.0" layoutY="391.0" text=" " />
+      <MaterialDesignIconView glyphName="TRAIN" layoutX="34.0" layoutY="431.0" size="30" />
+   </children>
+   <effect>
+      <InnerShadow />
+   </effect>
+</AnchorPane>
