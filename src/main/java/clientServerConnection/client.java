@@ -3,12 +3,11 @@ package clientServerConnection;
 import java.net.*;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
-
 import java.io.*;
+import java.util.*;
 
 public class client {
 public static void main(String[]args) throws UnknownHostException, IOException{
-	
       int port = 9090;
       byte[] answer; 
       byte[] sendMessage;
@@ -31,7 +30,7 @@ public static void main(String[]args) throws UnknownHostException, IOException{
       byte[] bytes = IOUtils.toByteArray(is);
       System.out.println("Message received from server : " + Arrays.toString(bytes));
 
-      if(Arrays.toString(bytes) == "[124, 4, 0, 0]")
+      rmx.setVerbindungCONNECTED();
       
       socket.close();
       }
