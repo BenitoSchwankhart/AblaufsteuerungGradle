@@ -24,11 +24,11 @@ public static void main(String[]args) throws UnknownHostException, IOException{
       DataOutputStream bw = new DataOutputStream(os);
 	  bw.write(sendMessage);
       bw.flush();
-      System.out.println("Message sent to server: "+ Arrays.toString(sendMessage));
+      System.out.println("Try to connect to server:"+ Arrays.toString(sendMessage));
       
       InputStream is = socket.getInputStream();
       byte[] bytes = IOUtils.toByteArray(is);
-      System.out.println("Message received from server : " + Arrays.toString(bytes));
+      System.out.println("Connected! : " + Arrays.toString(bytes));
       
       socket.close();
       
