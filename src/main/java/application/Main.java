@@ -16,6 +16,7 @@ public class Main extends Application {
 
 	public void start(Stage primaryStage) throws UnknownHostException, IOException {
 		//Checking if Server is connected
+		//Test
 		ClientConnection c = new ClientConnection();
 		c.main(null);
 		RmxCalls rmx = new RmxCalls();
