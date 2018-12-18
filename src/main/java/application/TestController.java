@@ -26,6 +26,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class TestController implements Initializable {
@@ -132,6 +134,15 @@ public class TestController implements Initializable {
 	@FXML
 	private JFXButton ziel2;
 	@FXML
+	private JFXButton ziel5;
+
+	@FXML
+	private JFXButton ziel6;
+
+	@FXML
+	private JFXButton ziel7;
+
+	@FXML
 	private JFXButton licht;
 
 	@FXML
@@ -228,7 +239,93 @@ public class TestController implements Initializable {
 	}
 
 	@FXML
+	void handledenDrop5(DragEvent event) {
+		String str = event.getDragboard().getString();
+		ziel5.setStyle("-fx-background-color: #009688;");
+		ziel5.setText(str);
+
+	}
+
+	@FXML
+	void handledenDrop6(DragEvent event) {
+		String str = event.getDragboard().getString();
+		ziel6.setStyle("-fx-background-color: #009688;");
+		ziel6.setText(str);
+
+	}
+
+	@FXML
+	void handledenDrop7(DragEvent event) {
+		String str = event.getDragboard().getString();
+		ziel7.setStyle("-fx-background-color: #009688;");
+		ziel7.setText(str);
+
+	}
+
+	@FXML
 	void starteAblauf(ActionEvent event) {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
 	}
+
+	@FXML
+	void popup(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel.getText().equals(" ")) {
+			if (event.getSource() == ziel) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel.getScene().getWindow());
+				stage.showAndWait();
+			}
+		}
+		else if (!ziel2.getText().equals(" ")) {
+			if (event.getSource() == ziel2) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel2.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else if (!ziel3.getText().equals(" ")) {
+			if (event.getSource() == ziel3) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel3.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else if (!ziel4.getText().equals(" ")) {
+			if (event.getSource() == ziel4) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel4.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else if (!ziel5.getText().equals(" ")) {
+			if (event.getSource() == ziel5) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel5.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}
+	}
 }
+
+/*
+ * stage = (Stage) ziel.getScene().getWindow(); root =
+ * FXMLLoader.load(getClass().getResource("POPUP.fxml")); Scene scene = new
+ * Scene(root); stage.setScene(scene);
+ * stage.initModality(Modality.APPLICATION_MODAL); stage.show();
+ */
