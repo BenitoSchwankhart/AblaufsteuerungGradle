@@ -4,8 +4,8 @@
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
 	<classpathentry kind="con" path="org.eclipse.buildship.core.gradleclasspathcontainer"/>
-	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/commons-io-2.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/fontawesomefx-8.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Liam/Desktop/Jars/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Liam/Desktop/Jars/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Liam/Desktop/Jars/commons-io-2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
