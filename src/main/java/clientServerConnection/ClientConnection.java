@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 public class ClientConnection {
-public static void main(String[]args) throws UnknownHostException, IOException{
+public void main(String[]args) throws UnknownHostException, IOException{
       int port = 9090;
       byte[] answer; 
       byte[] sendMessage;

@@ -19,7 +19,7 @@ public class RmxCalls {
 				(byte) 128 };
 		public static final byte[] PowerOff = new byte[] { HEADBYTE, 0x04,
 				0x03, 0x40 };
-		public static final byte[] Nofall = new byte[] { HEADBYTE, 0x04, 0x03,
+		public static final byte[] Notfall = new byte[] { HEADBYTE, 0x04, 0x03,
 				0x08 };
 
 		// Konstanten des Verbindungsstatus
@@ -31,23 +31,23 @@ public class RmxCalls {
 		
 		private static int Verbindung = DISCONNECTED;
 		
-		public static int getVerbindung() {
+		public int getVerbindung() {
 			return Verbindung;
 		}
 		
-		public static int setVerbindungNULL() {
+		public int setVerbindungNULL() {
 			return Verbindung = NULL;
 		}
-		public static int setVerbindungCONNECTING() {
+		public int setVerbindungCONNECTING() {
 			return Verbindung = CONNECTING;
 		}
-		public static int setVerbindungCONNECTED() {
+		public int setVerbindungCONNECTED() {
 			return Verbindung = CONNECTED;
 		}
-		public static int setVerbindungDISCONNECTING() {
+		public int setVerbindungDISCONNECTING() {
 			return Verbindung = DISCONNECTING;
 		}
-		public static int setVerbindungDISCONNECTED() {
+		public int setVerbindungDISCONNECTED() {
 			return Verbindung = DISCONNECTED;
 		}
 		

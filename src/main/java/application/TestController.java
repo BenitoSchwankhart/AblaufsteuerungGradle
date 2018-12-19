@@ -263,10 +263,10 @@ public class TestController implements Initializable {
 	}
 
 	@FXML
-	void starteAblauf(ActionEvent event) {
+	void starteAblauf(ActionEvent event) throws IOException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
-		ClientConnection c = new ClientConnection();
-		
+		ConnectionCalls c = new ConnectionCalls();
+		c.PowerOn();
 	}
 
 	@FXML
