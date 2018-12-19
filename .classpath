@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/commons-io-2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/fontawesomefx-8.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Public/Documents/AblaufsteuerungJars/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/fontawesomefx-8.9.jar"/>
+	<classpathentry kind="lib" path="lib/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
