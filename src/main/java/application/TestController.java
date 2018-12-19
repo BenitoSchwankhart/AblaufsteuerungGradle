@@ -9,7 +9,7 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import com.sun.glass.ui.ClipboardAssistance;
-
+import clientServerConnection.*;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -265,6 +265,8 @@ public class TestController implements Initializable {
 	@FXML
 	void starteAblauf(ActionEvent event) {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
+		ClientConnection c = new ClientConnection();
+		
 	}
 
 	@FXML
