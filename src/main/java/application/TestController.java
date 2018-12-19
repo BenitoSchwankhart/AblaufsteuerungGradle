@@ -58,7 +58,7 @@ public class TestController implements Initializable {
 		String pass = password.getText();
 
 		if (user.equals("user") && pass.equals("user")) {
-			System.out.println("Willkommen");
+			System.out.println("Willkommen User!");
 			weiter(event);
 		} else {
 			System.out.println("Fehler");
