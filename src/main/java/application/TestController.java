@@ -85,6 +85,9 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton start_btn;
+	
+	@FXML
+	private JFXButton nothalt_btn;
 
 	@FXML
 	private JFXButton zuege;
@@ -268,7 +271,12 @@ public class TestController implements Initializable {
 		ConnectionCalls c = new ConnectionCalls();
 		c.PowerOn();
 	}
-
+	//Hier Nothalt Funktion implementieren
+	   @FXML
+	    void nothalt(ActionEvent event) {
+		   System.out.println("Zug bremst");
+	    }
+	   
 	@FXML
 	void popup(ActionEvent event) throws IOException {
 		Stage stage;
@@ -282,8 +290,7 @@ public class TestController implements Initializable {
 				stage.initOwner(ziel.getScene().getWindow());
 				stage.showAndWait();
 			}
-		}
-		else if (!ziel2.getText().equals(" ")) {
+		} else if (!ziel2.getText().equals(" ")) {
 			if (event.getSource() == ziel2) {
 				stage = new Stage();
 				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
