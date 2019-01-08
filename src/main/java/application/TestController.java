@@ -19,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -275,6 +276,25 @@ public class TestController implements Initializable {
 	   @FXML
 	    void nothalt(ActionEvent event) {
 		   System.out.println("Zug bremst");
+	    }
+	   
+	// Hier POPUP implementieren
+	   
+	   @FXML
+	    private JFXToggleButton LichtButton;
+
+	    @FXML
+	    private TextField ZeitInSekunden;
+
+	    @FXML
+	    private Text LichtTextfeld1;
+
+	    @FXML
+	    private Text LichtTextfeld2;
+	    
+	    @FXML
+	    void lichtEinschalten(ActionEvent event) {
+	    	
 	    }
 	   
 	@FXML

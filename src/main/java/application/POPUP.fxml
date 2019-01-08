@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXButton layoutX="274.0" layoutY="188.0" text="Hallo" />
+      <JFXToggleButton fx:id="LichtButton" layoutX="117.0" layoutY="59.0" onAction="#lichtEinschalten" prefHeight="0.0" prefWidth="95.0" text="Licht" />
+      <TextField fx:id="ZeitInSekunden" layoutX="220.0" layoutY="161.0" prefHeight="25.0" prefWidth="66.0" />
+      <Text fx:id="LichtTextfeld1" layoutX="132.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licht an für " wrappingWidth="66.0" />
+      <Text fx:id="LichtTextfeld2" layoutX="308.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sekunden" />
    </children>
 </AnchorPane>
