@@ -12,8 +12,14 @@ import javafx.fxml.FXMLLoader;
 
 public class Main extends Application {
 	@Override
+	
 
 	public void start(Stage primaryStage) throws UnknownHostException, IOException {
+		/**
+		 * Threadobjekt zum starten beenden usw.
+		 */
+		//private static Thread thread = null;
+		
 		//Checking if Server is connected
 		/*ClientConnection c = new ClientConnection();
 		c.main(null);

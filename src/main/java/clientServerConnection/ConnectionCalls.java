@@ -13,28 +13,30 @@ import org.apache.commons.io.IOUtils;
 
 public class ConnectionCalls {
 
-	public static void PositivQuittung() throws IOException {
+	public static void Verbindung() throws IOException {
 		      int port = 9090;
 		      byte[] answer; 
 		      byte[] sendMessage;
+		      RmxCalls rmx = new RmxCalls();
 		      InetAddress address = InetAddress.getLocalHost();
 
 		      Socket socket= new Socket(address,port);
 		      OutputStream os = socket.getOutputStream();
 
 		      System.out.println("Start...");
-		      RmxCalls rmx = new RmxCalls();
 		      answer = rmx.Positivquittung;
 
 		      sendMessage = answer;
 		      DataOutputStream bw = new DataOutputStream(os);
 			  bw.write(sendMessage);
 		      bw.flush();
-		      System.out.println("Try to connect to server:"+ Arrays.toString(sendMessage));
+		      System.out.println("Try to connect to server:");
+		      rmx.Hexaprint(sendMessage);
 		      
 		      InputStream is = socket.getInputStream();
 		      byte[] bytes = IOUtils.toByteArray(is);
-		      System.out.println("Connected! : " + Arrays.toString(bytes));
+		      System.out.println("\nConnected!: ");
+		      rmx.Hexaprint(bytes);
 		      
 		      socket.close();
 		      
@@ -58,11 +60,13 @@ public class ConnectionCalls {
 	      DataOutputStream bw = new DataOutputStream(os);
 		  bw.write(sendMessage);
 	      bw.flush();
-	      System.out.println("Try switch power on"+ Arrays.toString(sendMessage));
+	      System.out.println("Try switch power on");
+	      rmx.Hexaprint(sendMessage);
 	      
 	      InputStream is = socket.getInputStream();
 	      byte[] bytes = IOUtils.toByteArray(is);
-	      System.out.println("Power on!: " + Arrays.toString(bytes));
+	      System.out.println("\nPower on!:");
+	      rmx.Hexaprint(bytes);
 	      
 	      socket.close();
 	      }
@@ -84,11 +88,13 @@ public class ConnectionCalls {
 	      DataOutputStream bw = new DataOutputStream(os);
 		  bw.write(sendMessage);
 	      bw.flush();
-	      System.out.println("Try to turn power off:"+ Arrays.toString(sendMessage));
+	      System.out.println("Try to turn power off:");
+	      rmx.Hexaprint(sendMessage);
 	      
 	      InputStream is = socket.getInputStream();
 	      byte[] bytes = IOUtils.toByteArray(is);
-	      System.out.println("Power off! : " + Arrays.toString(bytes));
+	      System.out.println("Power off! : ");
+	      rmx.Hexaprint(bytes);
 	      
 	      socket.close();
 	      }
@@ -110,17 +116,19 @@ public class ConnectionCalls {
 	      DataOutputStream bw = new DataOutputStream(os);
 		  bw.write(sendMessage);
 	      bw.flush();
-	      System.out.println("Initialisiere Nothalt:"+ Arrays.toString(sendMessage));
+	      System.out.println("Initialisiere Nothalt:");
+	      rmx.Hexaprint(sendMessage);
 	      
 	      InputStream is = socket.getInputStream();
 	      byte[] bytes = IOUtils.toByteArray(is);
-	      System.out.println("Angehalten! : " + Arrays.toString(bytes));
+	      System.out.println("\nAngehalten!: ");
+	      rmx.Hexaprint(bytes);
 	      
 	      socket.close();
 	      }
 
-	/*public static void main(String[]args) throws IOException {
-		PositivQuittung();
-	}*/
+	public static void main(String[]args) throws IOException {
+		Verbindung(); 
+	}
 	
 }

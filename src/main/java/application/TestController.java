@@ -274,8 +274,10 @@ public class TestController implements Initializable {
 	}
 	//Hier Nothalt Funktion implementieren
 	   @FXML
-	    void nothalt(ActionEvent event) {
-		   System.out.println("Zug bremst");
+	    void nothalt(ActionEvent event) throws IOException {
+		   ConnectionCalls c = new ConnectionCalls();
+			c.Notfall();
+		   System.out.println("Nothalt");
 	    }
 	   
 	// Hier POPUP implementieren
