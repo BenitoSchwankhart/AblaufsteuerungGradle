@@ -269,35 +269,21 @@ public class TestController implements Initializable {
 	@FXML
 	void starteAblauf(ActionEvent event) throws IOException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
-		ConnectionCalls c = new ConnectionCalls();
-		c.PowerOn();
+		//ConnectionCalls c = new ConnectionCalls();
+	//	c.PowerOn();
 	}
 	//Hier Nothalt Funktion implementieren
 	   @FXML
 	    void nothalt(ActionEvent event) throws IOException {
-		   ConnectionCalls c = new ConnectionCalls();
-			c.Notfall();
+		  // ConnectionCalls c = new ConnectionCalls();
+			//c.Notfall();
 		   System.out.println("Nothalt");
 	    }
 	   
 	// Hier POPUP implementieren
 	   
-	   @FXML
-	    private JFXToggleButton LichtButton;
-
-	    @FXML
-	    private TextField ZeitInSekunden;
-
-	    @FXML
-	    private Text LichtTextfeld1;
-
-	    @FXML
-	    private Text LichtTextfeld2;
+	 
 	    
-	    @FXML
-	    void lichtEinschalten(ActionEvent event) {
-	    	
-	    }
 	   
 	@FXML
 	void popup(ActionEvent event) throws IOException {
