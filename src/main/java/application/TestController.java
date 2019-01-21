@@ -288,13 +288,24 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel.getText().equals(" ")) {
-			if (event.getSource() == ziel) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel.getText().equals("Licht")) {
+				if (event.getSource() == ziel) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel.getText().equals("Speed")) {
+				if (event.getSource() == ziel) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel.getScene().getWindow());
+					stage.showAndWait();
+				}
 			} else {
 				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
@@ -306,16 +317,27 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel2.getText().equals(" ")) {
-			if (event.getSource() == ziel2) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel2.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel.getText().equals("Licht")) {
+				if (event.getSource() == ziel) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel.getText().equals("Speed")) {
+				if (event.getSource() == ziel) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -324,16 +346,27 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel3.getText().equals(" ")) {
-			if (event.getSource() == ziel3) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel3.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel3.getText().equals("Licht")) {
+				if (event.getSource() == ziel3) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel3.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel3.getText().equals("Speed")) {
+				if (event.getSource() == ziel3) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel3.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -342,16 +375,27 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel4.getText().equals(" ")) {
-			if (event.getSource() == ziel4) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel4.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel4.getText().equals("Licht")) {
+				if (event.getSource() == ziel4) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel4.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel4.getText().equals("Speed")) {
+				if (event.getSource() == ziel4) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel4.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -360,16 +404,27 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel5.getText().equals(" ")) {
-			if (event.getSource() == ziel5) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel5.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel5.getText().equals("Licht")) {
+				if (event.getSource() == ziel5) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel5.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel5.getText().equals("Speed")) {
+				if (event.getSource() == ziel5) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel5.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -378,17 +433,28 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel6.getText().equals(" ")) {
-			if (event.getSource() == ziel6) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel6.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel6.getText().equals("Licht")) {
+				if (event.getSource() == ziel6) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel6.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel6.getText().equals("Speed")) {
+				if (event.getSource() == ziel6) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel6.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
-		}	
+		}
 	}
 
 	@FXML
@@ -396,16 +462,27 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel7.getText().equals(" ")) {
-			if (event.getSource() == ziel7) {
-				stage = new Stage();
-				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
-				stage.setScene(new Scene(root));
-				stage.initModality(Modality.APPLICATION_MODAL);
-				stage.initOwner(ziel7.getScene().getWindow());
-				stage.showAndWait();
+			if (ziel7.getText().equals("Licht")) {
+				if (event.getSource() == ziel7) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel7.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else if (ziel7.getText().equals("Speed")) {
+				if (event.getSource() == ziel7) {
+					stage = new Stage();
+					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
+					stage.setScene(new Scene(root));
+					stage.initModality(Modality.APPLICATION_MODAL);
+					stage.initOwner(ziel7.getScene().getWindow());
+					stage.showAndWait();
+				}
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else {
-			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 }
