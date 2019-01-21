@@ -126,9 +126,67 @@ public class ConnectionCalls {
 	      
 	      socket.close();
 	      }
+	
+	public static void ZugInfo() throws IOException {
+	      int port = 9090;
+	      byte[] answer; 
+	      byte[] sendMessage;
+	      InetAddress address = InetAddress.getLocalHost();
+
+	      Socket socket= new Socket(address,port);
+	      OutputStream os = socket.getOutputStream();
+
+	      System.out.println("Start...");
+	      RmxCalls rmx = new RmxCalls();
+	      answer = rmx.ZugInfo;
+
+	      sendMessage = answer;
+	      DataOutputStream bw = new DataOutputStream(os);
+		  bw.write(sendMessage);
+	      bw.flush();
+	      System.out.println("ZugInfo wird Abgefragt:");
+	      rmx.Hexaprint(sendMessage);
+	      
+	      InputStream is = socket.getInputStream();
+	      byte[] bytes = IOUtils.toByteArray(is);
+	      System.out.println("\nZugdaten: ");
+	      rmx.Hexaprint(bytes);
+	      
+	      socket.close();
+	      }
+	
+	public static void Initialisieren() throws IOException {
+	      int port = 9090;
+	      byte[] answer; 
+	      byte[] sendMessage;
+	      InetAddress address = InetAddress.getLocalHost();
+
+	      Socket socket= new Socket(address,port);
+	      OutputStream os = socket.getOutputStream();
+
+	      System.out.println("\nStart...");
+	      RmxCalls rmx = new RmxCalls();
+	      answer = rmx.Initialisieren;
+
+	      sendMessage = answer;
+	      DataOutputStream bw = new DataOutputStream(os);
+		  bw.write(sendMessage);
+	      bw.flush();
+	      System.out.println("Verbindung wird initialisiert:");
+	      rmx.Hexaprint(sendMessage);
+	      
+	      InputStream is = socket.getInputStream();
+	      byte[] bytes = IOUtils.toByteArray(is);
+	      System.out.println("\nDaten: ");
+	      rmx.Hexaprint(bytes);
+	      
+	      socket.close();
+	      }
+
 
 	public static void main(String[]args) throws IOException {
-		Verbindung(); 
+		ZugInfo();
+		Initialisieren(); 
 	}
 	
 }
