@@ -162,8 +162,7 @@ public class TestController implements Initializable {
 	private JFXButton starting_btn;
 
 	@FXML
-
-	private JFXButton poweroff_btn;
+	private JFXToggleButton poweroff_btn;
 
 	@FXML
 	private MaterialDesignIconView zeiger;

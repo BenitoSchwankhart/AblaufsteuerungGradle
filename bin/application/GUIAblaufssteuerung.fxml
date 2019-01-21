@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -110,12 +111,8 @@
             <Font name="Calibri" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="poweroff_btn" layoutX="649.0" layoutY="400.0" onAction="#poweroff" prefHeight="39.0" prefWidth="54.0" style="-fx-background-color: #aa1426;" text=" ">
-         <font>
-            <Font name="Calibri" size="20.0" />
-         </font>
-      </JFXButton>
-      <MaterialDesignIconView glyphName="POWER" layoutX="619.0" layoutY="432.0" size="30" text="" />
+      <MaterialDesignIconView glyphName="POWER" layoutX="663.0" layoutY="437.0" size="30" text="" />
+      <JFXToggleButton fx:id="poweroff_btn" layoutX="604.0" layoutY="396.0" text=" " />
    </children>
    <effect>
       <InnerShadow />
