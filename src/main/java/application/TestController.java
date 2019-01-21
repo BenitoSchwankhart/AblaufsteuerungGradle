@@ -162,7 +162,18 @@ public class TestController implements Initializable {
 	private JFXButton starting_btn;
 
 	@FXML
+
+	private JFXButton poweroff_btn;
+
+	@FXML
 	private MaterialDesignIconView zeiger;
+
+	@FXML
+	void poweroff(ActionEvent event) {
+// Hier wird der Power Off Button implementiert
+		System.out.println("POWER OFF!");
+
+	}
 
 	@FXML
 	void handleDragOver(DragEvent event) {

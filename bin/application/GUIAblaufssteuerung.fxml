@@ -110,6 +110,12 @@
             <Font name="Calibri" size="20.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="poweroff_btn" layoutX="649.0" layoutY="400.0" onAction="#poweroff" prefHeight="39.0" prefWidth="54.0" style="-fx-background-color: #aa1426;" text=" ">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </JFXButton>
+      <MaterialDesignIconView glyphName="POWER" layoutX="619.0" layoutY="432.0" size="30" text="" />
    </children>
    <effect>
       <InnerShadow />
