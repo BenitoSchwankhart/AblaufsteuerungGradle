@@ -86,7 +86,7 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton start_btn;
-	
+
 	@FXML
 	private JFXButton nothalt_btn;
 
@@ -269,24 +269,22 @@ public class TestController implements Initializable {
 	@FXML
 	void starteAblauf(ActionEvent event) throws IOException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
-		//ConnectionCalls c = new ConnectionCalls();
-	//	c.PowerOn();
+		// ConnectionCalls c = new ConnectionCalls();
+		// c.PowerOn();
 	}
-	//Hier Nothalt Funktion implementieren
-	   @FXML
-	    void nothalt(ActionEvent event) throws IOException {
-		  // ConnectionCalls c = new ConnectionCalls();
-			//c.Notfall();
-		   System.out.println("Nothalt");
-	    }
-	   
-	// Hier POPUP implementieren
-	   
-	 
-	    
-	   
+
+	// Hier Nothalt Funktion implementieren
 	@FXML
-	void popup(ActionEvent event) throws IOException {
+	void nothalt(ActionEvent event) throws IOException {
+		// ConnectionCalls c = new ConnectionCalls();
+		// c.Notfall();
+		System.out.println("Nothalt");
+	}
+
+	// Hier POPUP implementieren
+
+	@FXML
+	void popup1(ActionEvent event) throws IOException {
 		Stage stage;
 		Parent root;
 		if (!ziel.getText().equals(" ")) {
@@ -297,8 +295,17 @@ public class TestController implements Initializable {
 				stage.initModality(Modality.APPLICATION_MODAL);
 				stage.initOwner(ziel.getScene().getWindow());
 				stage.showAndWait();
+			} else {
+				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
-		} else if (!ziel2.getText().equals(" ")) {
+		}
+	}
+
+	@FXML
+	void popup2(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel2.getText().equals(" ")) {
 			if (event.getSource() == ziel2) {
 				stage = new Stage();
 				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
@@ -307,7 +314,16 @@ public class TestController implements Initializable {
 				stage.initOwner(ziel2.getScene().getWindow());
 				stage.showAndWait();
 			}
-		} else if (!ziel3.getText().equals(" ")) {
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}
+	}
+
+	@FXML
+	void popup3(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel3.getText().equals(" ")) {
 			if (event.getSource() == ziel3) {
 				stage = new Stage();
 				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
@@ -316,7 +332,16 @@ public class TestController implements Initializable {
 				stage.initOwner(ziel3.getScene().getWindow());
 				stage.showAndWait();
 			}
-		} else if (!ziel4.getText().equals(" ")) {
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}
+	}
+
+	@FXML
+	void popup4(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel4.getText().equals(" ")) {
 			if (event.getSource() == ziel4) {
 				stage = new Stage();
 				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
@@ -325,7 +350,16 @@ public class TestController implements Initializable {
 				stage.initOwner(ziel4.getScene().getWindow());
 				stage.showAndWait();
 			}
-		} else if (!ziel5.getText().equals(" ")) {
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}
+	}
+
+	@FXML
+	void popup5(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel5.getText().equals(" ")) {
 			if (event.getSource() == ziel5) {
 				stage = new Stage();
 				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
@@ -338,10 +372,62 @@ public class TestController implements Initializable {
 			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
-}
 
-/*
- * stage = (Stage) ziel.getScene().getWindow(); root =
+	@FXML
+	void popup6(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel6.getText().equals(" ")) {
+			if (event.getSource() == ziel6) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel6.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}	
+	}
+
+	@FXML
+	void popup7(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (!ziel7.getText().equals(" ")) {
+			if (event.getSource() == ziel7) {
+				stage = new Stage();
+				root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+				stage.setScene(new Scene(root));
+				stage.initModality(Modality.APPLICATION_MODAL);
+				stage.initOwner(ziel7.getScene().getWindow());
+				stage.showAndWait();
+			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
+		}
+	}
+}
+/**
+ * } } else if (!ziel3.getText().equals(" ")) { if (event.getSource() == ziel3)
+ * { stage = new Stage(); root =
+ * FXMLLoader.load(getClass().getResource("POPUP.fxml")); stage.setScene(new
+ * Scene(root)); stage.initModality(Modality.APPLICATION_MODAL);
+ * stage.initOwner(ziel3.getScene().getWindow()); stage.showAndWait(); } } else
+ * if (!ziel4.getText().equals(" ")) { if (event.getSource() == ziel4) { stage =
+ * new Stage(); root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+ * stage.setScene(new Scene(root));
+ * stage.initModality(Modality.APPLICATION_MODAL);
+ * stage.initOwner(ziel4.getScene().getWindow()); stage.showAndWait(); } } else
+ * if (!ziel5.getText().equals(" ")) { if (event.getSource() == ziel5) { stage =
+ * new Stage(); root = FXMLLoader.load(getClass().getResource("POPUP.fxml"));
+ * stage.setScene(new Scene(root));
+ * stage.initModality(Modality.APPLICATION_MODAL);
+ * stage.initOwner(ziel5.getScene().getWindow()); stage.showAndWait(); } } else
+ * { System.out.println("Ziehe erst ein Element in die Ablaufsteuerung"); } } }
+ * 
+ * /* stage = (Stage) ziel.getScene().getWindow(); root =
  * FXMLLoader.load(getClass().getResource("POPUP.fxml")); Scene scene = new
  * Scene(root); stage.setScene(scene);
  * stage.initModality(Modality.APPLICATION_MODAL); stage.show();
