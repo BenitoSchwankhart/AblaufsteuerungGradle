@@ -317,22 +317,22 @@ public class TestController implements Initializable {
 		Stage stage;
 		Parent root;
 		if (!ziel2.getText().equals(" ")) {
-			if (ziel.getText().equals("Licht")) {
-				if (event.getSource() == ziel) {
+			if (ziel2.getText().equals("Licht")) {
+				if (event.getSource() == ziel2) {
 					stage = new Stage();
 					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
 					stage.setScene(new Scene(root));
 					stage.initModality(Modality.APPLICATION_MODAL);
-					stage.initOwner(ziel.getScene().getWindow());
+					stage.initOwner(ziel2.getScene().getWindow());
 					stage.showAndWait();
 				}
-			} else if (ziel.getText().equals("Speed")) {
-				if (event.getSource() == ziel) {
+			} else if (ziel2.getText().equals("Speed")) {
+				if (event.getSource() == ziel2) {
 					stage = new Stage();
 					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
 					stage.setScene(new Scene(root));
 					stage.initModality(Modality.APPLICATION_MODAL);
-					stage.initOwner(ziel.getScene().getWindow());
+					stage.initOwner(ziel2.getScene().getWindow());
 					stage.showAndWait();
 				}
 			} else {
