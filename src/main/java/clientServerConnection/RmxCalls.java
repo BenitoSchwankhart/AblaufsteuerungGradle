@@ -107,13 +107,17 @@ public class RmxCalls {
 
 				if (charsbby == c) {
 					String fertig = "" + charsbby;
+					System.out.println(fertig);
 					
-					System.out.print(fertig.replace("|", ""));
-
+					/*String[] splited = fertig.split("|");
+					for (int y = 0; y < splited.length; y++) {
+						  System.out.println(splited[y]);
+						}*/
+					
 				}
 			}
 		}
 
 	}
-
+	
 }
