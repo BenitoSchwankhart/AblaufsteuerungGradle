@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class RmxCalls {
 
@@ -100,7 +102,7 @@ public class RmxCalls {
 		String alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890|";
 		char[] alphabetArray = alphabetString.toCharArray();
 
-		for (int i = 7; i < string.length(); i++) {
+		for (int i = 13; i < string.length(); i++) {
 
 			char charsbby = string.charAt(i);
 
@@ -109,16 +111,24 @@ public class RmxCalls {
 
 				if (charsbby == c) {
 					fertig = "" + charsbby;
-					fertig.replace("|", " ");
 
-					String[] tokens = fertig.split(" ");
-					System.out.print(tokens[2]);
+					System.out.print(fertig.replace("|", " "));
 
 				}
 
 			}
-
+			String[] words = fertig.split("\\s+");
+			for (int o = 0; o < words.length; o++) {
+				// You may want to check for a non-word character before blindly
+				// performing a replacement
+				// It may also be necessary to adjust the character class
+				words[o] = words[o].replaceAll("[^\\w]", "");
+			}
+			for (int counter = 0; counter < words.length; counter++) {
+				System.out.print(words[counter]);
+			}
 		}
+
 		return fertig;
 
 	}
