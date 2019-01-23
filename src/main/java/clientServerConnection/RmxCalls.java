@@ -112,7 +112,7 @@ public class RmxCalls {
 					fertig.replace("|", " ");
 
 					String[] tokens = fertig.split(" ");
-					System.out.print(tokens[0]);
+					System.out.print(tokens[2]);
 
 				}
 
