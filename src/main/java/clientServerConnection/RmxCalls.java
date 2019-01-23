@@ -110,6 +110,7 @@ public class RmxCalls {
 				char c = alphabetArray[j];
 
 				if (charsbby == c) {
+
 					fertig = "" + charsbby;
 
 					System.out.print(fertig.replace("|", " "));
@@ -132,5 +133,5 @@ public class RmxCalls {
 		return fertig;
 
 	}
-
+	
 }
