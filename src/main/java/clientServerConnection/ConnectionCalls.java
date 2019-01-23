@@ -124,6 +124,7 @@ public class ConnectionCalls {
 	      System.out.println("\nAngehalten!: ");
 	      rmx.Hexaprint(bytes);
 	      
+	      
 	      socket.close();
 	      }
 	
@@ -150,7 +151,9 @@ public class ConnectionCalls {
 	      InputStream is = socket.getInputStream();
 	      byte[] bytes = IOUtils.toByteArray(is);
 	      System.out.println("\nZugdaten: ");
+	      System.out.println(bytes.length);
 	      rmx.Hexaprint(bytes);
+	      rmx.ASCIIprint(bytes);
 	      
 	      socket.close();
 	      }

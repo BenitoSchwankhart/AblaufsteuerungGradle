@@ -2,6 +2,7 @@ package clientServerConnection;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
 public class RmxCalls {
@@ -88,6 +89,12 @@ public class RmxCalls {
 			System.out.print(String.format("0x%02X", ((byte) toPrint[i])) + " ");
 			}
 		}
+	
+	public String ASCIIprint(byte[] bytes) throws UnsupportedEncodingException {
+		String test = new String(bytes,"ASCII");
+		System.out.print(test);
+		return test;
+	}
 		
 		
 }
