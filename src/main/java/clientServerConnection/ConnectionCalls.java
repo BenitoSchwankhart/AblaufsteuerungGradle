@@ -186,7 +186,6 @@ public class ConnectionCalls {
 
 	public static void main(String[]args) throws IOException {
 		ZugInfo();
-		Initialisieren(); 
 	}
 	
 }
