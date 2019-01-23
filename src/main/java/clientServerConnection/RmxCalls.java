@@ -93,9 +93,11 @@ public class RmxCalls {
 	 * @param toPrint
 	 */
 
-	public void ASCIIprint(byte[] bytes) throws UnsupportedEncodingException {
+	public String ASCIIprint(byte[] bytes) throws UnsupportedEncodingException {
+
+		String fertig = null;
 		String string = new String(bytes, "ASCII");
-		String alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz|";
+		String alphabetString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890|";
 		char[] alphabetArray = alphabetString.toCharArray();
 
 		for (int i = 7; i < string.length(); i++) {
@@ -106,13 +108,18 @@ public class RmxCalls {
 				char c = alphabetArray[j];
 
 				if (charsbby == c) {
-					String fertig = "" + charsbby;
-					
-					System.out.print(fertig.replace("|", ""));
+					fertig = "" + charsbby;
+					fertig.replace("|", " ");
+
+					String[] tokens = fertig.split(" ");
+					System.out.print(tokens[0]);
 
 				}
+
 			}
+
 		}
+		return fertig;
 
 	}
 
