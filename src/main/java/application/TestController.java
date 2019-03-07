@@ -98,6 +98,9 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton settings;
+	
+	@FXML
+	private JFXButton back;
 
 	@FXML
 	void bittestarten(ActionEvent event) throws IOException {
@@ -122,7 +125,19 @@ public class TestController implements Initializable {
 			pane_ablauf.toFront();
 		}
 	}
-
+	//Zurueck Button
+	@FXML
+	void backonstart (ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (event.getSource() == back) {
+			stage = (Stage) back.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
+	}
 	// Drag and Drop
 	@FXML
 	private Pane black_pane;

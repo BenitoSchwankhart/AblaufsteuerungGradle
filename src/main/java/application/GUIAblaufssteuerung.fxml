@@ -97,6 +97,11 @@
                   <Font size="27.0" />
                </font>
             </Text>
+            <JFXButton fx:id="back" layoutX="14.0" layoutY="5.0" onAction="#backonstart" style="-fx-background-color: #32404c;" text="Zurück" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
       <MaterialDesignIconView glyphName="TRAIN" layoutX="34.0" layoutY="431.0" size="30" />
