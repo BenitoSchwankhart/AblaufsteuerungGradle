@@ -39,10 +39,25 @@ public class NeueLokController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-loaddata();
+		loaddata();
 	}
 
 	// Neue Lok
+	@FXML
+	private JFXButton lokback_btn;
+
+	@FXML
+	void backtohome(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (event.getSource() == lokback_btn) {
+			stage = (Stage) lokback_btn.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
+	}
 
 	@FXML
 	private Text TypBoxLabel;
@@ -51,22 +66,32 @@ loaddata();
 	private ChoiceBox<String> TypBox;
 
 	@FXML
-	private TextField screentyp;
+	private ChoiceBox<String> AdresslaengeBox;
 
 	@FXML
 	private Button OK_btn;
 	ObservableList listtyp = FXCollections.observableArrayList();
-
-	@FXML
-	void displaytyp(ActionEvent event) {
-	}
+	ObservableList listadresslaenge = FXCollections.observableArrayList();
 
 	private void loaddata() {
+		// Typ
 		listtyp.removeAll(listtyp);
-		String a = "Hallo";
-		String b = "Wie gehts";
-		String c = " Moin Moin";
-		listtyp.addAll(a, b, c);
+		String a = "DCC STandard (NRMA)";
+		String b = "SX1 Parameter";
+		String c = "SX1 Erweitert";
+		String d = "SX1 Standard";
+		String e = "SX2 Standard";
+		listtyp.addAll(a, b, c, d, e);
 		TypBox.getItems().addAll(listtyp);
+
+		// Adresslaenge
+		listadresslaenge.removeAll(listadresslaenge);
+		String eins = "eins";
+		String zwei = "zwei";
+		String drei = "drei";
+
+		listadresslaenge.addAll(eins, zwei, drei);
+		AdresslaengeBox.getItems().addAll(listadresslaenge);
+
 	}
 }
