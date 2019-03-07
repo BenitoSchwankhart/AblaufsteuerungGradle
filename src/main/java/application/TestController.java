@@ -161,33 +161,6 @@ public class TestController implements Initializable {
 
 		}
 	}
-	// Neue Lok
-
-	@FXML
-	private Text TypBoxLabel;
-
-	@FXML
-	private ChoiceBox<String> TypBox;
-
-	@FXML
-	private TextField screentyp;
-
-	@FXML
-	private Button OK_btn;
-	ObservableList listtyp = FXCollections.observableArrayList();
-
-	@FXML
-	void displaytyp(ActionEvent event) {
-	}
-
-	private void loaddata() {
-		listtyp.removeAll(listtyp);
-		String a = "Hallo";
-		String b = "Wie gehts";
-		String c = " Moin Moin";
-		listtyp.addAll(a, b, c);
-		TypBox.getItems().addAll(listtyp);
-	}
 
 	// Drag and Drop
 	@FXML
