@@ -13,12 +13,16 @@ import clientServerConnection.*;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
@@ -79,7 +83,7 @@ public class TestController implements Initializable {
 	private Pane pane_settings;
 
 	@FXML
-	private Pane pane_zuege;
+	private Pane neuelok;
 
 	@FXML
 	private Pane pane_ablauf;
@@ -98,7 +102,7 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton settings;
-	
+
 	@FXML
 	private JFXButton back;
 
@@ -118,16 +122,17 @@ public class TestController implements Initializable {
 	@FXML
 	void menuOnClick(ActionEvent event) {
 		if (event.getSource() == zuege) {
-			pane_zuege.toFront();
+			neuelok.toFront();
 		} else if (event.getSource() == settings) {
 			pane_settings.toFront();
 		} else if (event.getSource() == ablauf) {
 			pane_ablauf.toFront();
 		}
 	}
-	//Zurueck Button
+
+	// Zurueck Button
 	@FXML
-	void backonstart (ActionEvent event) throws IOException {
+	void backonstart(ActionEvent event) throws IOException {
 		Stage stage;
 		Parent root;
 		if (event.getSource() == back) {
@@ -138,6 +143,53 @@ public class TestController implements Initializable {
 			stage.show();
 		}
 	}
+
+//Neue Lok Fenster
+	@FXML
+	private JFXButton neuelok_btn;
+
+	@FXML
+	void neuelok(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (event.getSource() == neuelok_btn) {
+			stage = (Stage) neuelok_btn.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("NeueLok.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+
+			loaddata();
+		}
+	}
+	// Neue Lok
+
+	@FXML
+	private Text TypBoxLabel;
+
+	@FXML
+	private ChoiceBox<String> TypBox;
+
+	@FXML
+	private TextField screentyp;
+
+	@FXML
+	private Button OK_btn;
+	ObservableList listtyp = FXCollections.observableArrayList();
+
+	@FXML
+	void displaytyp(ActionEvent event) {
+	}
+
+	private void loaddata() {
+		listtyp.removeAll(listtyp);
+		String a = "Hallo";
+		String b = "Wie gehts";
+		String c = " Moin Moin";
+		listtyp.addAll(a, b, c);
+		TypBox.getItems().addAll(listtyp);
+	}
+
 	// Drag and Drop
 	@FXML
 	private Pane black_pane;
