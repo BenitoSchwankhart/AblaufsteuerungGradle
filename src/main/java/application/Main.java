@@ -19,10 +19,10 @@ public class Main extends Application {
 		//*Threadobjekt zum starten beenden usw.
 		//*Thread thread = null;
 		//*Checking if Server is connected
-		ClientConnection c = new ClientConnection();
+		/*clientConnection c = new clientConnection();
 		c.main(null);
 		RmxCalls rmx = new RmxCalls();
-		if (rmx.getVerbindung() == 2) {
+		if (rmx.getVerbindung() == 2) {*/
 			try {
 				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Test.fxml"));
 				Scene scene = new Scene(root, 400, 400);
@@ -32,9 +32,9 @@ public class Main extends Application {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else {
+		/*} else {
 		System.out.println("Keine Verbindung zum Server");
-	}
+	}*/
 
 	}
 
