@@ -15,9 +15,9 @@
             <DropShadow />
          </effect>
          <children>
-            <Pane fx:id="neuelok" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
+            <Pane fx:id="neuelok" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="234.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="216.0" text="Neue Lok" textAlignment="CENTER">
+                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Neue Lok" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
@@ -25,7 +25,7 @@
                         <MaterialDesignIconView glyphName="TRAIN" size="25" />
                      </graphic>
                   </JFXButton>
-                  <Text layoutX="239.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Neue Lok hinzufügen">
+                  <Text fill="WHITE" layoutX="239.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Neue Lok hinzufügen">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
