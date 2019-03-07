@@ -110,11 +110,10 @@ public class RmxCalls {
 				if (charsbby == c) {
 
 					fertig = "" + charsbby;
-					fertig.replace("|", " ");
+					System.out.print(fertig.replace("|", " "));
+					
 
-					String[] tokens = fertig.split(" ");
-					System.out.print(tokens[2]);
-
+				
 				}
 
 			}
