@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="260.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer" wrappingWidth="80.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXToggleButton layoutX="196.0" layoutY="14.0" prefHeight="115.0" prefWidth="195.0" text="Licht">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXToggleButton>
+      <JFXTimePicker layoutX="111.0" layoutY="233.0" />
+      <Text layoutX="57.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" />
+      <Text layoutX="364.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ende" />
+      <JFXTimePicker layoutX="415.0" layoutY="233.0" />
+   </children>
+</AnchorPane>
