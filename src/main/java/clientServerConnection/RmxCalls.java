@@ -110,19 +110,13 @@ public class RmxCalls {
 				char c = alphabetArray[j];
 
 				if (charsbby == c) {
-
 					fertig = "" + charsbby;
-
-					System.out.print(fertig.replace("|", " "));
-
+					//System.out.print(fertig.replace("|", " "));
 				}
 
 			}
 			String[] words = fertig.split("\\s+");
 			for (int o = 0; o < words.length; o++) {
-				// You may want to check for a non-word character before blindly
-				// performing a replacement
-				// It may also be necessary to adjust the character class
 				words[o] = words[o].replaceAll("[^\\w]", "");
 			}
 			for (int counter = 0; counter < words.length; counter++) {
@@ -133,5 +127,14 @@ public class RmxCalls {
 		return fertig;
 
 	}
-	
+
+	public void ZugNr(byte[] bytes) {
+			
+		    String string = bytes.toString();
+		    int first = string.indexOf("0x7C");
+		    int last = string.indexOf("0x7C");
+		    
+		    string.substring(first,last);
+		
+	}
 }

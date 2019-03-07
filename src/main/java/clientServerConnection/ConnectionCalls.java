@@ -12,7 +12,8 @@ import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 
 public class ConnectionCalls {
-
+	
+//* sendet eine Positivquittung um die Verbindung zu testen, und setzt dann die Verbindung auf Connected//
 	public static void Verbindung() throws IOException {
 		int port = 9090;
 		byte[] answer;
@@ -42,7 +43,7 @@ public class ConnectionCalls {
 
 		rmx.setVerbindungCONNECTED();
 	}
-
+//* Setzt das Rmx-System auf Start//
 	public static void PowerOn() throws IOException {
 		int port = 9090;
 		byte[] answer;
@@ -70,7 +71,7 @@ public class ConnectionCalls {
 
 		socket.close();
 	}
-
+//* Setzt das Rmx-System auf Stop//
 	public static void PowerOff() throws IOException {
 		int port = 9090;
 		byte[] answer;
@@ -98,7 +99,7 @@ public class ConnectionCalls {
 
 		socket.close();
 	}
-
+//* Das System macht Nothalt aller Loks//
 	public static void Notfall() throws IOException {
 		int port = 9090;
 		byte[] answer;
@@ -126,7 +127,7 @@ public class ConnectionCalls {
 
 		socket.close();
 	}
-
+//* Gibt die Zugnummer und den Zugnamen zurück//
 	public static void ZugInfo() throws IOException {
 		int port = 9090;
 		byte[] answer;
@@ -155,8 +156,13 @@ public class ConnectionCalls {
 
 		socket.close();
 	}
+//* Gibt erst Protokollversion, dann die Businhalte (Betriebsdaten) beider RMX-Busse,  danach die Fahrdaten von RMX0. 
+//* Nach jeder Kanalinfo werden ebenfalls die Steuerungsdaten der jeweiligen Lok ausgegeben. Zuerst
+//* die Antwort Loksteuerung Geschwindigkeit und Richtung. Danach die Antwort Loksteuerung Funktionen.
+//* Als letztes wird zur Kennzeichnung der vollständigen Ausgabe noch die Antwort auf eine
+//* Statusabfrage an den Client gesendet
 
-	public static void Initialisieren() throws IOException {
+	public static void Status() throws IOException {
 		int port = 9090;
 		byte[] answer;
 		byte[] sendMessage;
@@ -167,18 +173,23 @@ public class ConnectionCalls {
 
 		System.out.println("\nStart...");
 		RmxCalls rmx = new RmxCalls();
-		answer = rmx.Initialisieren;
+		answer = rmx.Status;
 
 		sendMessage = answer;
 		DataOutputStream bw = new DataOutputStream(os);
 		bw.write(sendMessage);
 		bw.flush();
-		System.out.println("Verbindung wird initialisiert:");
+		System.out.println("Verbindung wird abgefragt:");
 		rmx.Hexaprint(sendMessage);
 
 		InputStream is = socket.getInputStream();
 		byte[] bytes = IOUtils.toByteArray(is);
-		System.out.println("\nDaten: ");
+		System.out.println("\n "
+				+ "<0x7c><0x04><0x04><STATUS>"
+				+ "Bit 5 und 6: 1 Initialisierung erfolgreich\r\n" + 
+				"Bit 7: 0 Zentrale Aus\r\n" + 
+				"Bit 7: 1 Zentrale Ein\r\n" + 
+				": ");
 		rmx.Hexaprint(bytes);
 
 		socket.close();
@@ -187,5 +198,15 @@ public class ConnectionCalls {
 	public static void main(String[] args) throws IOException {
 		ZugInfo();
 	}
+/*Positivquittung<0x7C><0x06><0x00><0x01> Anz. Highbytes,Anz. Lowbytes
+Dann Pro Zug:
+<0x7c>
+<0x07 keine Alphanumerische Zeichen, 0x08 bis 0x1B 1 bis 20 alphanumerische Zeichen>
+<0x08>
+<ADRH>/Higbytes Loknummer Teil 1(lang) (0x00 für DCC)
+<ADRL>/Lowbytes Loknummer Teil 2(lang)
+<ADRK> Adresse kurz (angegeben wenn adresse kurz, steuerung über Loknummer) --> Bei DCC Loknummer = Adresse
+<OPMODE> Menü über Fahrstufen
+<n*AN> Name*/
 
 }
