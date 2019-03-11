@@ -45,7 +45,6 @@ public class NeueLokController implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loaddata();
-		NumberValidator numValidator = new NumberValidator();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
 
 		Namebox.getValidators().add(validator);

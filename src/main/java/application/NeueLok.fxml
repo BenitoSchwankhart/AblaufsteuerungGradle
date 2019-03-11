@@ -45,12 +45,12 @@
          </font>
       </Text>
       <ChoiceBox fx:id="TypBox" layoutX="137.0" layoutY="79.0" prefHeight="14.0" prefWidth="128.0" />
-      <Text layoutX="339.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <Text layoutX="310.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="Namebox" layoutX="422.0" layoutY="79.0" prefHeight="25.0" prefWidth="128.0" />
-      <Spinner fx:id="adressespinner" layoutX="714.0" layoutY="79.0" prefHeight="25.0" prefWidth="51.0" />
+      <JFXTextField fx:id="Namebox" layoutX="388.0" layoutY="79.0" prefHeight="25.0" prefWidth="189.0" />
+      <Spinner fx:id="adressespinner" layoutX="714.0" layoutY="79.0" prefHeight="25.0" prefWidth="78.0" />
    </children>
 </AnchorPane>
