@@ -50,12 +50,12 @@ public class ConnectionCalls{
 	}
 	
 	//* Erstellt neuen Zug in der Datenbank gilt nur für DCC mit kurzer Adresse
-	public static void Zugerstellen() throws IOException {
-		byte Count = 0x00;
-		byte ZUGNR = 0x03;
-		byte OPMODE = 0x09;//(0x09)-> 14 FS, (0x0C)-> 28 FS, (0x0F)-> 126 FS
-		byte NAME = 0x44; //,0x45,0x4D, 04F;// (DEMO)
-		byte[] ZugErstellung = new byte[] { 0x7c, Count , 0x08, 0x00, ZUGNR, ZUGNR, OPMODE, NAME };
+	public static void ZugErstellen(byte COUNT, byte ZUGNR, byte OPMODE, byte NAME) throws IOException {
+		//byte COUNT = 0x00;
+		//byte ZUGNR = 0x03;
+		//byte OPMODE = 0x09;//(0x09)-> 14 FS, (0x0C)-> 28 FS, (0x0F)-> 126 FS
+		//byte NAME = 0x44; //,0x45,0x4D, 04F;// (DEMO)
+		byte[] ZugErstellung = new byte[] { 0x7c, COUNT , 0x08, 0x00, ZUGNR, ZUGNR, OPMODE, NAME };
 		int port = 9090;
 		byte[] answer;
 		byte[] sendMessage;
