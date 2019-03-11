@@ -5,12 +5,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXPasswordField;
+
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXToggleButton;
-import com.sun.glass.ui.ClipboardAssistance;
-import clientServerConnection.*;
-import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
+import com.jfoenix.validation.NumberValidator;
+import com.jfoenix.validation.RequiredFieldValidator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -23,28 +21,50 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class NeueLokController implements Initializable {
+// Neue Lok
+	@FXML
+	private JFXButton lokback_btn;
+
+	@FXML
+	private JFXTextField Namebox;
+//Das ist der Spinner
+	@FXML
+	private Spinner<Integer> adressespinner;
+	@FXML
+	private Text TypBoxLabel;
+
+	@FXML
+	private ChoiceBox<String> TypBox;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loaddata();
-	}
+		RequiredFieldValidator validator = new RequiredFieldValidator();
 
-	// Neue Lok
-	@FXML
-	private JFXButton lokback_btn;
+		Namebox.getValidators().add(validator);
+		validator.setMessage("Noch keine Eingabe");
+
+		Namebox.focusedProperty().addListener(new ChangeListener<Boolean>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+				if (!newValue) {
+					Namebox.validate();
+				}
+
+			}
+		});
+
+		// Spinner von 1-100
+		SpinnerValueFactory<Integer> adresse = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1);
+		this.adressespinner.setValueFactory(adresse);
+	}
 
 	@FXML
 	void backtohome(ActionEvent event) throws IOException {
@@ -59,39 +79,21 @@ public class NeueLokController implements Initializable {
 		}
 	}
 
-	@FXML
-	private Text TypBoxLabel;
-
-	@FXML
-	private ChoiceBox<String> TypBox;
-
-	@FXML
-	private ChoiceBox<String> AdresslaengeBox;
-
+	// Füllt die Typ ChoiceBox
 	@FXML
 	private Button OK_btn;
 	ObservableList listtyp = FXCollections.observableArrayList();
-	ObservableList listadresslaenge = FXCollections.observableArrayList();
 
 	private void loaddata() {
 		// Typ
 		listtyp.removeAll(listtyp);
-		String a = "DCC STandard (NRMA)";
-		String b = "SX1 Parameter";
-		String c = "SX1 Erweitert";
-		String d = "SX1 Standard";
-		String e = "SX2 Standard";
-		listtyp.addAll(a, b, c, d, e);
+		String a = "14";
+		String b = "28";
+		String c = "126";
+		
+		listtyp.addAll(a, b, c);
 		TypBox.getItems().addAll(listtyp);
 
-		// Adresslaenge
-		listadresslaenge.removeAll(listadresslaenge);
-		String eins = "eins";
-		String zwei = "zwei";
-		String drei = "drei";
-
-		listadresslaenge.addAll(eins, zwei, drei);
-		AdresslaengeBox.getItems().addAll(listadresslaenge);
-
 	}
+
 }

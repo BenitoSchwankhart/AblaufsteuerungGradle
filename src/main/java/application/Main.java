@@ -3,7 +3,7 @@ package application;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import clientServerConnection.*;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -16,16 +16,14 @@ public class Main extends Application {
 
 	public void start(Stage primaryStage) throws UnknownHostException, IOException {
 
-		//*Threadobjekt zum starten beenden usw.
-		//*Thread thread = null;
 		//*Checking if Server is connected
 		/*clientConnection c = new clientConnection();
 		c.main(null);
 		RmxCalls rmx = new RmxCalls();
 		if (rmx.getVerbindung() == 2) {*/
 			try {
-				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Test.fxml"));
-				Scene scene = new Scene(root, 400, 400);
+				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Home.fxml"));
+				Scene scene = new Scene(root, 900, 450);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
