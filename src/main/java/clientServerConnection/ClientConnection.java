@@ -6,7 +6,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.*;
 import java.util.*;
 
-public class ClientConnection {
+public class clientConnection {
 public void main(String[]args) throws UnknownHostException, IOException{
       int port = 9090;
       byte[] answer; 

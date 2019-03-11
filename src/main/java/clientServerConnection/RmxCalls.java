@@ -26,6 +26,7 @@ public class RmxCalls {
 	public static final byte[] PowerOn = new byte[] { HEADBYTE, 0x04, 0x03, (byte) 128 };
 	public static final byte[] PowerOff = new byte[] { HEADBYTE, 0x04, 0x03, 0x40 };
 	public static final byte[] Notfall = new byte[] { HEADBYTE, 0x04, 0x03, 0x08 };
+	
 
 	// Konstanten des Verbindungsstatus
 

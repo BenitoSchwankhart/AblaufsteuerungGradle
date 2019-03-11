@@ -16,8 +16,6 @@ public class Main extends Application {
 
 	public void start(Stage primaryStage) throws UnknownHostException, IOException {
 
-		//*Threadobjekt zum starten beenden usw.
-		//*Thread thread = null;
 		//*Checking if Server is connected
 		/*clientConnection c = new clientConnection();
 		c.main(null);
