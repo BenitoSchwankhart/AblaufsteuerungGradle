@@ -15,6 +15,23 @@
             <DropShadow />
          </effect>
          <children>
+            <Pane fx:id="pane_settings" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: a40e4c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="pane_ablauf" layoutX="26.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="start_btn" layoutX="195.0" layoutY="185.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #F0F7FF;" text="Starten">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="229.0" layoutY="237.0" size="30" text="" />
+                  <JFXButton fx:id="start_btn1" layoutX="195.0" layoutY="289.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #F0F7FF;" text="Default Ablauf">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </JFXButton>
+                  <MaterialDesignIconView fill="WHITE" glyphName="THUMB_UP" layoutX="229.0" layoutY="340.0" size="30" text="" />
+               </children>
+            </Pane>
             <Pane fx:id="neuelok" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Neue Lok" textAlignment="CENTER" textFill="WHITE">
@@ -30,17 +47,14 @@
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Text>
-               </children>
-            </Pane>
-            <Pane fx:id="pane_settings" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: a40e4c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="pane_ablauf" layoutX="26.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <JFXButton fx:id="start_btn" layoutX="195.0" layoutY="185.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #F0F7FF;" text="Starten">
+                  <JFXButton fx:id="neuelok_btn1" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="289.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Default Zug" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="Calibri" size="24.0" />
                      </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="TRAIN" size="25" />
+                     </graphic>
                   </JFXButton>
-                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="229.0" layoutY="237.0" size="30" text="" />
                </children>
             </Pane>
          </children>
