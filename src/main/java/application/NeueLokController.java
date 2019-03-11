@@ -21,32 +21,33 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class NeueLokController implements Initializable {
+// Neue Lok
+	@FXML
+	private JFXButton lokback_btn;
+
+	@FXML
+	private JFXTextField Namebox;
+//Das ist der Spinner
+	@FXML
+	private Spinner<Integer> adressespinner;
+	@FXML
+	private Text TypBoxLabel;
+
+	@FXML
+	private ChoiceBox<String> TypBox;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loaddata();
 		NumberValidator numValidator = new NumberValidator();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
-		
-		
-		Adressetextbox.getValidators().add(numValidator);
-		numValidator.setMessage("Nur Zahlen einfügen");
-		Adressetextbox.focusedProperty().addListener(new ChangeListener<Boolean>() {
 
-			@Override
-			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-				if (!newValue) {
-					Adressetextbox.validate();
-				}
-
-			}
-		});
-
-		
 		Namebox.getValidators().add(validator);
 		validator.setMessage("Noch keine Eingabe");
 
@@ -60,17 +61,11 @@ public class NeueLokController implements Initializable {
 
 			}
 		});
+
+		// Spinner von 1-100
+		SpinnerValueFactory<Integer> adresse = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1);
+		this.adressespinner.setValueFactory(adresse);
 	}
-
-	// Neue Lok
-	@FXML
-	private JFXButton lokback_btn;
-
-	@FXML
-	private JFXTextField Adressetextbox;
-
-	@FXML
-	private JFXTextField Namebox;
 
 	@FXML
 	void backtohome(ActionEvent event) throws IOException {
@@ -85,12 +80,7 @@ public class NeueLokController implements Initializable {
 		}
 	}
 
-	@FXML
-	private Text TypBoxLabel;
-
-	@FXML
-	private ChoiceBox<String> TypBox;
-
+	// Füllt die Typ ChoiceBox
 	@FXML
 	private Button OK_btn;
 	ObservableList listtyp = FXCollections.observableArrayList();
@@ -104,4 +94,5 @@ public class NeueLokController implements Initializable {
 		TypBox.getItems().addAll(listtyp);
 
 	}
+
 }

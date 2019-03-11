@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -44,12 +45,12 @@
          </font>
       </Text>
       <ChoiceBox fx:id="TypBox" layoutX="69.0" layoutY="76.0" prefHeight="14.0" prefWidth="128.0" />
-      <JFXTextField fx:id="Adressetextbox" layoutX="672.0" layoutY="80.0" prefHeight="25.0" prefWidth="214.0" />
       <Text layoutX="241.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Text>
       <JFXTextField fx:id="Namebox" layoutX="317.0" layoutY="79.0" prefHeight="25.0" prefWidth="214.0" />
+      <Spinner fx:id="adressespinner" layoutX="662.0" layoutY="80.0" prefHeight="25.0" prefWidth="214.0" />
    </children>
 </AnchorPane>
