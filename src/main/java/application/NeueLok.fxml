@@ -34,23 +34,23 @@
             <Font name="Calibri Bold" size="36.0" />
          </font>
       </Text>
-      <Text fx:id="TypBoxLabel" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Typ">
+      <Text fx:id="TypBoxLabel" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="576.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse">
+      <Text layoutX="622.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="TypBox" layoutX="69.0" layoutY="76.0" prefHeight="14.0" prefWidth="128.0" />
-      <Text layoutX="241.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+      <ChoiceBox fx:id="TypBox" layoutX="137.0" layoutY="79.0" prefHeight="14.0" prefWidth="128.0" />
+      <Text layoutX="339.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Text>
-      <JFXTextField fx:id="Namebox" layoutX="317.0" layoutY="79.0" prefHeight="25.0" prefWidth="214.0" />
-      <Spinner fx:id="adressespinner" layoutX="662.0" layoutY="80.0" prefHeight="25.0" prefWidth="214.0" />
+      <JFXTextField fx:id="Namebox" layoutX="422.0" layoutY="79.0" prefHeight="25.0" prefWidth="128.0" />
+      <Spinner fx:id="adressespinner" layoutX="714.0" layoutY="79.0" prefHeight="25.0" prefWidth="51.0" />
    </children>
 </AnchorPane>

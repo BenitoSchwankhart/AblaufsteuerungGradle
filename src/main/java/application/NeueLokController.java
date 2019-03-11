@@ -88,9 +88,11 @@ public class NeueLokController implements Initializable {
 	private void loaddata() {
 		// Typ
 		listtyp.removeAll(listtyp);
-		String a = "DCC-Kurze Adresse";
-		String b = "DCC-Lange Adresse";
-		listtyp.addAll(a, b);
+		String a = "14";
+		String b = "28";
+		String c = "126";
+		
+		listtyp.addAll(a, b, c);
 		TypBox.getItems().addAll(listtyp);
 
 	}
