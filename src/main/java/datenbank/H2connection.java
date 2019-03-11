@@ -18,7 +18,7 @@ public class H2connection {
             Class.forName("org.h2.Driver"); 
              
             conn = DriverManager.getConnection( 
-                    "jdbc:h2:~/.GitHub\\AblaufsteuerungGradle\\H2Datenbank", "", ""); 
+                    "jdbc:h2:~/.AblaufsteuerungGradle\\H2Datenbank", "", ""); 
 
             DatabaseMetaData md = conn.getMetaData(); 
 
