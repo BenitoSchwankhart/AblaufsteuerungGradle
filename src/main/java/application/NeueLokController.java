@@ -25,8 +25,9 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import java.awt.*;
 
-public class NeueLokController implements Initializable {
+public class NeueLokController implements Initializable{
 // Neue Lok
 	@FXML
 	private JFXButton lokback_btn;
