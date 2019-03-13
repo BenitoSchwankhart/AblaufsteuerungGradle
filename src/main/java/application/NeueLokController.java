@@ -30,7 +30,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import java.awt.*;
 
-public class NeueLokController implements Initializable{
+public class NeueLokController implements Initializable {
 // Neue Lok
 	@FXML
 	private JFXButton lokback_btn;
@@ -55,6 +55,9 @@ public class NeueLokController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		submit_btn.setOnAction(e -> getChoice(TypBox));
+		// Startet get Choice Methode um die Auswahl der TypBox anzuzeigen
+		submit_btn.setOnAction(e -> getChoice(TypBox));
+		// Lädt die Daten der Choice Box
 		loaddata();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
 
@@ -91,8 +94,6 @@ public class NeueLokController implements Initializable{
 	}
 
 	// Füllt die Typ ChoiceBox
-	@FXML
-	private Button OK_btn;
 	ObservableList listtyp = FXCollections.observableArrayList();
 
 	private void loaddata() {
@@ -113,6 +114,9 @@ public class NeueLokController implements Initializable{
 		int FS = Integer.parseInt(Fahrstufen);
 		return FS;
 	}
+
+
+
 
 	@FXML
 	void submit_neueLok(ActionEvent event) {
@@ -144,6 +148,10 @@ public class NeueLokController implements Initializable{
 		}*/
 		//int COUNT = NAME.length; 
 		//c.ZugErstellen();
+		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		byte[] NAME = null;
+		int COUNT = NAME.length;
+		// c.ZugErstellen();
 
 	}
 
