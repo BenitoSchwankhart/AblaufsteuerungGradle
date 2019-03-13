@@ -11,6 +11,7 @@ import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import clientServerConnection.ConnectionCalls;
+import clientServerConnection.RmxCalls;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -53,6 +54,7 @@ public class NeueLokController implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		submit_btn.setOnAction(e -> getChoice(TypBox));
 		loaddata();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
 
@@ -106,20 +108,42 @@ public class NeueLokController implements Initializable{
 	}
 //SubmitButton Funktion
 
-	private void getChoice(ChoiceBox<String> TypBox) {
+	private int getChoice(ChoiceBox<String> TypBox) {
 		String Fahrstufen = TypBox.getValue();
-		System.out.print(Fahrstufen);
+		int FS = Integer.parseInt(Fahrstufen);
+		return FS;
 	}
 
 	@FXML
 	void submit_neueLok(ActionEvent event) {
+		
+		int sub = getChoice(TypBox);
 
 		ConnectionCalls c = new ConnectionCalls();
+		RmxCalls rmx = new RmxCalls();
+		byte OPMODE = 0;
 		//byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
-		byte[] NAME = null;
-		int COUNT = NAME.length; 
+		
+		//Test welche Fahrstufe in TextBox ausgwählt wurde
+		if ( sub == 14) {
+			OPMODE = 0x09;
+		}
+		else if ( sub == 24) {
+			OPMODE = 0x0C;
+		}
+		else if ( sub == 126) {
+			OPMODE = 0x0F;
+		}
+		else {
+			throw new IllegalArgumentException ("Fahrstufenauswahl fehlgeschlagen!");
+		}
+		
+		/*byte[] NAME = new byte[20]; //Maximale Länge auf 20 festgelegt
+		for(int i=0; i<20; i++) {
+			NAME[i] = i;
+		}*/
+		//int COUNT = NAME.length; 
 		//c.ZugErstellen();
-		submit_btn.setOnAction(e -> getChoice(TypBox));
 
 	}
 
