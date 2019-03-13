@@ -9,6 +9,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
+
+import clientServerConnection.ConnectionCalls;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -108,6 +110,20 @@ public class NeueLokController implements Initializable {
 	private void getChoice(ChoiceBox<String> TypBox) {
 		String Fahrstufen = TypBox.getValue();
 		System.out.print(Fahrstufen);
+	}
+
+
+
+	@FXML
+	void submit_neueLok(ActionEvent event) {
+
+		ConnectionCalls c = new ConnectionCalls();
+		//byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		byte[] NAME = null;
+		int COUNT = NAME.length; 
+		//c.ZugErstellen();
+		submit_btn.setOnAction(e -> getChoice(TypBox));
+
 	}
 
 }
