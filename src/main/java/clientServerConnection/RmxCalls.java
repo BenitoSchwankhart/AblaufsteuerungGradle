@@ -129,13 +129,4 @@ public class RmxCalls {
 
 	}
 
-	public void ZugNr(byte[] bytes) {
-			
-		    String string = bytes.toString();
-		    int first = string.indexOf("0x7C");
-		    int last = string.indexOf("0x7C");
-		    
-		    string.substring(first,last);
-		
-	}
 }

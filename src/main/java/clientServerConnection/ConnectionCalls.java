@@ -54,8 +54,8 @@ public class ConnectionCalls{
 	public static void ZugErstellen(/*byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME*/)throws IOException { 
 		
 		//Dient zur DEMO-Zwecken
-		byte ZUGNR = 0x03;
-		byte COUNT = 0x0B; // Anzahl der Opmode Zeichen + 7 oder 7(0x07) für keine Alphanumerische Zeichen
+		byte ZUGNR = 0x03; // Kann selbst gewählt werden
+		byte COUNT = 0x0B; // Anzahl der NAME Zeichen + 7 oder 7(0x07) für keine Alphanumerische Zeichen
 		byte OPMODE = 0x09;//(0x09)-> 14 FS, (0x0C)-> 28 FS, (0x0F)-> 126 FS
 		byte[] NAME = new byte[] {0x44,0x45,0x4D,0x4F}; //0x44,0x45,0x4D, 04F;// (DEMO)
 		
