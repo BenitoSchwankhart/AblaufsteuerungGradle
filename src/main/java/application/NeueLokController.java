@@ -41,6 +41,9 @@ public class NeueLokController implements Initializable {
 
 	@FXML
 	private ChoiceBox<String> TypBox;
+	// Das ist der Submit Button
+	@FXML
+	private JFXButton submit_btn;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -90,9 +93,14 @@ public class NeueLokController implements Initializable {
 		String a = "14";
 		String b = "28";
 		String c = "126";
-		
+
 		listtyp.addAll(a, b, c);
 		TypBox.getItems().addAll(listtyp);
+
+	}
+//SubmitButton Funktion
+	@FXML
+	void submit_neueLok(ActionEvent event) {
 
 	}
 
