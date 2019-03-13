@@ -33,14 +33,17 @@ public class NeueLokController implements Initializable {
 
 	@FXML
 	private JFXTextField Namebox;
+
 //Das ist der Spinner
 	@FXML
 	private Spinner<Integer> adressespinner;
+
 	@FXML
 	private Text TypBoxLabel;
 
 	@FXML
 	private ChoiceBox<String> TypBox;
+
 	// Das ist der Submit Button
 	@FXML
 	private JFXButton submit_btn;
@@ -99,9 +102,15 @@ public class NeueLokController implements Initializable {
 
 	}
 //SubmitButton Funktion
+
+	private void getChoice(ChoiceBox<String> TypBox) {
+		String Fahrstufen = TypBox.getValue();
+		System.out.print(Fahrstufen);
+	}
+
 	@FXML
 	void submit_neueLok(ActionEvent event) {
-
+		submit_btn.setOnAction(e -> getChoice(TypBox));
 	}
 
 }
