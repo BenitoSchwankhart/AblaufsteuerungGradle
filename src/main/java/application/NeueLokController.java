@@ -114,15 +114,15 @@ public class NeueLokController implements Initializable {
 
 
 
+
 	@FXML
 	void submit_neueLok(ActionEvent event) {
 
 		ConnectionCalls c = new ConnectionCalls();
-		//byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
 		byte[] NAME = null;
-		int COUNT = NAME.length; 
-		//c.ZugErstellen();
-		submit_btn.setOnAction(e -> getChoice(TypBox));
+		int COUNT = NAME.length;
+		// c.ZugErstellen();
 
 	}
 
