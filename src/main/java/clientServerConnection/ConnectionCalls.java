@@ -10,13 +10,14 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ArrayUtils;
 
 public class ConnectionCalls{
 	
 //* sendet eine Positivquittung um die Verbindung zu testen, und setzt dann die Verbindung auf Connected//
-	public static void Verbindung() throws IOException {
+	public void Verbindung() throws IOException {
 		RmxCalls rmx = new RmxCalls();
-		ServerCall.serverConnection(rmx.Positivquittung);
+		ServerCall.serverConnection(RmxCalls.Positivquittung);
 		rmx.setVerbindungCONNECTED();
 	}
 	
@@ -50,15 +51,19 @@ public class ConnectionCalls{
 	}
 	
 	//* Erstellt neuen Zug in der Datenbank gilt nur für DCC mit kurzer Adresse
-	public static void ZugErstellen(byte COUNT, byte ZUGNR, byte OPMODE, byte NAME) throws IOException {
-		//byte COUNT = 0x00;
-		//byte ZUGNR = 0x03;
-		//byte OPMODE = 0x09;//(0x09)-> 14 FS, (0x0C)-> 28 FS, (0x0F)-> 126 FS
-		//byte NAME = 0x44; //,0x45,0x4D, 04F;// (DEMO)
-		byte[] ZugErstellung = new byte[] { 0x7c, COUNT , 0x08, 0x00, ZUGNR, ZUGNR, OPMODE, NAME };
+	public static void ZugErstellen(/*byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME*/)throws IOException { 
+		
+		//Dient zur DEMO-Zwecken
+		byte ZUGNR = 0x03; // Kann selbst gewählt werden
+		byte COUNT = 0x0B; // Anzahl der NAME Zeichen + 7 oder 7(0x07) für keine Alphanumerische Zeichen
+		byte OPMODE = 0x09;//(0x09)-> 14 FS, (0x0C)-> 28 FS, (0x0F)-> 126 FS
+		byte[] NAME = new byte[] {0x44,0x45,0x4D,0x4F}; //0x44,0x45,0x4D, 04F;// (DEMO)
+		
+		
+		byte[] ZugErstellung = new byte[] { 0x7c, COUNT , 0x08, 0x00, ZUGNR, ZUGNR, OPMODE};
+		byte[] Zug = ArrayUtils.addAll(ZugErstellung,NAME);
 		int port = 9090;
 		byte[] answer;
-		byte[] sendMessage;
 		InetAddress address = InetAddress.getLocalHost();
 
 		Socket socket = new Socket(address, port);
@@ -66,25 +71,24 @@ public class ConnectionCalls{
 
 		System.out.println("\nStart...");
 		RmxCalls rmx = new RmxCalls();
-		answer = ZugErstellung;
+		answer = Zug;
 
-		sendMessage = answer;
 		DataOutputStream bw = new DataOutputStream(os);
-		bw.write(sendMessage);
+		bw.write(answer);
 		bw.flush();
 		System.out.println("Zug wird angelegt:");
-		rmx.Hexaprint(sendMessage);
+		rmx.Hexaprint(answer);
 
 		InputStream is = socket.getInputStream();
 		byte[] bytes = IOUtils.toByteArray(is);
-		System.out.println("Ausgabe muss Positivquittung und Eingabe sein");
+		System.out.println("/n Ausgabe muss Eingabe sein:");
 		rmx.Hexaprint(bytes);
 
 		socket.close();
 	}
 
 	public static void main(String[] args) throws IOException {
-		ZugInfo();
+		ZugErstellen();
 		
 	}
 

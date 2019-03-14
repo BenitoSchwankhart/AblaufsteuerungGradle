@@ -9,6 +9,9 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
+
+import clientServerConnection.ConnectionCalls;
+import clientServerConnection.RmxCalls;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -25,6 +28,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import java.awt.*;
 
 public class NeueLokController implements Initializable {
 // Neue Lok
@@ -33,17 +37,27 @@ public class NeueLokController implements Initializable {
 
 	@FXML
 	private JFXTextField Namebox;
+
 //Das ist der Spinner
 	@FXML
 	private Spinner<Integer> adressespinner;
+
 	@FXML
 	private Text TypBoxLabel;
 
 	@FXML
 	private ChoiceBox<String> TypBox;
 
+	// Das ist der Submit Button
+	@FXML
+	private JFXButton submit_btn;
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		submit_btn.setOnAction(e -> getChoice(TypBox));
+		// Startet get Choice Methode um die Auswahl der TypBox anzuzeigen
+		submit_btn.setOnAction(e -> getChoice(TypBox));
+		// Lädt die Daten der Choice Box
 		loaddata();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
 
@@ -80,8 +94,6 @@ public class NeueLokController implements Initializable {
 	}
 
 	// Füllt die Typ ChoiceBox
-	@FXML
-	private Button OK_btn;
 	ObservableList listtyp = FXCollections.observableArrayList();
 
 	private void loaddata() {
@@ -90,9 +102,56 @@ public class NeueLokController implements Initializable {
 		String a = "14";
 		String b = "28";
 		String c = "126";
-		
+
 		listtyp.addAll(a, b, c);
 		TypBox.getItems().addAll(listtyp);
+
+	}
+//SubmitButton Funktion
+
+	private int getChoice(ChoiceBox<String> TypBox) {
+		String Fahrstufen = TypBox.getValue();
+		int FS = Integer.parseInt(Fahrstufen);
+		return FS;
+	}
+
+
+
+
+	@FXML
+	void submit_neueLok(ActionEvent event) {
+		
+		int sub = getChoice(TypBox);
+
+		ConnectionCalls c = new ConnectionCalls();
+		RmxCalls rmx = new RmxCalls();
+		byte OPMODE = 0;
+		//byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		
+		//Test welche Fahrstufe in TextBox ausgwählt wurde
+		if ( sub == 14) {
+			OPMODE = 0x09;
+		}
+		else if ( sub == 24) {
+			OPMODE = 0x0C;
+		}
+		else if ( sub == 126) {
+			OPMODE = 0x0F;
+		}
+		else {
+			throw new IllegalArgumentException ("Fahrstufenauswahl fehlgeschlagen!");
+		}
+		
+		/*byte[] NAME = new byte[20]; //Maximale Länge auf 20 festgelegt
+		for(int i=0; i<20; i++) {
+			NAME[i] = i;
+		}*/
+		//int COUNT = NAME.length; 
+		//c.ZugErstellen();
+		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		byte[] NAME = null;
+		int COUNT = NAME.length;
+		// c.ZugErstellen();
 
 	}
 
