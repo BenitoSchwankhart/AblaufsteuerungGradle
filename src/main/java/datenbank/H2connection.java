@@ -7,9 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.sql.Statement; 
 
-public class H2connection {
+//public class H2connection {
 	
-    public static void main(String[] a) throws Exception { 
+    /* public static void main(String[] a) throws Exception { 
         Connection conn = null; 
         String tab = "AblaufSchemas"; 
 
@@ -22,7 +22,7 @@ public class H2connection {
 
             DatabaseMetaData md = conn.getMetaData(); 
 
-            String[] types = { "TABLE", "SYSTEM TABLE" }; 
+            String[] types = { "TABLE"}; 
              
             ResultSet metaRS = md.getTables(null, null, "%", types); 
 
@@ -85,4 +85,4 @@ public class H2connection {
                 } 
         } 
     } 
-}
+} */
