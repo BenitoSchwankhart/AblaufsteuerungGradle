@@ -8,10 +8,10 @@ import java.sql.Statement;
 public class InsertIntoTable { 
    // JDBC driver name and database URL 
    static final String JDBC_DRIVER = "org.h2.Driver";   
-   static final String DB_URL = "jdbc:h2:~/test";  
+   static final String DB_URL = "jdbc:h2:~/.AblaufsteuerungGradle\\H2Datenbank";  
    
    //  Database credentials 
-   static final String USER = "sa"; 
+   static final String USER = ""; 
    static final String PASS = ""; 
   
    public static void main(String[] args) { 
