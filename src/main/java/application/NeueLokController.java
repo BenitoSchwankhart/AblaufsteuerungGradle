@@ -130,6 +130,7 @@ public class NeueLokController implements Initializable {
 		System.out.println(Name);
 		return Name;
 	}
+
 	
 	
 	//Fahrstufen für datenbank
@@ -152,16 +153,14 @@ public class NeueLokController implements Initializable {
 	
 
 	@FXML
-	void submit_neueLok(ActionEvent event) throws IOException, SQLException {
+	void submit_neueLok(ActionEvent event) throws IOException {
 		int zugnummer = getAdresse(adressespinner);
 		int sub = getChoice(TypBox);
 		String zugname = getName(Namebox);
-		
 		ConnectionCalls c = new ConnectionCalls();
 		InsertIntoTable t = new InsertIntoTable();
 		RmxCalls rmx = new RmxCalls();
 		byte OPMODE = 0;
-		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
 
 		// Test welche Fahrstufe in TextBox ausgwählt wurde
 		if (sub == 14) {
