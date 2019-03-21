@@ -128,37 +128,42 @@ public class NeueLokController implements Initializable {
 		return Name;
 	}
 
+
+
+
 	@FXML
 	void submit_neueLok(ActionEvent event) {
-		//submit_btn.setOnAction(e -> getChoice(TypBox));
 		getAdresse(adressespinner);
 		int sub = getChoice(TypBox);
 		getName(Namebox);
 		ConnectionCalls c = new ConnectionCalls();
 		RmxCalls rmx = new RmxCalls();
 		byte OPMODE = 0;
-		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
-
-		// Test welche Fahrstufe in TextBox ausgwählt wurde
-		if (sub == 14) {
+		//byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
+		
+		//Test welche Fahrstufe in TextBox ausgwählt wurde
+		if ( sub == 14) {
 			OPMODE = 0x09;
 			System.out.println("FS14");
-		} else if (sub == 24) {
+		}
+		else if ( sub == 24) {
 			OPMODE = 0x0C;
 			System.out.println("FS24");
-		} else if (sub == 126) {
+		}
+		else if ( sub == 126) {
 			OPMODE = 0x0F;
 			System.out.println("FS126");
-		} else {
-			throw new IllegalArgumentException("Fahrstufenauswahl fehlgeschlagen!");
 		}
-
-		/*
-		 * byte[] NAME = new byte[20]; //Maximale Länge auf 20 festgelegt for(int i=0;
-		 * i<20; i++) { NAME[i] = i; }
-		 */
-		// int COUNT = NAME.length;
-		// c.ZugErstellen();
+		else {
+			throw new IllegalArgumentException ("Fahrstufenauswahl fehlgeschlagen!");
+		}
+		
+		/*byte[] NAME = new byte[20]; //Maximale Länge auf 20 festgelegt
+		for(int i=0; i<20; i++) {
+			NAME[i] = i;
+		}*/
+		//int COUNT = NAME.length; 
+		//c.ZugErstellen();
 		// byte COUNT, byte ZUGNR, byte OPMODE, byte[] NAME
 		byte[] NAME = null;
 		int COUNT = NAME.length;
