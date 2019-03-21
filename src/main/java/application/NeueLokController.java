@@ -112,6 +112,7 @@ public class NeueLokController implements Initializable {
 	private int getChoice(ChoiceBox<String> TypBox) {
 		String Fahrstufen = TypBox.getValue();
 		int FS = Integer.parseInt(Fahrstufen);
+		System.out.println(FS);
 		return FS;
 	}
 
@@ -131,12 +132,15 @@ public class NeueLokController implements Initializable {
 		//Test welche Fahrstufe in TextBox ausgwählt wurde
 		if ( sub == 14) {
 			OPMODE = 0x09;
+			System.out.println("FS14");
 		}
 		else if ( sub == 24) {
 			OPMODE = 0x0C;
+			System.out.println("FS24");
 		}
 		else if ( sub == 126) {
 			OPMODE = 0x0F;
+			System.out.println("FS126");
 		}
 		else {
 			throw new IllegalArgumentException ("Fahrstufenauswahl fehlgeschlagen!");
