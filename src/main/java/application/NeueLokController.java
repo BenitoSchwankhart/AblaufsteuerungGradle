@@ -180,7 +180,7 @@ public class NeueLokController implements Initializable {
 		int fahrstufen = sub;
 		
 		/** Fehler int COUNT = NAME.length;**/
-		//InsertIntoTable.zugData(zugnummer, zugname, fahrstufen);
+		InsertIntoTable.zugData(zugnummer, zugname, fahrstufen);
 		RmxCalls r = new RmxCalls();
 		byte COUNT = r.intToByte(zugname.length()+7);
 		byte ZUGNR = r.intToByte(zugnummer);
