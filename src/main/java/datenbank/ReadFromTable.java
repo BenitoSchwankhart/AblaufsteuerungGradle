@@ -29,20 +29,22 @@ public class ReadFromTable {
          // STEP 3: Execute a query 
          System.out.println("Connected database successfully..."); 
          stmt = conn.createStatement(); 
-         String sql = "SELECT zugnummer, zugname, fahrstufen FROM zug"; 
+         String sql = "SELECT id, first, last, age FROM Registration"; 
          ResultSet rs = stmt.executeQuery(sql); 
          
          // STEP 4: Extract data from result set 
          while(rs.next()) { 
             // Retrieve by column name 
-            int zugnummer  = rs.getInt("zugnummer"); 
-            String zugname = rs.getString("zugname"); 
-            int fahrstufen = rs.getInt("fahrstufen");   
+            int id  = rs.getInt("id"); 
+            int age = rs.getInt("age"); 
+            String first = rs.getString("first"); 
+            String last = rs.getString("last");  
             
             // Display values 
-            System.out.print("Zugnummer: " + zugnummer); 
-            System.out.print(", Zugname: " + zugname); 
-            System.out.print(", Fahrstufen: " + fahrstufen); 
+            System.out.print("ID: " + id); 
+            System.out.print(", Age: " + age); 
+            System.out.print(", First: " + first); 
+            System.out.println(", Last: " + last); 
          } 
          // STEP 5: Clean-up environment 
          rs.close(); 

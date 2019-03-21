@@ -13,23 +13,6 @@ public class InsertIntoTable {
    //  Database credentials 
    static final String USER = ""; 
    static final String PASS = ""; 
-   
-   static Statement stmt = null;
-   
-   //Speichert neuen Zug mit Daten
-   public static void  zugDatenbank(int zugnummer, String zugname, int fahrstufen) {
-       String sql = "INSERT INTO zug " + "VALUES"+ zugnummer + zugname + fahrstufen; 
-       try {
-		stmt.executeUpdate(sql);
-	} catch (SQLException e) {
-		System.out.println("Datenbankfehler");
-	} 
-      }
-   
-   //Speichert neuen Ablauf in Datenbank
-  /** public static void  ablaufDatenbank() {
-     
-      }*/
   
    public static void main(String[] args) { 
       Connection conn = null; 
@@ -45,7 +28,18 @@ public class InsertIntoTable {
          
          // STEP 3: Execute a query 
          stmt = conn.createStatement();  
-         zugDatenbank(0, null, 0);
+         String sql = "INSERT INTO Registration " + "VALUES (100, 'Zara', 'Ali', 18)"; 
+         
+         stmt.executeUpdate(sql); 
+         sql = "INSERT INTO Registration " + "VALUES (101, 'Mahnaz', 'Fatma', 25)";  
+         
+         stmt.executeUpdate(sql); 
+         sql = "INSERT INTO Registration " + "VALUES (102, 'Zaid', 'Khan', 30)"; 
+         
+         stmt.executeUpdate(sql); 
+         sql = "INSERT INTO Registration " + "VALUES(103, 'Sumit', 'Mittal', 28)"; 
+         
+         stmt.executeUpdate(sql); 
          System.out.println("Inserted records into the table..."); 
          
          // STEP 4: Clean-up environment 

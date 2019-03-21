@@ -28,11 +28,12 @@ public class CreateTable {
          //STEP 3: Execute a query 
          System.out.println("Creating table in given database..."); 
          stmt = conn.createStatement(); 
-         String sql =  "CREATE TABLE   zug" + 
-            "(zugnummer INTEGER not NULL, " + 
-            " zugname VARCHAR(255), " +  
-            " fahrstufen INTEGER, " +  
-            " PRIMARY KEY ( zugnummer ))";  
+         String sql =  "CREATE TABLE   REGISTRATION " + 
+            "(id INTEGER not NULL, " + 
+            " first VARCHAR(255), " +  
+            " last VARCHAR(255), " +  
+            " age INTEGER, " +  
+            " PRIMARY KEY ( id ))";  
          stmt.executeUpdate(sql);
          System.out.println("Created table in given database..."); 
          
