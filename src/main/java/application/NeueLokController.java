@@ -113,15 +113,26 @@ public class NeueLokController implements Initializable {
 		String Fahrstufen = TypBox.getValue();
 		int FS = Integer.parseInt(Fahrstufen);
 		System.out.println(FS);
-		String Nameboxtext = Namebox.getText();
-		System.out.println(Nameboxtext);
 		return FS;
+	}
+
+	private int getAdresse(Spinner<Integer> adressespinner2) {
+		int adresse = adressespinner2.getValue();
+		System.out.println(adresse);
+		return adresse;
+	}
+
+	private String getName(JFXTextField Namebox) {
+		String Name = Namebox.getText();
+		System.out.println(Name);
+		return Name;
 	}
 
 	@FXML
 	void submit_neueLok(ActionEvent event) {
-
+		int adr = getAdresse(adressespinner);
 		int sub = getChoice(TypBox);
+		System.out.println(getAdresse(adressespinner));
 
 		ConnectionCalls c = new ConnectionCalls();
 		RmxCalls rmx = new RmxCalls();
