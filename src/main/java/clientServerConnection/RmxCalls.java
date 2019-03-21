@@ -81,12 +81,17 @@ public class RmxCalls {
 	 * @param value
 	 * @return byte[] - Byte-Array (highByte/lowByte)
 	 */
-	protected static byte[] intToBytes(int value) {
+	public byte[] intToBytes(int value) {
 		byte[] byteValue = new byte[2];
 
 		byteValue[1] = (byte) (value & 0xFF);
 		byteValue[0] = (byte) ((value >> 8) & 0xFF);
 
+		return byteValue;
+	}
+	
+	public byte intToByte(int value) {
+		byte byteValue = (byte) (value & 0xFF);
 		return byteValue;
 	}
 
@@ -114,7 +119,6 @@ public class RmxCalls {
 					fertig = "" + charsbby;
 					//System.out.print(fertig.replace("|", " "));
 				}
-
 			}
 			String[] words = fertig.split("\\s+");
 			for (int o = 0; o < words.length; o++) {
@@ -124,9 +128,7 @@ public class RmxCalls {
 				System.out.print(words[counter]);
 			}
 		}
-
 		return fertig;
-
 	}
 
 }

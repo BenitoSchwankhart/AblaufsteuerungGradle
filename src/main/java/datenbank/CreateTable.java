@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException; 
 import java.sql.Statement;  
 
+//Soll bei neuinstallation des systems angelest werden
 public class CreateTable { 
    // JDBC driver name and database URL 
    static final String JDBC_DRIVER = "org.h2.Driver";   
@@ -28,12 +29,11 @@ public class CreateTable {
          //STEP 3: Execute a query 
          System.out.println("Creating table in given database..."); 
          stmt = conn.createStatement(); 
-         String sql =  "CREATE TABLE   REGISTRATION " + 
-            "(id INTEGER not NULL, " + 
-            " first VARCHAR(255), " +  
-            " last VARCHAR(255), " +  
-            " age INTEGER, " +  
-            " PRIMARY KEY ( id ))";  
+         String sql =  "CREATE TABLE   zug" + 
+            "(zugnummer INTEGER not NULL, " + 
+            " zugname VARCHAR(255), " +  
+            " fahrstufen INTEGER, " +  
+            " PRIMARY KEY ( zugnummer ))";  
          stmt.executeUpdate(sql);
          System.out.println("Created table in given database..."); 
          
