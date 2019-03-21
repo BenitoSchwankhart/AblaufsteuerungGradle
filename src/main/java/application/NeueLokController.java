@@ -54,9 +54,9 @@ public class NeueLokController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		submit_btn.setOnAction(e -> getChoice(TypBox));
+
 		// Startet get Choice Methode um die Auswahl der TypBox anzuzeigen
-		submit_btn.setOnAction(e -> getChoice(TypBox));
+		// submit_btn.setOnAction(e -> getChoice(TypBox));
 		// Lädt die Daten der Choice Box
 		loaddata();
 		RequiredFieldValidator validator = new RequiredFieldValidator();
@@ -130,10 +130,10 @@ public class NeueLokController implements Initializable {
 
 	@FXML
 	void submit_neueLok(ActionEvent event) {
-		int adr = getAdresse(adressespinner);
+		//submit_btn.setOnAction(e -> getChoice(TypBox));
+		getAdresse(adressespinner);
 		int sub = getChoice(TypBox);
-		System.out.println(getAdresse(adressespinner));
-
+		getName(Namebox);
 		ConnectionCalls c = new ConnectionCalls();
 		RmxCalls rmx = new RmxCalls();
 		byte OPMODE = 0;
