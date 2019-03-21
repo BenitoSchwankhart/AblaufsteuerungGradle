@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException; 
 import java.sql.Statement;  
 
+//Soll bei neuinstallation des systems angelest werden
 public class CreateTable { 
    // JDBC driver name and database URL 
    static final String JDBC_DRIVER = "org.h2.Driver";   

@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="C:/Users/benit/eclipse-workspace/AblaufsteuerungGradle/Jars/commons-lang3-3.8.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/benit/eclipse-workspace/AblaufsteuerungGradle/Jars/fontawesomefx-8.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/benit/eclipse-workspace/AblaufsteuerungGradle/Jars/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/benit/eclipse-workspace/AblaufsteuerungGradle/Jars/h2-1.4.198.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
