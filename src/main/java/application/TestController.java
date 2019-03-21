@@ -202,6 +202,14 @@ public class TestController implements Initializable {
 
 	@FXML
 	private MaterialDesignIconView zeiger;
+	@FXML
+	private JFXButton default_lok_button;
+
+//Hier wird eine Standardt Lok erstellt 
+	@FXML
+	void defaultlok(ActionEvent event) {
+		System.out.println("Default Lok erstellt");
+	}
 
 	@FXML
 	void handleDragOver(DragEvent event) {
