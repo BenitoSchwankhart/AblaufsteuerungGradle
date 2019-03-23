@@ -107,6 +107,54 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton back;
+	
+	@FXML
+	private JFXButton lokauswahl_btn;
+	
+	@FXML
+	private ChoiceBox<String> TrainBox;
+	
+	@FXML
+	private Text TypBoxText;
+	
+	
+	@FXML
+	void lokauswahl_btn(ActionEvent event) throws IOException {
+		Stage stage;
+		Parent root;
+		if (event.getSource() == lokauswahl_btn) {
+			stage = (Stage) lokauswahl_btn.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("LokAuswahl.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+
+		}
+	
+	}
+	
+	// Füllt die Typ ChoiceBox für die Züge
+	ObservableList listtyp = FXCollections.observableArrayList();
+
+	private void loaddata() {
+		// Typ
+		listtyp.removeAll(listtyp);
+		String a = "14";
+		String b = "24";
+		String c = "126";
+
+		listtyp.addAll(a, b, c);
+		TrainBox.getItems().addAll(listtyp);
+
+	}
+	// SubmitButton Funktion
+
+	private int getChoice(ChoiceBox<String> TrainBox) {
+		String Fahrstufen = TrainBox.getValue();
+		int FS = Integer.parseInt(Fahrstufen);
+		System.out.println(FS);
+		return FS;
+	}
 
 	@FXML
 	void bittestarten(ActionEvent event) throws IOException {

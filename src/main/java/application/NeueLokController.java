@@ -2,18 +2,15 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.validation.NumberValidator;
 import com.jfoenix.validation.RequiredFieldValidator;
 
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
-import datenbank.CreateTable;
 import datenbank.InsertIntoTable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -25,13 +22,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import java.awt.*;
 
 public class NeueLokController implements Initializable {
 	// Neue Lok

@@ -42,7 +42,7 @@
                         <MaterialDesignIconView glyphName="TRAIN" size="25" />
                      </graphic>
                   </JFXButton>
-                  <Text fill="WHITE" layoutX="239.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Neue Lok hinzufügen">
+                  <Text fill="WHITE" layoutX="293.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Menü">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
@@ -53,6 +53,14 @@
                      </font>
                      <graphic>
                         <MaterialDesignIconView fill="WHITE" glyphName="TRAIN" size="25" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="lokauswahl_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="84.0" onAction="#lokauswahl_btn" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Auswahl" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="TRAIN" size="25" />
                      </graphic>
                   </JFXButton>
                </children>
