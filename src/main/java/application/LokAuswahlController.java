@@ -23,6 +23,8 @@ public class LokAuswahlController implements Initializable{
 	@FXML
 	private JFXButton back;
 	
+	@FXML
+	private JFXButton lokauswahl_btn;
 	
 	@FXML
 	private ChoiceBox<String> TrainBox;
@@ -34,7 +36,6 @@ public class LokAuswahlController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		loaddata();
 	}
-
 	
 	@FXML
 	void lokauswahl_btn(ActionEvent event) throws IOException {
