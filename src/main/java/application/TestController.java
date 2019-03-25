@@ -39,11 +39,6 @@ import clientServerConnection.ConnectionCalls;
 
 public class TestController implements Initializable {
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-
-	}
-
 	@FXML
 	private AnchorPane logpane;
 
@@ -58,7 +53,10 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton signup;
-
+	
+	@FXML
+	private JFXButton back;
+	
 	@FXML
 	void makeLogin(ActionEvent event) throws IOException {
 		String user = username.getText();
@@ -104,18 +102,13 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton settings;
-
-	@FXML
-	private JFXButton back;
 	
 	@FXML
 	private JFXButton lokauswahl_btn;
-	
-	@FXML
-	private ChoiceBox<String> TrainBox;
-	
-	@FXML
-	private Text TypBoxText;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+	}
 	
 	
 	@FXML
@@ -131,29 +124,6 @@ public class TestController implements Initializable {
 
 		}
 	
-	}
-	
-	// Füllt die Typ ChoiceBox für die Züge
-	ObservableList listtyp = FXCollections.observableArrayList();
-
-	private void loaddata() {
-		// Typ
-		listtyp.removeAll(listtyp);
-		String a = "14";
-		String b = "24";
-		String c = "126";
-
-		listtyp.addAll(a, b, c);
-		TrainBox.getItems().addAll(listtyp);
-
-	}
-	// SubmitButton Funktion
-
-	private int getChoice(ChoiceBox<String> TrainBox) {
-		String Fahrstufen = TrainBox.getValue();
-		int FS = Integer.parseInt(Fahrstufen);
-		System.out.println(FS);
-		return FS;
 	}
 
 	@FXML
