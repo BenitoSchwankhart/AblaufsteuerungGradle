@@ -127,7 +127,6 @@ public class NeueLokController implements Initializable {
 	}
 
 	
-	
 	//Fahrstufen für datenbank
 	public int dataFS() {
 		int sub = getChoice(TypBox);

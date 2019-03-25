@@ -58,25 +58,6 @@ public class TestController implements Initializable {
 	private JFXButton back;
 	
 	@FXML
-	void makeLogin(ActionEvent event) throws IOException {
-		String user = username.getText();
-		String pass = password.getText();
-
-		if (user.equals("user") && pass.equals("user")) {
-			System.out.println("Willkommen User!");
-			weiter(event);
-		} else {
-			System.out.println("Fehler");
-		}
-
-	}
-
-	void weiter(ActionEvent event) throws IOException {
-		AnchorPane pane = FXMLLoader.load(getClass().getResource("Home.fxml"));
-		logpane.getChildren().setAll(pane);
-	}
-
-	@FXML
 	private AnchorPane menu_pane;
 
 	@FXML
@@ -105,11 +86,75 @@ public class TestController implements Initializable {
 	
 	@FXML
 	private JFXButton lokauswahl_btn;
+	
+	// Drag and Drop
+	@FXML
+	private Pane black_pane;
+
+	@FXML
+	private JFXButton ziel;
+	
+	@FXML
+	private JFXButton ziel4;
+
+	@FXML
+	private JFXButton ziel3;
+
+	@FXML
+	private JFXButton ziel2;
+	@FXML
+	private JFXButton ziel5;
+
+	@FXML
+	private JFXButton ziel6;
+
+	@FXML
+	private JFXButton ziel7;
+
+	@FXML
+	private JFXButton licht;
+
+	@FXML
+	private JFXButton speed;
+
+	@FXML
+	private JFXButton funktion4;
+
+	@FXML
+	private JFXButton funktion3;
+
+	@FXML
+	private JFXButton starting_btn;
+
+	@FXML
+	private MaterialDesignIconView zeiger;
+	@FXML
+	private JFXButton default_lok_button;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
 	
+	
+	@FXML
+	void makeLogin(ActionEvent event) throws IOException {
+		String user = username.getText();
+		String pass = password.getText();
+
+		if (user.equals("user") && pass.equals("user")) {
+			System.out.println("Willkommen User!");
+			weiter(event);
+		} else {
+			System.out.println("Fehler");
+		}
+
+	}
+
+	void weiter(ActionEvent event) throws IOException {
+		AnchorPane pane = FXMLLoader.load(getClass().getResource("Home.fxml"));
+		logpane.getChildren().setAll(pane);
+	}
+
 	
 	@FXML
 	void lokauswahl_btn(ActionEvent event) throws IOException {
@@ -182,48 +227,6 @@ public class TestController implements Initializable {
 		}
 	}
 
-	// Drag and Drop
-	@FXML
-	private Pane black_pane;
-
-	@FXML
-	private JFXButton ziel;
-	@FXML
-	private JFXButton ziel4;
-
-	@FXML
-	private JFXButton ziel3;
-
-	@FXML
-	private JFXButton ziel2;
-	@FXML
-	private JFXButton ziel5;
-
-	@FXML
-	private JFXButton ziel6;
-
-	@FXML
-	private JFXButton ziel7;
-
-	@FXML
-	private JFXButton licht;
-
-	@FXML
-	private JFXButton speed;
-
-	@FXML
-	private JFXButton funktion4;
-
-	@FXML
-	private JFXButton funktion3;
-
-	@FXML
-	private JFXButton starting_btn;
-
-	@FXML
-	private MaterialDesignIconView zeiger;
-	@FXML
-	private JFXButton default_lok_button;
 
 //Hier wird eine Standart Lok erstellt und beim Installieren der Software angelegt
 	@FXML
