@@ -20,5 +20,10 @@
          </font>
       </Text>
       <JFXButton fx:id="back" layoutX="24.0" layoutY="14.0" onAction="#backonstart" style="-fx-background-color: Grey;" text="Zurück" />
+      <JFXButton fx:id="submit_btn" layoutX="606.0" layoutY="14.0" onAction="#submit_Lok" style="-fx-background-color: C6C2C1;" text="Submit" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </Pane>

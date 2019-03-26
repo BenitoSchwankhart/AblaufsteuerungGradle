@@ -28,6 +28,9 @@ public class LokAuswahlController implements Initializable{
 	private JFXButton lokauswahl_btn;
 	
 	@FXML
+	private JFXButton submit_btn;
+
+	@FXML
 	private ChoiceBox<String> TrainBox;
 	
 	@FXML
@@ -109,4 +112,13 @@ public class LokAuswahlController implements Initializable{
 		}
 	}
 
+	// Ausgewählte Lok wird als aktuelle verwendete Lok submittet
+	@FXML
+    void submit_Lok(ActionEvent event) {
+		if (event.getSource() == submit_btn) {
+			if (TrainBox != null) {
+				TrainBox.getValue();
+			}
+		}
+    }
 }
