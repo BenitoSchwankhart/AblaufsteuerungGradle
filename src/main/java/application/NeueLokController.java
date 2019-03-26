@@ -143,7 +143,6 @@ public class NeueLokController implements Initializable {
 				String zugname = getName(Namebox);
 				return zugname;
 			}
-	
 
 	@FXML
 	void submit_neueLok(ActionEvent event) throws IOException {
@@ -181,18 +180,7 @@ public class NeueLokController implements Initializable {
 		
 		//ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);
 		
-		//TODO
-		//Fenster mit: Lok Erfolgreich hinzugefügt
-		Stage stage;
-		Parent root;
-		if (event.getSource() == submit_btn) {
-			stage = (Stage) submit_btn.getScene().getWindow();
-			root = FXMLLoader.load(getClass().getResource("ZugAdded.fxml"));
-			Scene scene = new Scene(root);
-			stage.setScene(scene);
-			stage.show();
+		//TODO Fenster zur Bestätigung der Zuganlage ausgeben
 		
-		}
 	}
-
 }
