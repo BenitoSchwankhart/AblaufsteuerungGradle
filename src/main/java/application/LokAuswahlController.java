@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import datenbank.ReadFromTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -47,23 +48,43 @@ public class LokAuswahlController implements Initializable{
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
-
 		}
-	
 	}
 	
 	// Füllt die Typ ChoiceBox für die Züge
-	ObservableList listtyp = FXCollections.observableArrayList();
+	ObservableList<String> listtyp = FXCollections.observableArrayList();
 
 	private void loaddata() {
+		
+		ReadFromTable r = new ReadFromTable();
+		
+		String b = r.getData();
+		//System.out.println(b+ "funktioniert") ;
+		String[] s = b.split(";");
+		//s[0] enthält Zugnummer
+		
+		//Gibt alle Zugnummern aus
+		/**for(int i=0;i<s.length;i+=2){
+			System.out.println(s[i]);		
+		}*/
+		
 		// Typ
 		listtyp.removeAll(listtyp);
-		String a = "14";
-		String b = "24";
-		String c = "126";
-
-		listtyp.addAll(a, b, c);
+		if(s != null && s.length != 0) {
+			for(int i=1;i<s.length;i+=2){
+				String a = s[i];
+				listtyp.addAll(a);		
+			}
+		}
 		TrainBox.getItems().addAll(listtyp);
+		
+		//if Schleife für Zugauswahl
+		/**
+		 * if(s[i] == aktuelles Element){
+		 * i--;
+		 * return s[i] //gibt Zugnummer für Bahn aus
+		 * }
+		 */
 
 	}
 	// SubmitButton Funktion

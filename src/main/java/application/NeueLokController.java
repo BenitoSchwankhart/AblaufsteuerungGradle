@@ -61,7 +61,6 @@ public class NeueLokController implements Initializable {
 
 		Namebox.getValidators().add(validator);
 		validator.setMessage("Noch keine Eingabe");
-
 		Namebox.focusedProperty().addListener(new ChangeListener<Boolean>() {
 
 			@Override
