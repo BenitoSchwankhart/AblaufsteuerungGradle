@@ -2,7 +2,10 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import com.jfoenix.controls.JFXButton;
 
@@ -12,6 +15,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
 import datenbank.InsertIntoTable;
+import datenbank.ReadFromTable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -71,10 +75,35 @@ public class NeueLokController implements Initializable {
 
 			}
 		});
+		
+		//Funktion zum füllen von adressspinner
+		ReadFromTable r = new ReadFromTable();
+		
+		String b = r.getZugNr();
+		//String[] s = b.split(";");
+		//s[0] enthält Zugnummer
+		
+		//TODO Liste machen von denen ZugNr abgezogen werden
+		
+			Scanner scanner = new Scanner(b);
+			String line = scanner.nextLine();
+			String[] s = line.split(";");
+			Integer[] n = new Integer[s.length];
 
-		// Spinner von 1-100
-		SpinnerValueFactory<Integer> adresse = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 1);
-		this.adressespinner.setValueFactory(adresse);
+		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(n));
+		
+
+		//Value mit verfügbaren Zahlen füllen
+		ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
+		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
+	    this.adressespinner.setValueFactory(valueFactory);
+	 
+	      
+	     // Default value
+	     valueFactory.setValue(null);
+	     adressespinner.setValueFactory(valueFactory);
+
+	
 	}
 
 	@FXML
