@@ -34,7 +34,7 @@
             </Pane>
             <Pane fx:id="neuelok" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Editor" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="213.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Editor" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
@@ -47,15 +47,7 @@
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Text>
-                  <JFXButton fx:id="default_lok_button" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="289.0" onAction="#defaultlok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Default Zug" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                     <graphic>
-                        <MaterialDesignIconView fill="WHITE" glyphName="TRAIN" size="25" />
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton fx:id="lokauswahl_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="84.0" onAction="#lokauswahl_btn" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Auswahl" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="lokauswahl_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="105.0" onAction="#lokauswahl_btn" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Auswahl" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
@@ -63,12 +55,12 @@
                         <MaterialDesignIconView glyphName="TRAIN" size="25" />
                      </graphic>
                   </JFXButton>
-                  <Text fill="WHITE" layoutX="33.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktueller Zug:">
+                  <Text fill="WHITE" layoutX="30.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktueller Zug:">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
                   </Text>
-                  <Text fx:id="aktuell" fill="WHITE" layoutX="195.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="293.9999898523092">
+                  <Text fx:id="aktuell" fill="WHITE" layoutX="195.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="293.9999898523092">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>

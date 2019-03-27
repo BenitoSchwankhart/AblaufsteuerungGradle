@@ -130,9 +130,6 @@ public class TestController implements Initializable {
 	@FXML
 	private MaterialDesignIconView zeiger;
 	
-	@FXML
-	private JFXButton default_lok_button;
-	
 	@FXML 
 	private Text aktuell;
 	
@@ -248,45 +245,6 @@ public class TestController implements Initializable {
 			stage.show();
 
 		}
-	}
-
-
-//Hier wird eine Standart Lok erstellt und beim Installieren der Software angelegt
-	@FXML
-	void defaultlok(ActionEvent event) throws IOException {
-		int zugnummer = 222;
-		int sub = 14;
-		String zugname = "DEMO-ZUG";
-		ConnectionCalls c = new ConnectionCalls();
-		InsertIntoTable t = new InsertIntoTable();
-		RmxCalls rmx = new RmxCalls();
-		byte OPMODE = 0;
-
-		// Test welche Fahrstufe in TextBox ausgwählt wurde
-		if (sub == 14) {
-			OPMODE = 0x09;
-			System.out.println("FS14");
-		} else if (sub == 24) {
-			OPMODE = 0x0C;
-			System.out.println("FS24");
-		} else if (sub == 126) {
-			OPMODE = 0x0F;
-			System.out.println("FS126");
-		} else {
-			throw new IllegalArgumentException("Fahrstufenauswahl fehlgeschlagen!");
-		}
-
-		
-		int fahrstufen = sub;
-		
-		/** Fehler int COUNT = NAME.length;**/
-		InsertIntoTable.zugData(zugnummer, zugname, fahrstufen);
-		RmxCalls r = new RmxCalls();
-		byte COUNT = r.intToByte(zugname.length()+7);
-		byte ZUGNR = r.intToByte(zugnummer);
-		byte[] NAME = zugname.getBytes();
-		
-		ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);
 	}
 
 	@FXML
