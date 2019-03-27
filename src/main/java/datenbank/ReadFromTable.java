@@ -15,6 +15,8 @@ public class ReadFromTable {
    static final String USER = ""; 
    static final String PASS = ""; 
    
+   
+   //Gibt Alle Züge mit Daten aus
    @SuppressWarnings("null")
    public String getData() {
 	   String z = "";
@@ -82,6 +84,7 @@ public class ReadFromTable {
 	    return z;
 	   } 
    
+   //Gibt alle Zugnummern aus
    @SuppressWarnings("null")
    public String getZugNr() {
 	   String z = "";
@@ -100,25 +103,16 @@ public class ReadFromTable {
 	         // STEP 3: Execute a query 
 	         System.out.println("Connected database successfully..."); 
 	         stmt = conn.createStatement(); 
-	         String sql = "SELECT zugnummer, zugname, fahrstufen FROM zug"; 
+	         String sql = "SELECT zugnummer FROM zug"; 
 	         ResultSet rs = stmt.executeQuery(sql); 
 	         
 	         // STEP 4: Extract data from result set 
 	         while(rs.next()) { 
 	            // Retrieve by column name 
-	            int zugnummer  = rs.getInt("zugnummer"); 
-	            String zugname = rs.getString("zugname"); 
-	            int fahrstufen = rs.getInt("fahrstufen");   
-	            
-	            // Display values 
-	            //System.out.print(zugnummer + "-"); 
-	            //System.out.print(zugname + "\n"); 
-	            //System.out.print(fahrstufen); 
-	            
+	        	 
+	            int zugnummer  = rs.getInt("zugnummer");    
 	            String zn = Integer.toString(zugnummer);
-	            //String fs = Integer.toString(fahrstufen);
 
-	            //z wird mit Zugbezeichnungen gefüllt
 	            z += zn + ";";
 	            
 	         }
@@ -148,6 +142,62 @@ public class ReadFromTable {
 	      System.out.println("End of Reading!");
 	    return z;
 	   } 
+   
+   //Gibt den aktuellen Zug aus
+   @SuppressWarnings("null")  
+   public String getAktiverZug() {
+	   String zugname = null;
+	   
+	   Connection conn = null; 
+	   Statement stmt = null; 
+	      try { 
+	    	  
+	         // STEP 1: Register JDBC driver 
+	         Class.forName(JDBC_DRIVER); 
+	         
+	         // STEP 2: Open a connection 
+	         System.out.println("Connecting to database..."); 
+	         conn = DriverManager.getConnection(DB_URL,USER,PASS);  
+	         
+	         // STEP 3: Execute a query 
+	         System.out.println("Connected database successfully..."); 
+	         stmt = conn.createStatement(); 
+	         String sql = "SELECT zugname FROM zug"; 
+	         ResultSet rs = stmt.executeQuery(sql); 
+	         
+	         // STEP 4: Extract data from result set 
+	         while(rs.next()) { 
+	            // Retrieve by column name 
+	            zugname = rs.getString("zugname"); 
+	            
+	         }
+	         
+	         // STEP 5: Clean-up environment 
+	         rs.close(); 
+	      }catch(SQLException se) { 
+	         // Handle errors for JDBC 
+	         se.printStackTrace(); 
+	      } catch(Exception e) { 
+	         // Handle errors for Class.forName 
+	         e.printStackTrace(); 
+	      } finally { 
+	         // finally block used to close resources 
+	         try { 
+	            if(stmt!=null) stmt.close();  
+	         } catch(SQLException se2) { 
+	         } // nothing we can do 
+	         try { 
+	            if(conn!=null) conn.close(); 
+	         } catch(SQLException se) { 
+	            se.printStackTrace(); 
+	         } // end finally try 
+	         
+	      } // end try 
+	      
+	      System.out.println("End of Reading!");
+	    return zugname;
+	   
+   }
    
    public static void main(String[] args) { 
 

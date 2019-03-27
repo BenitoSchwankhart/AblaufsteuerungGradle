@@ -6,6 +6,8 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import datenbank.DeleteFromTable;
+import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -120,5 +122,11 @@ public class LokAuswahlController implements Initializable{
 				TrainBox.getValue();
 			}
 		}
+		
+	// Aktueller Zug wird in die Datenbank gespeichert
+	DeleteFromTable d = new DeleteFromTable();
+	d.deleteAktuellerZug();
+	InsertIntoTable i = new InsertIntoTable();
+	i.setAktuellZug(TrainBox.getValue());
     }
 }

@@ -27,13 +27,13 @@
                   <Font size="14.0" />
                </font>
             </JFXButton>
+            <Text fill="WHITE" layoutX="368.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Editor">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <Text fill="WHITE" layoutX="339.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok hinzufügen">
-         <font>
-            <Font name="Calibri Bold" size="36.0" />
-         </font>
-      </Text>
       <Text fx:id="TypBoxLabel" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
          <font>
             <Font name="Calibri" size="24.0" />

@@ -136,7 +136,7 @@ public class TestController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
 	
-	
+// Nicht Verwendet++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	@FXML
 	void makeLogin(ActionEvent event) throws IOException {
 		String user = username.getText();
@@ -150,7 +150,8 @@ public class TestController implements Initializable {
 		}
 
 	}
-
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	
 	void weiter(ActionEvent event) throws IOException {
 		AnchorPane pane = FXMLLoader.load(getClass().getResource("Home.fxml"));
 		logpane.getChildren().setAll(pane);
@@ -171,9 +172,15 @@ public class TestController implements Initializable {
 		}
 	
 	}
+	
+
 
 	@FXML
 	void bittestarten(ActionEvent event) throws IOException {
+		String Bedingung = null;
+		String Erfüllt = null;
+		if (Bedingung == Erfüllt) {
+			
 		Stage stage;
 		Parent root;
 		if (event.getSource() == start_btn) {
@@ -182,6 +189,7 @@ public class TestController implements Initializable {
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			}
 		}
 	}
 

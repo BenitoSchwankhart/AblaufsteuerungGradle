@@ -34,7 +34,7 @@
             </Pane>
             <Pane fx:id="neuelok" layoutX="27.0" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" AnchorPane.leftAnchor="27.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Neue Lok" textAlignment="CENTER" textFill="WHITE">
+                  <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="195.0" layoutY="185.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #63595f;" text="Lok-Editor" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Calibri" size="24.0" />
                      </font>
