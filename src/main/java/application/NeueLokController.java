@@ -78,7 +78,6 @@ public class NeueLokController implements Initializable {
 		String b = r.getZugNr();
 
 		//Gibt alle Zugnummern aus und speichert sie in als Integer in n
-		if(b == ";") {
 		Integer[] array = new Integer[100];
 		Scanner scanner = new Scanner(b);
 		String line = scanner.nextLine();
@@ -94,14 +93,20 @@ public class NeueLokController implements Initializable {
 				}
 		
 		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
+		
+		for (int i = 0; i < array.length; i++) {
+			arrayList.get(i);
+			}
 
 		//Vorhandene Zugnummern löschen
-		for (int i = 0; i < n.length-1; ++i) {
-			for (int j = i+1; j < arrayList.size(); ++j) {
+		for (int i = 0; i < n.length; ++i) {
+			for (int j = 0; j < arrayList.size(); ++j) {
 				if (n[i] == arrayList.get(j)) {
 					arrayList.remove(j);
 				}
-			}
+			}		
+		}
+		
 			//Value mit verfügbaren Zahlen füllen
 			ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
 			SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
@@ -111,33 +116,6 @@ public class NeueLokController implements Initializable {
 		     // Default value
 		     valueFactory.setValue(arrayList.get(0));
 		     adressespinner.setValueFactory(valueFactory);	
-		
-		}
-		}
-		else{
-			//Array mit 100 Elementen 0-99 erstellen
-			Integer[] array = new Integer[100];
-			for (int i = 0; i < array.length; i++) {
-					array[i] = i;
-					}
-
-			ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
-			
-			//Value mit verfügbaren Zahlen füllen
-			ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
-			SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
-		    this.adressespinner.setValueFactory(valueFactory);
-		 
-		      
-		     // Default value
-		     valueFactory.setValue(arrayList.get(0));
-		     adressespinner.setValueFactory(valueFactory);
-			
-		}
-		/*else {
-			System.out.println("Fehler!");
-		}*/
-		
 	}
 
 //-------------------Ende von Initialise--------------------------------------
