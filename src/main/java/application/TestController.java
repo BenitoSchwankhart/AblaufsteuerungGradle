@@ -11,6 +11,7 @@ import com.jfoenix.controls.JFXToggleButton;
 import com.sun.glass.ui.ClipboardAssistance;
 import clientServerConnection.*;
 import datenbank.InsertIntoTable;
+import datenbank.ReadFromTable;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -131,9 +132,22 @@ public class TestController implements Initializable {
 	
 	@FXML
 	private JFXButton default_lok_button;
+	
+	@FXML 
+	private Text aktuell;
+	
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		ReadFromTable r = new ReadFromTable();
+		System.out.println(r.getNameAktiverZug());
+		if (r.getNameAktiverZug() != null) {
+		aktuell.setText(r.getNameAktiverZug());
+		}
+		else {
+		aktuell.setText("Kein Zug ausgewählt!");
+		}
 	}
 	
 // Nicht Verwendet++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

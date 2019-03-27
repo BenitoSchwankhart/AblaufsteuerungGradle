@@ -143,11 +143,10 @@ public class ReadFromTable {
 	    return z;
 	   } 
    
-   //Gibt den aktuellen Zug aus
+   //Gibt den namen des aktuellen Zug aus
    @SuppressWarnings("null")  
-   public String getAktiverZug() {
-	   String zugname = null;
-	   
+   public String getNameAktiverZug() {
+	   String zugname = "";
 	   Connection conn = null; 
 	   Statement stmt = null; 
 	      try { 
@@ -168,7 +167,7 @@ public class ReadFromTable {
 	         // STEP 4: Extract data from result set 
 	         while(rs.next()) { 
 	            // Retrieve by column name 
-	            zugname = rs.getString("zugname"); 
+	            zugname += rs.getString("zugname"); 
 	            
 	         }
 	         

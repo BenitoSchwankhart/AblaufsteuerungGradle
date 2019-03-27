@@ -78,21 +78,36 @@ public class NeueLokController implements Initializable {
 		
 		//Funktion zum füllen von adressspinner
 		ReadFromTable r = new ReadFromTable();
+		String b = r.getData();
+		String[] h = b.split(";");
+		Integer[] n = new Integer[h.length/2];
+		int j = 0;
 		
-		String b = r.getZugNr();
-		//String[] s = b.split(";");
-		//s[0] enthält Zugnummer
+		//TODO
+		//Gibt alle Zugnummern aus und speichert sie in als Integer in n
+		if(h != null && h.length != 0) {
+			for(int i=0;i<h.length;i+=2){
+				n[j] = Integer.parseInt(h[i]);
+				j++;
+			}
+		}
 		
-		//TODO Liste machen von denen ZugNr abgezogen werden
-		
-			Scanner scanner = new Scanner(b);
-			String line = scanner.nextLine();
-			String[] s = line.split(";");
-			Integer[] n = new Integer[s.length];
+		// aus 100 Array alle vergebenen Zahlen löschen
+		Integer[] array = new Integer[100];
+			
+		for (int i = 0; i < array.length; i++) {
+				array[i] = i++;
+				i++;
+				}
+			
+		for (int i = 0; i <n.length ; i++) {
+			int a = n[i];
+			array[a] = null;
+			}
 
-		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(n));
+			
+		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
 		
-
 		//Value mit verfügbaren Zahlen füllen
 		ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
 		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);

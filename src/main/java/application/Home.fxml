@@ -63,6 +63,16 @@
                         <MaterialDesignIconView glyphName="TRAIN" size="25" />
                      </graphic>
                   </JFXButton>
+                  <Text fill="WHITE" layoutX="33.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktueller Zug:">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="aktuell" fill="WHITE" layoutX="195.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="293.9999898523092">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
          </children>

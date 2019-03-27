@@ -60,20 +60,12 @@ public class LokAuswahlController implements Initializable{
 	ObservableList<String> listtyp = FXCollections.observableArrayList();
 
 	private void loaddata() {
-		
-		ReadFromTable r = new ReadFromTable();
-		
-		String b = r.getData();
-		//System.out.println(b+ "funktioniert") ;
-		String[] s = b.split(";");
 		//s[0] enthält Zugnummer
+		ReadFromTable r = new ReadFromTable();
+		String b = r.getData();
+		String[] s = b.split(";");
 		
-		//Gibt alle Zugnummern aus
-		/**for(int i=0;i<s.length;i+=2){
-			System.out.println(s[i]);		
-		}*/
-		
-		// Typ
+		//Gibt alle Zugnamen aus
 		listtyp.removeAll(listtyp);
 		if(s != null && s.length != 0) {
 			for(int i=1;i<s.length;i+=2){
@@ -82,14 +74,6 @@ public class LokAuswahlController implements Initializable{
 			}
 		}
 		TrainBox.getItems().addAll(listtyp);
-		
-		//if Schleife für Zugauswahl
-		/**
-		 * if(s[i] == aktuelles Element){
-		 * i--;
-		 * return s[i] //gibt Zugnummer für Bahn aus
-		 * }
-		 */
 
 	}
 	// SubmitButton Funktion
@@ -114,19 +98,36 @@ public class LokAuswahlController implements Initializable{
 		}
 	}
 
-	// Ausgewählte Lok wird als aktuelle verwendete Lok submittet
+	// Ausgewählte Lok wird als aktuelle verwendete Lok submittet und mit name und Zugnummer gespeichert
 	@FXML
     void submit_Lok(ActionEvent event) {
+	String zug = null;
 		if (event.getSource() == submit_btn) {
 			if (TrainBox != null) {
 				TrainBox.getValue();
 			}
 		}
 		
+	//Zugnummer ermitteln
+	ReadFromTable r = new ReadFromTable();
+	String b = r.getData();
+	String[] s = b.split(";");
+	
+	for(int i=1;i<s.length;i+=2){
+		String a = s[i];
+		if(a.equals(TrainBox.getValue())) {
+			i --;
+			zug = s[i];
+		}
+	}
+	
+	int aktuellerZug = Integer.parseInt(zug);
+	
+		
 	// Aktueller Zug wird in die Datenbank gespeichert
 	DeleteFromTable d = new DeleteFromTable();
 	d.deleteAktuellerZug();
 	InsertIntoTable i = new InsertIntoTable();
-	i.setAktuellZug(TrainBox.getValue());
+	i.setAktuellZug(aktuellerZug,TrainBox.getValue());
     }
 }

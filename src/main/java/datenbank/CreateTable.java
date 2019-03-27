@@ -32,7 +32,9 @@ public class CreateTable {
 	         System.out.println("Creating table in given database..."); 
 	         stmt = conn.createStatement(); 
 	         String sql =  "CREATE TABLE   aktueller_zug" + 
-	            "(zugname VARCHAR(255) not NULL)";  
+	                 "(zugnummer INTEGER not NULL, " + 
+	                 " zugname VARCHAR(255), " +  
+	                 " PRIMARY KEY ( zugnummer ))";  
 	         stmt.executeUpdate(sql);
 	         System.out.println("Created table in given database..."); 
 	         
@@ -64,8 +66,8 @@ public class CreateTable {
   
    public static void main(String[] args) { 
 	   
-	 //createAktuellZug(); 
-	  Connection conn = null; 
+	 createAktuellZug(); 
+	  /*Connection conn = null; 
       Statement stmt = null; 
       try { 
          // STEP 1: Register JDBC driver 
@@ -107,6 +109,6 @@ public class CreateTable {
             se.printStackTrace(); 
          } //end finally try 
       } //end try 
-      System.out.println("Goodbye!");
+      System.out.println("Goodbye!");*/
    } 
 }
