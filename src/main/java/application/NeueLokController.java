@@ -75,41 +75,69 @@ public class NeueLokController implements Initializable {
 		
 //----------Funktion zum füllen von adressspinner---------------------------------------------------------------------------
 		ReadFromTable r = new ReadFromTable();
-		String b = r.getData();
-		String[] h = b.split(";");
-		Integer[] n = new Integer[h.length/2];
-		int j = 0;
-		
+		String b = r.getZugNr();
+
 		//Gibt alle Zugnummern aus und speichert sie in als Integer in n
-		if(h != null && h.length != 0) {
-			for(int i=0; i<= h.length;i+=2){
-				n[j] = Integer.parseInt(h[i].toString());
-				j++;
-			}
-		}
-		// aus 100 Array alle vergebenen Zahlen löschen
+		if(b == ";") {
 		Integer[] array = new Integer[100];
-		
+		Scanner scanner = new Scanner(b);
+		String line = scanner.nextLine();
+		String[] h = line.split(";");
+		int[] n = new int[h.length];
+		for(int i = 0;i < h.length;i++) {
+		n[i] = Integer.parseInt(h[i]);
+		}
+	
 		//Array mit 100 Elementen 0-99 erstellen
 		for (int i = 0; i < array.length; i++) {
 				array[i] = i;
 				}
 		
-		for (int i = 0; i <n.length ; i++) {
-			int a = n[i];
-			array[a] = null;
-			}
 		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
+
+		//Vorhandene Zugnummern löschen
+		for (int i = 0; i < n.length-1; ++i) {
+			for (int j = i+1; j < arrayList.size(); ++j) {
+				if (n[i] == arrayList.get(j)) {
+					arrayList.remove(j);
+				}
+			}
+			//Value mit verfügbaren Zahlen füllen
+			ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
+			SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
+		    this.adressespinner.setValueFactory(valueFactory);
+		 
+		      
+		     // Default value
+		     valueFactory.setValue(arrayList.get(0));
+		     adressespinner.setValueFactory(valueFactory);	
 		
-		//Value mit verfügbaren Zahlen füllen
-		ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
-		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
-	    this.adressespinner.setValueFactory(valueFactory);
-	 
-	      
-	     // Default value
-	     valueFactory.setValue(null);
-	     adressespinner.setValueFactory(valueFactory);
+		}
+		}
+		else{
+			//Array mit 100 Elementen 0-99 erstellen
+			Integer[] array = new Integer[100];
+			for (int i = 0; i < array.length; i++) {
+					array[i] = i;
+					}
+
+			ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
+			
+			//Value mit verfügbaren Zahlen füllen
+			ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
+			SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.ListSpinnerValueFactory<Integer>(zugNr);
+		    this.adressespinner.setValueFactory(valueFactory);
+		 
+		      
+		     // Default value
+		     valueFactory.setValue(arrayList.get(0));
+		     adressespinner.setValueFactory(valueFactory);
+			
+		}
+		/*else {
+			System.out.println("Fehler!");
+		}*/
+		
 	}
 
 //-------------------Ende von Initialise--------------------------------------

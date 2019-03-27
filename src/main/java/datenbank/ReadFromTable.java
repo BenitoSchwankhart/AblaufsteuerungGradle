@@ -161,7 +161,7 @@ public class ReadFromTable {
 	         // STEP 3: Execute a query 
 	         System.out.println("Connected database successfully..."); 
 	         stmt = conn.createStatement(); 
-	         String sql = "SELECT zugname FROM zug"; 
+	         String sql = "SELECT zugname FROM aktueller_zug"; 
 	         ResultSet rs = stmt.executeQuery(sql); 
 	         
 	         // STEP 4: Extract data from result set 

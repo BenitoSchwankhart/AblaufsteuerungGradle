@@ -65,9 +65,7 @@ public class CreateTable {
 //---------------------------------------------------MAIN--------------------------------------------
   
    public static void main(String[] args) { 
-	   
-	 createAktuellZug(); 
-	  /*Connection conn = null; 
+	  Connection conn = null; 
       Statement stmt = null; 
       try { 
          // STEP 1: Register JDBC driver 
@@ -109,6 +107,6 @@ public class CreateTable {
             se.printStackTrace(); 
          } //end finally try 
       } //end try 
-      System.out.println("Goodbye!");*/
+      System.out.println("Goodbye!");
    } 
 }
