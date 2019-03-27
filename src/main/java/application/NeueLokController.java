@@ -65,47 +65,40 @@ public class NeueLokController implements Initializable {
 
 		Namebox.getValidators().add(validator);
 		validator.setMessage("Noch keine Eingabe");
+		
 		Namebox.focusedProperty().addListener(new ChangeListener<Boolean>() {
-
 			@Override
 			public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
 				if (!newValue) {
 					Namebox.validate();
-				}
-
-			}
-		});
+				}}});
 		
-		//Funktion zum füllen von adressspinner
+//----------Funktion zum füllen von adressspinner---------------------------------------------------------------------------
 		ReadFromTable r = new ReadFromTable();
 		String b = r.getData();
 		String[] h = b.split(";");
 		Integer[] n = new Integer[h.length/2];
 		int j = 0;
 		
-		//TODO
 		//Gibt alle Zugnummern aus und speichert sie in als Integer in n
 		if(h != null && h.length != 0) {
-			for(int i=0;i<h.length;i+=2){
-				n[j] = Integer.parseInt(h[i]);
+			for(int i=0; i<= h.length;i+=2){
+				n[j] = Integer.parseInt(h[i].toString());
 				j++;
 			}
 		}
-		
 		// aus 100 Array alle vergebenen Zahlen löschen
 		Integer[] array = new Integer[100];
-			
+		
+		//Array mit 100 Elementen 0-99 erstellen
 		for (int i = 0; i < array.length; i++) {
-				array[i] = i++;
-				i++;
+				array[i] = i;
 				}
-			
+		
 		for (int i = 0; i <n.length ; i++) {
 			int a = n[i];
 			array[a] = null;
 			}
-
-			
 		ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
 		
 		//Value mit verfügbaren Zahlen füllen
@@ -117,10 +110,10 @@ public class NeueLokController implements Initializable {
 	     // Default value
 	     valueFactory.setValue(null);
 	     adressespinner.setValueFactory(valueFactory);
-
-	
 	}
 
+//-------------------Ende von Initialise--------------------------------------
+	
 	@FXML
 	void backtohome(ActionEvent event) throws IOException {
 		Stage stage;
