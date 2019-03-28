@@ -10,8 +10,8 @@
 	<children>
 		<Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;" />
       <JFXSlider fx:id="slider14" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="14.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-      <JFXSlider fx:id="slider28" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="28.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-      <JFXSlider fx:id="slider128" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="128.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="slider24" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="24.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="slider126" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="126.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" />
 		<Text layoutX="218.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
 			<font>

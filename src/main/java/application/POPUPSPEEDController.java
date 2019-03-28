@@ -5,31 +5,36 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXSlider;
 
+import datenbank.ReadFromTable;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class POPUPSPEEDController implements Initializable {
 
+	ReadFromTable r = new ReadFromTable();
+	String a = r.getData();
+	String h[] = a.split(";");
+
 	@FXML
 	private JFXSlider slider14;
 
 	@FXML
-	private JFXSlider slider28;
+	private JFXSlider slider24;
 
 	@FXML
-	private JFXSlider slider128;
+	private JFXSlider slider126;
 
-	int fahrstufen = 128;
+	int fahrstufen = 126;
 
 	public void fahrstufenlesen() {
 		if (fahrstufen == 14) {
 			slider14.toFront();
 
-		} else if (fahrstufen == 28) {
-			slider28.toFront();
+		} else if (fahrstufen == 24) {
+			slider24.toFront();
 
-		} else if (fahrstufen == 128) {
-			slider128.toFront();
+		} else if (fahrstufen == 126) {
+			slider126.toFront();
 
 		}
 	}
