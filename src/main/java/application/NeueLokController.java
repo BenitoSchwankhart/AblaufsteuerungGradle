@@ -29,8 +29,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+
+import java.sql.ResultSet;
 
 public class NeueLokController implements Initializable {
 	// Neue Lok
@@ -53,6 +59,18 @@ public class NeueLokController implements Initializable {
 	// Das ist der Submit Button
 	@FXML
 	private JFXButton submit_btn;
+	
+	@FXML
+	private TableView<String[]> tableView;
+	  
+	@FXML
+	private TableColumn<String[], String> adresse;
+
+	@FXML
+	private TableColumn<String[], String> name;
+
+	@FXML
+	private TableColumn<String[], String> fahrstufe;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -104,8 +122,9 @@ public class NeueLokController implements Initializable {
 				if (n[i] == arrayList.get(j)) {
 					arrayList.remove(j);
 				}
-			}		
+			}
 		}
+		
 		
 			//Value mit verfügbaren Zahlen füllen
 			ObservableList<Integer> zugNr = FXCollections.observableArrayList(arrayList);
@@ -116,9 +135,44 @@ public class NeueLokController implements Initializable {
 		     // Default value
 		     valueFactory.setValue(arrayList.get(0));
 		     adressespinner.setValueFactory(valueFactory);	
+
+//----------Initialisierung der Lok-Tabelle---------------------------------------------------------------------------
+				
+		     
+		   //erstellt die Spalten in der Tabelle
+				adresse.setCellValueFactory(new PropertyValueFactory<String[], String> ("Adresse"));
+				name.setCellValueFactory(new PropertyValueFactory<String[], String>("Name"));
+				fahrstufe.setCellValueFactory(new PropertyValueFactory<String[], String> ("Fahrstufe"));
+				
+				tableView.setItems(getZuege());
 	}
 
 //-------------------Ende von Initialise--------------------------------------
+	
+	
+	public ObservableList<String[]> getZuege() {
+		ObservableList<String[]> zuege = FXCollections.observableArrayList();
+		
+		ReadFromTable r = new ReadFromTable();
+		String a = r.getAllData();
+		String[] h = a.split(";");
+		ArrayList done = new ArrayList();
+		int j = 0;
+		
+		for (int i = 0; i < h.length/3; i=+3) {
+			done.add(h[i] + h[i+1] + h[i+2]);
+			j++;
+		}
+		
+		for (int i = 0; i < h.length/3; i++) {
+			System.out.print(done);
+		}
+		
+		
+		zuege.addAll(done);
+		
+		return zuege;
+	}
 	
 	@FXML
 	void backtohome(ActionEvent event) throws IOException {
