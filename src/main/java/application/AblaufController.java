@@ -100,7 +100,7 @@ public class AblaufController implements Initializable {
 		}
 	}
 
-
+//Drag and Drop der verschiedenen Elemente
 	@FXML
 	void handleDragOver(DragEvent event) {
 		event.acceptTransferModes(TransferMode.ANY);
