@@ -6,10 +6,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.POPUPSPEEDController">
 	<children>
 		<Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;" />
-		<JFXSlider blockIncrement="1.0" layoutX="272.0" layoutY="74.0" majorTickUnit="2.0" max="28.0" minorTickCount="1" orientation="VERTICAL" prefHeight="312.0" prefWidth="56.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="slider14" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="14.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="slider28" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="28.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="slider128" layoutX="293.0" layoutY="47.0" majorTickUnit="1.0" max="128.0" minorTickCount="0" orientation="VERTICAL" prefHeight="336.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" />
 		<Text layoutX="218.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
 			<font>
 				<Font size="25.0" />

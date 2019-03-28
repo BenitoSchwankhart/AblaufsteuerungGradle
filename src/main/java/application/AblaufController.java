@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
-
+import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
 
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
@@ -16,7 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.scene.control.Slider;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -81,10 +81,15 @@ public class AblaufController implements Initializable {
 	@FXML
 	private JFXToggleButton poweroff_btn;
 
+	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 	}
+
+
+
 
 	// Zurueck Button
 	@FXML
@@ -227,21 +232,25 @@ public class AblaufController implements Initializable {
 		if (!ziel.getText().equals(" ")) {
 			if (ziel.getText().equals("Licht")) {
 				if (event.getSource() == ziel) {
+
 					stage = new Stage();
 					root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
 					stage.setScene(new Scene(root));
 					stage.initModality(Modality.APPLICATION_MODAL);
 					stage.initOwner(ziel.getScene().getWindow());
 					stage.showAndWait();
+
 				}
 			} else if (ziel.getText().equals("Speed")) {
 				if (event.getSource() == ziel) {
+					
 					stage = new Stage();
 					root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
 					stage.setScene(new Scene(root));
 					stage.initModality(Modality.APPLICATION_MODAL);
 					stage.initOwner(ziel.getScene().getWindow());
 					stage.showAndWait();
+					
 				}
 			} else {
 				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
