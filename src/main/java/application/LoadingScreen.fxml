@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="menu_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestController">
+   <children>
+      <JFXProgressBar layoutX="187.0" layoutY="225.0" prefHeight="8.0" prefWidth="527.0" />
+      <Text layoutX="307.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anwendung startet">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
