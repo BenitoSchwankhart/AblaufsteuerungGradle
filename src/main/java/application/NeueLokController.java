@@ -61,16 +61,16 @@ public class NeueLokController implements Initializable {
 	private JFXButton submit_btn;
 	
 	@FXML
-	private TableView<String[]> tableView;
+	private TableView<Zug> tableView;
 	  
 	@FXML
-	private TableColumn<String[], String> adresse;
+	private TableColumn<Zug, String> zugnummer;
 
 	@FXML
-	private TableColumn<String[], String> name;
+	private TableColumn<Zug, String> zugname;
 
 	@FXML
-	private TableColumn<String[], String> fahrstufe;
+	private TableColumn<Zug, String> fahrstufe;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -140,9 +140,9 @@ public class NeueLokController implements Initializable {
 				
 		     
 		   //erstellt die Spalten in der Tabelle
-				adresse.setCellValueFactory(new PropertyValueFactory<String[], String> ("Adresse"));
-				name.setCellValueFactory(new PropertyValueFactory<String[], String>("Name"));
-				fahrstufe.setCellValueFactory(new PropertyValueFactory<String[], String> ("Fahrstufe"));
+				zugnummer.setCellValueFactory(new PropertyValueFactory<Zug, String> ("ZugNr"));
+				zugname.setCellValueFactory(new PropertyValueFactory<Zug, String>("Name"));
+				fahrstufe.setCellValueFactory(new PropertyValueFactory<Zug, String> ("Fahrstufe"));
 				
 				tableView.setItems(getZuege());
 	}
@@ -150,28 +150,29 @@ public class NeueLokController implements Initializable {
 //-------------------Ende von Initialise--------------------------------------
 	
 	
-	public ObservableList<String[]> getZuege() {
-		ObservableList<String[]> zuege = FXCollections.observableArrayList();
+	public ObservableList<Zug> getZuege() {
+		ObservableList<Zug> zug = FXCollections.observableArrayList();
 		
 		ReadFromTable r = new ReadFromTable();
 		String a = r.getAllData();
 		String[] h = a.split(";");
-		ArrayList done = new ArrayList();
-		int j = 0;
 		
-		for (int i = 0; i < h.length/3; i=+3) {
+		/*for (int i = 0; i < h.length/3; i=+3) {
 			done.add(h[i] + h[i+1] + h[i+2]);
 			j++;
+		}*/
+		
+		for (int i = 0; i < h.length; i++) {
+			System.out.print(h[i] + "\n");
 		}
+		
+		zug.add(new Zug("3", "Talent", "14"));
 		
 		for (int i = 0; i < h.length/3; i++) {
-			System.out.print(done);
+		zug.add(new Zug(h[i], h[i+1], h[i+2]));
 		}
 		
-		
-		zuege.addAll(done);
-		
-		return zuege;
+		return zug;
 	}
 	
 	@FXML

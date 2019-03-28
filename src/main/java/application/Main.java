@@ -21,6 +21,8 @@ public class Main extends Application {
 		c.main(null);
 		RmxCalls rmx = new RmxCalls();
 		if (rmx.getVerbindung() == 2) {*/
+		
+		//-->Sicherstellen das Tabellen da sind
 			try {
 				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Home.fxml"));
 				Scene scene = new Scene(root, 900, 450);
