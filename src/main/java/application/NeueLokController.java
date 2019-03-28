@@ -140,8 +140,8 @@ public class NeueLokController implements Initializable {
 				
 		     
 		   //erstellt die Spalten in der Tabelle
-				zugnummer.setCellValueFactory(new PropertyValueFactory<Zug, String> ("ZugNr"));
-				zugname.setCellValueFactory(new PropertyValueFactory<Zug, String>("Name"));
+				zugnummer.setCellValueFactory(new PropertyValueFactory<Zug, String> ("zugnummer"));
+				zugname.setCellValueFactory(new PropertyValueFactory<Zug, String>("zugname"));
 				fahrstufe.setCellValueFactory(new PropertyValueFactory<Zug, String> ("Fahrstufe"));
 				
 				tableView.setItems(getZuege());
@@ -166,12 +166,12 @@ public class NeueLokController implements Initializable {
 			System.out.print(h[i] + "\n");
 		}
 		
-		zug.add(new Zug("3", "Talent", "14"));
-		
+		int j = 0;
 		for (int i = 0; i < h.length/3; i++) {
-		zug.add(new Zug(h[i], h[i+1], h[i+2]));
+		zug.add(new Zug(h[j], h[j+1], h[j+2]));
+		System.out.println(h[j] + h[j+1] + h[j+2]);
+		j+=3;
 		}
-		
 		return zug;
 	}
 	
@@ -279,6 +279,15 @@ public class NeueLokController implements Initializable {
 		//ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);
 		
 		//TODO Fenster zur Bestätigung der Zuganlage ausgeben
+		Stage stage;
+		Parent root;
+		if (event.getSource() == submit_btn) {
+			stage = (Stage) submit_btn.getScene().getWindow();
+			root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		}
 		
 	}
 }

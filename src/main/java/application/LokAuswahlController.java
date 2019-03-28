@@ -100,12 +100,13 @@ public class LokAuswahlController implements Initializable{
 
 	// Ausgewählte Lok wird als aktuelle verwendete Lok submittet und mit name und Zugnummer gespeichert
 	@FXML
-    void submit_Lok(ActionEvent event) {
+    void submit_Lok(ActionEvent event) throws IOException {
 	String zug = null;
 		if (event.getSource() == submit_btn) {
 			if (TrainBox != null) {
 				TrainBox.getValue();
 			}
+			
 		}
 		
 	//Zugnummer ermitteln
@@ -129,5 +130,16 @@ public class LokAuswahlController implements Initializable{
 	d.deleteAktuellerZug();
 	InsertIntoTable i = new InsertIntoTable();
 	i.setAktuellZug(aktuellerZug,TrainBox.getValue());
+	
+	Stage stage;
+	Parent root;
+	if (event.getSource() == submit_btn) {
+		stage = (Stage) submit_btn.getScene().getWindow();
+		root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
     }
 }
