@@ -26,7 +26,7 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </JFXButton>
-            <Text fill="WHITE" layoutX="368.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Editor">
+            <Text fill="WHITE" layoutX="368.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zug-Editor">
                <font>
                   <Font name="Calibri Bold" size="36.0" />
                </font>
@@ -35,18 +35,18 @@
       </Pane>
       <TableView fx:id="tableView" layoutX="18.0" layoutY="140.0" prefHeight="236.0" prefWidth="730.0">
         <columns>
-          <TableColumn fx:id="zugnummer" prefWidth="198.0" text="Zugnummer" />
-          <TableColumn fx:id="zugname" prefWidth="333.0" text="Name" />
+          <TableColumn fx:id="zugnummer" prefWidth="209.0" text="Zugnummer" />
+          <TableColumn fx:id="zugname" prefWidth="322.0" text="Name" />
             <TableColumn fx:id="fahrstufe" minWidth="0.0" prefWidth="198.0" text="Fahrstufe" />
         </columns>
       </TableView>
       <Pane layoutY="400.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: #4f474c;" />
-      <JFXButton fx:id="delete_btn" layoutX="794.0" layoutY="346.0" onAction="#delete_Lok" style="-fx-background-color: #4f474c;" text="Delete" textFill="WHITE">
+      <JFXButton fx:id="delete_btn" layoutX="794.0" layoutY="346.0" onAction="#delete_Lok" style="-fx-background-color: #4f474c;" text="Löschen" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </JFXButton>
-      <HBox layoutX="548.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0">
+      <HBox layoutX="548.0" layoutY="80.0" prefHeight="30.0" prefWidth="200.0" spacing="5.0">
          <children>
             <Text fx:id="TypBoxLabel" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
                <font>
@@ -59,7 +59,7 @@
             <ChoiceBox fx:id="TypBox" prefHeight="25.0" prefWidth="93.0" />
          </children>
       </HBox>
-      <HBox layoutX="18.0" layoutY="80.0" prefHeight="31.0" prefWidth="200.0">
+      <HBox layoutX="18.0" layoutY="80.0" prefHeight="31.0" prefWidth="212.0" spacing="5.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zugnummer">
                <font>
@@ -69,14 +69,14 @@
                   <Insets top="3.0" />
                </HBox.margin>
             </Text>
-            <Spinner fx:id="adressespinner" prefHeight="25.0" prefWidth="78.0">
+            <Spinner fx:id="adressespinner" prefHeight="25.0" prefWidth="83.0">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Spinner>
          </children>
       </HBox>
-      <HBox layoutX="254.0" layoutY="80.0" prefHeight="30.0" prefWidth="259.0">
+      <HBox layoutX="259.0" layoutY="80.0" prefHeight="30.0" prefWidth="259.0" spacing="5.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="58.1015625">
                <font>

@@ -31,13 +31,13 @@ public class Main extends Application {
 		c.createAktuellZug();
 		i.setAktuellZug(222, "DEMO-ZUG", 14);
 		c.createFSSave();
+		primaryStage.setResizable(false);
 			try {
 				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Home.fxml"));
 				Scene scene = new Scene(root, 900, 450);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
-				primaryStage.setResizable(false);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

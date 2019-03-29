@@ -21,7 +21,7 @@
                   <Font name="Calibri" size="14.0" />
                </font>
             </JFXButton>
-            <Text fill="WHITE" layoutX="246.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Auswahl">
+            <Text fill="WHITE" layoutX="246.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zug-Auswahl">
                <font>
                   <Font name="Calibri Bold" size="36.0" />
                </font>
