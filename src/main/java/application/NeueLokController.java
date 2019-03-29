@@ -61,6 +61,12 @@ public class NeueLokController implements Initializable {
 	private JFXButton submit_btn;
 	
 	@FXML
+	private JFXButton delete_btn;
+
+	@FXML
+	private JFXButton select_btn;
+	
+	@FXML
 	private TableView<Zug> tableView;
 	  
 	@FXML
@@ -290,4 +296,25 @@ public class NeueLokController implements Initializable {
 		}
 		
 	}
+	
+	@FXML
+    void delete_Lok(ActionEvent event) {
+		
+		ObservableList<Zug> selectedZug, allZuege;
+		allZuege = tableView.getItems();
+		
+		// gibt uns den ausgewählten Zug
+		selectedZug = tableView.getSelectionModel().getSelectedItems();
+		
+		// der ausgewählte Zug wird entfernt
+		for(Zug zug : selectedZug) {
+			allZuege.remove(zug);
+		}
+		
+    }
+
+    @FXML
+    void select_Lok(ActionEvent event) {
+
+    }
 }
