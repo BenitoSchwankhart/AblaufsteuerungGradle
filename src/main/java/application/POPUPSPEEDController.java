@@ -13,7 +13,7 @@ public class POPUPSPEEDController implements Initializable {
 
 	ReadFromTable r = new ReadFromTable();
 	String a = r.getFSAktiverZug();
-	int fahrstufen = Integer.parseInt(a);
+	Integer fahrstufen = Integer.parseInt(a);
 
 	@FXML
 	private JFXSlider slider14;
@@ -28,7 +28,7 @@ public class POPUPSPEEDController implements Initializable {
 		if (fahrstufen == 14) {
 			slider14.toFront();
 
-		} else if (fahrstufen == 24) {
+		} else if (fahrstufen == 28) {
 			slider28.toFront();
 
 		} else if (fahrstufen == 126) {

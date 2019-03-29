@@ -112,7 +112,7 @@ public class LokAuswahlController implements Initializable{
 		
 	//Zugnummer ermitteln
 	ReadFromTable r = new ReadFromTable();
-	String b = r.getData();
+	String b = r.getAllData();
 	String[] s = b.split(";");
 	
 	for(int i=1;i<s.length;i+=2){
@@ -120,15 +120,8 @@ public class LokAuswahlController implements Initializable{
 		if(a.equals(TrainBox.getValue())) {
 			i --;
 			zugNr = s[i];
-		}
-	}
-	
-	//FS ermitteln
-	for(int i=1;i<s.length;i+=2){
-		String a = s[i];
-		if(a.equals(TrainBox.getValue())) {
-			i ++;
-			zugFS = s[i];
+			int j = i+2;
+			zugFS = s[j];
 		}
 	}
 	

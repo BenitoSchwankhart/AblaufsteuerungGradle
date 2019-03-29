@@ -13,15 +13,15 @@ import clientServerConnection.RmxCalls;
 
 public class Zugablauf {
 	
-	static byte ADRH = 0x00;
+	/*static byte ADRH = 0x00;
 	static byte ADRL = 0x01;
 	static byte SPEED = 0x09;
 	static byte DIR = 0x00;
-
-	public static final byte[] ICE = new byte[] { 0x7c, 0x07, 0x24, ADRH, ADRL, SPEED, DIR};
+*/
 	
 	
-	public static void Zugfahrstufe() throws IOException {
+	public static void ZugFahrEinstellungen(byte ZUGNR, byte SPEED, byte DIR) throws IOException {
+		  byte[] ICE = new byte[] { 0x7c, 0x07, 0x24, 0x00, ZUGNR, SPEED, DIR};
 	      int port = 9090;
 	      byte[] answer; 
 	      byte[] sendMessage;
@@ -50,7 +50,7 @@ public class Zugablauf {
 	      }
 	
 	public static void main(String[]args) throws IOException {
-		Zugfahrstufe();
+		//Zugfahrstufe(ADRH, ADRH, ADRH, ADRH);
 	}
 
 }

@@ -15,8 +15,8 @@ public class Funktionssteuerung {
 	
 	
 	
-	static byte ADRH = 0x00;//Higbyte der Lok
-	static byte ADRL = 0x01;//Lowbyte der Lok
+
+	static byte ZUGNR = 0x01;//Lowbyte der Lok
 	static byte F0F7a = 0x03;//Funktionen 0(Licht)-7 an (hier funktion 3 an)
 	static byte F0F7b = 0x00;//Funktionen 0(Licht)-7 aus
 	static byte F8F15a = 0x01;//Funktionen 8 bis 15 an 
@@ -24,8 +24,8 @@ public class Funktionssteuerung {
 	static byte F16F23a = 0x01;//Funktionen 16 bis 23 an 
 	static byte F16F23b = 0x00;//Funktionen 16 bis 23 aus
 
-	public static final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, ADRH, ADRL, F0F7a, F8F15a, F16F23a};
-	public static final byte[] FKTAUS = new byte[] {0x7c, 0x08, 0x28, ADRH, ADRL, F0F7b, F8F15b, F16F23b};
+	public static final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, F0F7a, F8F15a, F16F23a};
+	public static final byte[] FKTAUS = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, F0F7b, F8F15b, F16F23b};
 	
 	
 	public static void FunktionenAn() throws IOException {

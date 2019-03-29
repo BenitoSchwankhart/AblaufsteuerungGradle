@@ -8,6 +8,9 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
 
+import Zugsteuerung.Zugablauf;
+import clientServerConnection.RmxCalls;
+import datenbank.ReadFromTable;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 
 import javafx.event.ActionEvent;
@@ -211,8 +214,17 @@ public class AblaufController implements Initializable {
 	@FXML
 	void starteAblauf(ActionEvent event) throws IOException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
-		// ConnectionCalls c = new ConnectionCalls();
-		// c.PowerOn();
+		RmxCalls r = new RmxCalls();
+		ReadFromTable f = new ReadFromTable();
+		String b = f.getFSAktiverZug();
+		String[] s = b.split(";");
+		
+		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
+		byte SPEED = (Byte) null;//r.intToByte()
+		byte DIR = (Byte) null;
+		Zugablauf z = new Zugablauf();
+		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
+		
 	}
 
 	// Hier Nothalt Funktion implementieren
