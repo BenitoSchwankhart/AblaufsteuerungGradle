@@ -504,17 +504,27 @@ public class AblaufController implements Initializable {
 	@FXML
 	void loescheneinleiten(ActionEvent event) {
 		ok.toFront();
-		delete_btn1.toFront();
-
-		delete_btn2.toFront();
-
-		delete_btn3.toFront();
-		delete_btn4.toFront();
-
-		delete_btn5.toFront();
-
-		delete_btn6.toFront();
-		delete_btn7.toFront();
+		if (!ziel.getText().equals(" ")) {
+			delete_btn1.toFront();
+		}
+		if (!ziel2.getText().equals(" ")) {
+			delete_btn2.toFront();
+		}
+		if (!ziel3.getText().equals(" ")) {
+			delete_btn3.toFront();
+		}
+		if (!ziel4.getText().equals(" ")) {
+			delete_btn4.toFront();
+		}
+		if (!ziel5.getText().equals(" ")) {
+			delete_btn5.toFront();
+		}
+		if (!ziel6.getText().equals(" ")) {
+			delete_btn6.toFront();
+		}
+		if (!ziel7.getText().equals(" ")) {
+			delete_btn7.toFront();
+		}
 
 	}
 
