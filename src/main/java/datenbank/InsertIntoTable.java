@@ -61,8 +61,8 @@ public class InsertIntoTable {
 	      System.out.println("Goodbye!"); 
 	   } 
    
-   //Speichert den aktuellen Zug mit Name und ZUgnummer
-   public void setAktuellZug(int zugnummer,String zugname){
+   //Speichert den aktuellen Zug mit Name, Zugnummer und Fahrstufen
+   public void setAktuellZug(int zugnummer,String zugname, int fahrstufe){
 	   Connection conn = null; 
 	   Statement stmt = null; 
 	      
@@ -79,7 +79,7 @@ public class InsertIntoTable {
 	         System.out.println("Test");
 	         
 	         stmt = conn.createStatement();  
-	         String sql = "INSERT INTO aktueller_zug " + "VALUES" + "(" + zugnummer + "," + "'" + zugname + "'" + ")";  
+	         String sql = "INSERT INTO aktueller_zug " + "VALUES" + "(" + zugnummer + "," + "'" + zugname + "'" + "," + fahrstufe + ")";  
 	         
 	         stmt.executeUpdate(sql); 
 	         System.out.println("Inserted records into the table..."); 

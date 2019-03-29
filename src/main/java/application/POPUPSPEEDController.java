@@ -12,26 +12,24 @@ import javafx.fxml.Initializable;
 public class POPUPSPEEDController implements Initializable {
 
 	ReadFromTable r = new ReadFromTable();
-	String a = r.getData();
-	String h[] = a.split(";");
+	String a = r.getFSAktiverZug();
+	int fahrstufen = Integer.parseInt(a);
 
 	@FXML
 	private JFXSlider slider14;
 
 	@FXML
-	private JFXSlider slider24;
+	private JFXSlider slider28;
 
 	@FXML
 	private JFXSlider slider126;
-
-	int fahrstufen = 126;
 
 	public void fahrstufenlesen() {
 		if (fahrstufen == 14) {
 			slider14.toFront();
 
 		} else if (fahrstufen == 24) {
-			slider24.toFront();
+			slider28.toFront();
 
 		} else if (fahrstufen == 126) {
 			slider126.toFront();

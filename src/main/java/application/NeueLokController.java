@@ -195,7 +195,7 @@ public class NeueLokController implements Initializable {
 		// Typ
 		listtyp.removeAll(listtyp);
 		String a = "14";
-		String b = "24";
+		String b = "28";
 		String c = "126";
 
 		listtyp.addAll(a, b, c);
@@ -256,9 +256,9 @@ public class NeueLokController implements Initializable {
 		if (sub == 14) {
 			OPMODE = 0x09;
 			System.out.println("FS14");
-		} else if (sub == 24) {
+		} else if (sub == 28) {
 			OPMODE = 0x0C;
-			System.out.println("FS24");
+			System.out.println("FS28");
 		} else if (sub == 126) {
 			OPMODE = 0x0F;
 			System.out.println("FS126");

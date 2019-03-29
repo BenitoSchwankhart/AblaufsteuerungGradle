@@ -33,7 +33,8 @@ public class CreateTable {
 	         stmt = conn.createStatement(); 
 	         String sql =  "CREATE TABLE   aktueller_zug" + 
 	                 "(zugnummer INTEGER not NULL, " + 
-	                 " zugname VARCHAR(255), " +  
+	                 " zugname VARCHAR(255), " + 
+	                 " fahrstufen INTEGER, " + 
 	                 " PRIMARY KEY ( zugnummer ))";  
 	         stmt.executeUpdate(sql);
 	         System.out.println("Created table in given database..."); 
@@ -62,9 +63,8 @@ public class CreateTable {
 	      System.out.println("Goodbye!");
 	   } 
    
-//---------------------------------------------------MAIN--------------------------------------------
-  
-   public static void main(String[] args) { 
+ //Erstellung der Tabelle für den aktuellen Zug
+   public static void createZug() {
 	  Connection conn = null; 
       Statement stmt = null; 
       try { 
@@ -109,4 +109,10 @@ public class CreateTable {
       } //end try 
       System.out.println("Goodbye!");
    } 
+   
+//---------------------------------------------------MAIN--------------------------------------------
+  
+   public static void main(String[] args) { 
+ createAktuellZug();
+   }
 }

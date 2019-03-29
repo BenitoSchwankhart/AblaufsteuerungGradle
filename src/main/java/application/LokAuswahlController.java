@@ -101,7 +101,8 @@ public class LokAuswahlController implements Initializable{
 	// Ausgewählte Lok wird als aktuelle verwendete Lok submittet und mit name und Zugnummer gespeichert
 	@FXML
     void submit_Lok(ActionEvent event) throws IOException {
-	String zug = null;
+	String zugNr = null;
+	String zugFS = null;
 		if (event.getSource() == submit_btn) {
 			if (TrainBox != null) {
 				TrainBox.getValue();
@@ -118,18 +119,28 @@ public class LokAuswahlController implements Initializable{
 		String a = s[i];
 		if(a.equals(TrainBox.getValue())) {
 			i --;
-			zug = s[i];
+			zugNr = s[i];
 		}
 	}
 	
-	int aktuellerZug = Integer.parseInt(zug);
+	//FS ermitteln
+	for(int i=1;i<s.length;i+=2){
+		String a = s[i];
+		if(a.equals(TrainBox.getValue())) {
+			i ++;
+			zugFS = s[i];
+		}
+	}
+	
+	int aktuellerZug = Integer.parseInt(zugNr);
+	int aktuelleFS = Integer.parseInt(zugFS);
 	
 		
 	// Aktueller Zug wird in die Datenbank gespeichert
 	DeleteFromTable d = new DeleteFromTable();
 	d.deleteAktuellerZug();
 	InsertIntoTable i = new InsertIntoTable();
-	i.setAktuellZug(aktuellerZug,TrainBox.getValue());
+	i.setAktuellZug(aktuellerZug,TrainBox.getValue(), aktuelleFS);
 	
 	Stage stage;
 	Parent root;
