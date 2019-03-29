@@ -211,11 +211,12 @@ public class AblaufController implements Initializable {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
 		RmxCalls r = new RmxCalls();
 		ReadFromTable f = new ReadFromTable();
+		POPUPSPEEDController p = new POPUPSPEEDController();
 		String b = f.getFSAktiverZug();
 		String[] s = b.split(";");
 		
 		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
-		byte SPEED = (Byte) null;//r.intToByte()
+		byte SPEED = r.intToByte(p.submitfahrstufen(event));
 		byte DIR = (Byte) null;
 		Zugablauf z = new Zugablauf();
 		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
@@ -254,7 +255,7 @@ public class AblaufController implements Initializable {
 		stage.showAndWait();
 
 	}
-
+//Öffnet Richtungswechsel-POPUP
 	public void popuprw() throws IOException {
 		Stage stage;
 		Parent root;

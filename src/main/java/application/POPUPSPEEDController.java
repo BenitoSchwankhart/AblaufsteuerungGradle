@@ -44,16 +44,20 @@ public class POPUPSPEEDController implements Initializable {
 
 	@FXML
 	
-	void submitfahrstufen(ActionEvent event) {
+	public int submitfahrstufen(ActionEvent event) {
+		int i = 0;
 		if (fahrstufen == 14) {
-
-			System.out.println(slider14.getValue());
+			double d = slider14.getValue();
+			i = (int) d;
 		} else if (fahrstufen == 28) {
-			System.out.println(slider28.getValue());
+			double d = slider28.getValue();
+			i = (int) d;
 		} else if (fahrstufen == 126) {
-
+			double d = slider126.getValue();
+			i = (int) d;
 			System.out.println(slider126.getValue());
 		}
+		return i;
 	}
 
 	@Override
