@@ -14,6 +14,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
+import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.beans.value.ChangeListener;
@@ -298,8 +299,11 @@ public class NeueLokController implements Initializable {
 	}
 	
 	@FXML
-    void delete_Lok(ActionEvent event) {
+    void delete_Lok(ActionEvent event) throws IOException {
+		byte OPMODE = 0x1F; //OPMODE für Zug löschen
+		RmxCalls r = new RmxCalls();
 		
+		DeleteFromTable d = new DeleteFromTable();
 		ObservableList<Zug> selectedZug, allZuege;
 		allZuege = tableView.getItems();
 		
@@ -309,6 +313,13 @@ public class NeueLokController implements Initializable {
 		// der ausgewählte Zug wird entfernt
 		for(Zug zug : selectedZug) {
 			allZuege.remove(zug);
+			//Löschen in DB
+			d.deleteZug(zug.getZugnummer());
+			//Löschen in RMX
+			byte COUNT = r.intToByte(zug.getZugname().length()+7);
+			byte ZUGNR = r.intToByte(Integer.parseInt(zug.getZugnummer()));
+			byte[] NAME = zug.getZugname().getBytes();
+			//ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);//Für löschen aus RMX
 		}
 		
     }
