@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 
+import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.collections.ListChangeListener.Change;
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ public class POPUPSPEEDController implements Initializable {
 	ReadFromTable r = new ReadFromTable();
 	String a = r.getFSAktiverZug();
 	Integer fahrstufen = Integer.parseInt(a);
+	
 
 	@FXML
 	private JFXSlider slider14;
@@ -57,6 +59,8 @@ public class POPUPSPEEDController implements Initializable {
 			i = (int) d;
 			System.out.println(slider126.getValue());
 		}
+		InsertIntoTable t = new InsertIntoTable();
+		t.setFS(i);
 		return i;
 	}
 

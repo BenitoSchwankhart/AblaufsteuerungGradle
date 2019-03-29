@@ -276,14 +276,13 @@ public class NeueLokController implements Initializable {
 		
 		int fahrstufen = sub;
 		
-		/** Fehler int COUNT = NAME.length;**/
 		InsertIntoTable.zugData(zugnummer, zugname, fahrstufen);
 		RmxCalls r = new RmxCalls();
 		byte COUNT = r.intToByte(zugname.length()+7);
 		byte ZUGNR = r.intToByte(zugnummer);
 		byte[] NAME = zugname.getBytes();
 		
-		//ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);
+		ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);
 		
 		//TODO Fenster zur Bestätigung der Zuganlage ausgeben
 		Stage stage;
@@ -319,7 +318,7 @@ public class NeueLokController implements Initializable {
 			byte COUNT = r.intToByte(zug.getZugname().length()+7);
 			byte ZUGNR = r.intToByte(Integer.parseInt(zug.getZugnummer()));
 			byte[] NAME = zug.getZugname().getBytes();
-			//ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);//Für löschen aus RMX
+			ConnectionCalls.ZugErstellen(COUNT, ZUGNR, OPMODE, NAME);//Für löschen aus RMX
 		}
 		
     }

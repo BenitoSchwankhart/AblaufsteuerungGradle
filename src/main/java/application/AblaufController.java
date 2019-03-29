@@ -240,8 +240,10 @@ public class AblaufController implements Initializable {
 		String[] s = b.split(";");
 
 		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
-		byte SPEED = r.intToByte(p.submitfahrstufen(event));
-		byte DIR = (Byte) null;
+		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
+		//TODO
+		//Noch anpassen
+		byte DIR = r.intToByte(1);
 		Zugablauf z = new Zugablauf();
 		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
 
