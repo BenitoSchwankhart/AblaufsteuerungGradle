@@ -6,24 +6,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="neuelok" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LokAuswahlController">
+<Pane fx:id="neuelok" prefHeight="450.0" prefWidth="684.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LokAuswahlController">
    <children>
-      <Text fill="#bfb7b7" layoutX="269.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Menü">
+      <ChoiceBox fx:id="TrainBox" layoutX="161.0" layoutY="140.0" prefHeight="31.0" prefWidth="362.0" />
+      <Text fx:id="TypBoxText" layoutX="161.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zug auswählen:">
          <font>
-            <Font name="Calibri" size="38.0" />
+            <Font name="Calibri" size="24.0" />
          </font>
       </Text>
-      <ChoiceBox fx:id="TrainBox" layoutX="161.0" layoutY="155.0" prefHeight="31.0" prefWidth="362.0" />
-      <Text fx:id="TypBoxText" fill="WHITE" layoutX="257.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zug auswählen:">
+      <Pane prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #4f474c;">
+         <children>
+            <JFXButton fx:id="back" layoutX="14.0" layoutY="13.0" onAction="#backonstart" style="-fx-background-color: #FFFFFF;" text="Zurück">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font>
+            </JFXButton>
+            <Text fill="WHITE" layoutX="246.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lok-Auswahl">
+               <font>
+                  <Font name="Calibri Bold" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <JFXButton fx:id="submit_btn" layoutX="560.0" layoutY="140.0" onAction="#submit_Lok" prefHeight="31.0" prefWidth="67.0" style="-fx-background-color: #4f474c;" text="Submit" textFill="WHITE">
          <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Text>
-      <JFXButton fx:id="back" layoutX="24.0" layoutY="14.0" onAction="#backonstart" style="-fx-background-color: Grey;" text="Zurück" />
-      <JFXButton fx:id="submit_btn" layoutX="606.0" layoutY="14.0" onAction="#submit_Lok" style="-fx-background-color: C6C2C1;" text="Submit" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
+            <Font name="Calibri" size="14.0" />
          </font>
       </JFXButton>
+      <Pane layoutY="400.0" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #4f474c;" />
    </children>
 </Pane>

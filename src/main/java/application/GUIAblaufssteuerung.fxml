@@ -11,21 +11,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AblaufController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" style="-fx-background-color: #4f474c;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AblaufController">
    <children>
-      <JFXButton fx:id="delete_btn1" layoutX="62.0" layoutY="150.0" onAction="#delete1" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn2" layoutX="152.0" layoutY="150.0" onAction="#delete2" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn3" layoutX="239.0" layoutY="150.0" onAction="#delete3" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn4" layoutX="331.0" layoutY="150.0" onAction="#delete4" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn5" layoutX="423.0" layoutY="150.0" onAction="#delete5" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn6" layoutX="515.0" layoutY="150.0" onAction="#delete6" style="-fx-background-color: #aa1426;" text="Löschen" />
-      <JFXButton fx:id="delete_btn7" layoutX="607.0" layoutY="150.0" onAction="#delete7" style="-fx-background-color: #aa1426;" text="Löschen" />
       <JFXButton fx:id="ok" layoutX="611.0" layoutY="287.0" onAction="#loeschenbeenden" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #7ddf64;" text="Ok">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
       </JFXButton>
-      <Pane fx:id="black_pane" layoutY="39.0" prefHeight="357.0" prefWidth="721.0" style="-fx-background-color: #000000;">
+      <JFXButton fx:id="delete_btn1" layoutX="62.0" layoutY="150.0" onAction="#delete1" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn2" layoutX="152.0" layoutY="150.0" onAction="#delete2" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn3" layoutX="239.0" layoutY="150.0" onAction="#delete3" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn4" layoutX="331.0" layoutY="150.0" onAction="#delete4" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn5" layoutX="423.0" layoutY="150.0" onAction="#delete5" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn6" layoutX="515.0" layoutY="150.0" onAction="#delete6" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="delete_btn7" layoutX="607.0" layoutY="150.0" onAction="#delete7" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <Pane fx:id="black_pane" layoutY="39.0" prefHeight="357.0" prefWidth="721.0" style="-fx-background-color: #FFFFFF;">
          <effect>
             <Lighting bumpInput="$null">
                <light>
@@ -34,100 +34,103 @@
             </Lighting>
          </effect>
          <children>
-            <JFXButton fx:id="ziel" alignment="CENTER" layoutX="51.0" layoutY="154.0" onAction="#popup1" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel" alignment="CENTER" layoutX="51.0" layoutY="154.0" onAction="#popup1" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ziel4" alignment="CENTER" layoutX="321.0" layoutY="155.0" onAction="#popup4" onDragDropped="#handledenDrop4" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel4" alignment="CENTER" layoutX="321.0" layoutY="154.0" onAction="#popup4" onDragDropped="#handledenDrop4" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ziel3" alignment="CENTER" layoutX="229.0" layoutY="154.0" onAction="#popup3" onDragDropped="#handledenDrop3" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel3" alignment="CENTER" layoutX="231.0" layoutY="154.0" onAction="#popup3" onDragDropped="#handledenDrop3" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ziel2" alignment="CENTER" layoutX="142.0" layoutY="155.0" onAction="#popup2" onDragDropped="#handledenDrop2" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel2" alignment="CENTER" layoutX="141.0" layoutY="154.0" onAction="#popup2" onDragDropped="#handledenDrop2" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <MaterialDesignIconView fx:id="zeiger" fill="RED" glyphName="NAVIGATION" glyphStyle="SLIDESHOW" layoutX="-2.0" layoutY="195.0" rotate="90.0" size="40" style="-fx-background-color: FFFFFF;" text="" textAlignment="CENTER" wrappingWidth="46.99999821186065" />
-            <JFXButton fx:id="ziel5" alignment="CENTER" layoutX="413.0" layoutY="155.0" onAction="#popup5" onDragDropped="#handledenDrop5" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <MaterialDesignIconView fx:id="zeiger" glyphName="NAVIGATION" glyphStyle="SLIDESHOW" layoutX="-2.0" layoutY="195.0" rotate="90.0" size="40" style="-fx-background-color: FFFFFF;" text="" textAlignment="CENTER" wrappingWidth="46.99999821186065" />
+            <JFXButton fx:id="ziel5" alignment="CENTER" layoutX="411.0" layoutY="154.0" onAction="#popup5" onDragDropped="#handledenDrop5" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ziel6" alignment="CENTER" layoutX="505.0" layoutY="155.0" onAction="#popup6" onDragDropped="#handledenDrop6" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel6" alignment="CENTER" layoutX="501.0" layoutY="154.0" onAction="#popup6" onDragDropped="#handledenDrop6" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="ziel7" alignment="CENTER" layoutX="597.0" layoutY="155.0" onAction="#popup7" onDragDropped="#handledenDrop7" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="717.0" layoutY="39.0" prefHeight="411.0" prefWidth="183.0" style="-fx-background-color: #F0F7FF;">
-         <effect>
-            <DropShadow />
-         </effect>
-         <children>
-            <JFXButton fx:id="licht" alignment="CENTER" layoutX="8.0" layoutY="14.0" onDragDetected="#handleDragRichtung" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Licht" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="speed" alignment="CENTER" layoutX="8.0" layoutY="86.0" onDragDetected="#handleDragRichtungSpeed" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Speed" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="richtungswechsel" alignment="CENTER" layoutX="8.0" layoutY="158.0" onDragDetected="#handleDragRichtungrichtungswechsel" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Richtungswechsel" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Calibri Bold" size="18.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="funktion4" alignment="CENTER" layoutX="8.0" layoutY="227.0" onDragDetected="#handleDragRichtungFunktion4" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #32404c;" text="Funktion4" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="ziel7" alignment="CENTER" layoutX="591.0" layoutY="154.0" onAction="#popup7" onDragDropped="#handledenDrop7" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #4f474c;" text=" " textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <Pane prefHeight="39.0" prefWidth="900.0" style="-fx-background-color: #F0F7FF;">
+      <Pane layoutX="717.0" layoutY="50.0" prefHeight="400.0" prefWidth="183.0" style="-fx-background-color: #FFFFFF;">
          <effect>
             <DropShadow />
          </effect>
          <children>
-            <Text layoutX="346.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablaufssteuerung">
+            <JFXButton fx:id="licht" alignment="CENTER" layoutX="8.0" layoutY="14.0" onDragDetected="#handleDragRichtung" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Licht" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font size="27.0" />
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="speed" alignment="CENTER" layoutX="8.0" layoutY="86.0" onDragDetected="#handleDragRichtungSpeed" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Speed" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="richtungswechsel" alignment="CENTER" layoutX="8.0" layoutY="158.0" onDragDetected="#handleDragRichtungrichtungswechsel" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Richtungswechsel" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="funktion4" alignment="CENTER" layoutX="8.0" layoutY="227.0" onDragDetected="#handleDragRichtungFunktion4" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Funktion4" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: #4f474c;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text fill="WHITE" layoutX="321.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablaufssteuerung">
+               <font>
+                  <Font name="Calibri" size="36.0" />
                </font>
             </Text>
-            <JFXButton fx:id="back" layoutX="12.0" layoutY="7.0" onAction="#backonstart" text="Zurück">
+            <JFXButton fx:id="back" layoutX="14.0" layoutY="12.0" onAction="#backonstart" style="-fx-background-color: #FFFFFF;" text="Zurück">
                <font>
                   <Font name="Calibri" size="14.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <MaterialDesignIconView glyphName="TRAIN" layoutX="34.0" layoutY="431.0" size="30" />
-      <JFXButton fx:id="starting_btn" layoutX="64.0" layoutY="400.0" onAction="#starteAblauf" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #7ddf64;" text="Start">
+      <MaterialDesignIconView fill="WHITE" glyphName="TRAIN" layoutX="14.0" layoutY="435.0" size="30" text="" />
+      <JFXButton fx:id="starting_btn" layoutX="62.0" layoutY="402.0" onAction="#starteAblauf" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #9FF781;" text="Start">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="nothalt_btn" layoutX="154.0" layoutY="400.0" onAction="#nothalt" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #aa1426;" text="Nothalt">
+      <JFXButton fx:id="nothalt_btn" layoutX="152.0" layoutY="402.0" onAction="#nothalt" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #FA5858;" text="Nothalt">
          <font>
             <Font name="Calibri" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="loeschen" layoutX="636.0" layoutY="407.0" onAction="#loescheneinleiten" style="-fx-background-color: #aa1426;" text="Löschen" />
+      <JFXButton fx:id="loeschen" layoutX="625.0" layoutY="407.0" onAction="#loescheneinleiten" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;" text="Löschen">
+         <font>
+            <Font size="14.0" />
+         </font></JFXButton>
    </children>
    <effect>
       <InnerShadow />
