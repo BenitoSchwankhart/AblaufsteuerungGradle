@@ -180,28 +180,28 @@ public class AblaufController implements Initializable {
 	@FXML
 	void handledenDrop(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel.setStyle("-fx-background-color: #009688;");
+		ziel.setStyle("-fx-background-color:  #4f474c;");
 		ziel.setText(str);
 	}
 
 	@FXML
 	void handledenDrop2(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel2.setStyle("-fx-background-color: #009688;");
+		ziel2.setStyle("-fx-background-color:  #4f474c;");
 		ziel2.setText(str);
 	}
 
 	@FXML
 	void handledenDrop3(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel3.setStyle("-fx-background-color: #009688;");
+		ziel3.setStyle("-fx-background-color:  #4f474c;");
 		ziel3.setText(str);
 	}
 
 	@FXML
 	void handledenDrop4(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel4.setStyle("-fx-background-color: #009688;");
+		ziel4.setStyle("-fx-background-color:  #4f474c;");
 		ziel4.setText(str);
 
 	}
@@ -209,7 +209,7 @@ public class AblaufController implements Initializable {
 	@FXML
 	void handledenDrop5(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel5.setStyle("-fx-background-color: #009688;");
+		ziel5.setStyle("-fx-background-color:  #4f474c;");
 		ziel5.setText(str);
 
 	}
@@ -217,7 +217,7 @@ public class AblaufController implements Initializable {
 	@FXML
 	void handledenDrop6(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel6.setStyle("-fx-background-color: #009688;");
+		ziel6.setStyle("-fx-background-color:  #4f474c;");
 		ziel6.setText(str);
 
 	}
@@ -225,7 +225,7 @@ public class AblaufController implements Initializable {
 	@FXML
 	void handledenDrop7(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel7.setStyle("-fx-background-color: #009688;");
+		ziel7.setStyle("-fx-background-color:  #4f474c;");
 		ziel7.setText(str);
 
 	}
@@ -254,6 +254,7 @@ public class AblaufController implements Initializable {
 	void nothalt(ActionEvent event) throws IOException {
 		// ConnectionCalls c = new ConnectionCalls();
 		// c.Notfall();
+		zeiger.setFill(javafx.scene.paint.Color.RED);
 		System.out.println("Nothalt");
 	}
 
