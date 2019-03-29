@@ -32,10 +32,34 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class AblaufController implements Initializable {
+	@FXML
+	private JFXButton ok;
+	@FXML
+	private JFXButton delete_btn1;
 
 	@FXML
-	private Pane black_pane;
+	private JFXButton delete_btn2;
 
+	@FXML
+	private JFXButton delete_btn3;
+
+	@FXML
+	private JFXButton delete_btn4;
+
+	@FXML
+	private JFXButton delete_btn5;
+
+	@FXML
+	private JFXButton delete_btn6;
+
+	@FXML
+	private JFXButton delete_btn7;
+	@FXML
+	private JFXButton loeschen;
+	@FXML
+	private Pane black_pane;
+	@FXML
+	private JFXButton delete;
 	@FXML
 	private JFXButton ziel;
 
@@ -214,13 +238,13 @@ public class AblaufController implements Initializable {
 		POPUPSPEEDController p = new POPUPSPEEDController();
 		String b = f.getFSAktiverZug();
 		String[] s = b.split(";");
-		
+
 		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
 		byte SPEED = r.intToByte(p.submitfahrstufen(event));
 		byte DIR = (Byte) null;
 		Zugablauf z = new Zugablauf();
 		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
-		
+
 	}
 
 	// Hier Nothalt Funktion implementieren
@@ -255,6 +279,7 @@ public class AblaufController implements Initializable {
 		stage.showAndWait();
 
 	}
+
 //Öffnet Richtungswechsel-POPUP
 	public void popuprw() throws IOException {
 		Stage stage;
@@ -306,7 +331,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel2) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel2.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
@@ -329,7 +354,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel3) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel3.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
@@ -352,7 +377,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel4) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel4.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
@@ -375,7 +400,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel5) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel5.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
@@ -398,16 +423,12 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel6) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel6.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
-					popuprw();
 
-				}
 			} else {
 				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
@@ -426,7 +447,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel7) {
 					popupspeed();
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
+			} else if (ziel7.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel) {
 					popuprw();
 
@@ -435,6 +456,83 @@ public class AblaufController implements Initializable {
 				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
 		}
+	}
+
+	@FXML
+	void delete1(ActionEvent event) {
+
+		ziel.setStyle("-fx-background-color: #000000;");
+		ziel.setText(" ");
+	}
+
+	@FXML
+	void delete2(ActionEvent event) {
+		ziel2.setStyle("-fx-background-color: #000000;");
+		ziel2.setText(" ");
+	}
+
+	@FXML
+	void delete3(ActionEvent event) {
+		ziel3.setStyle("-fx-background-color: #000000;");
+		ziel3.setText(" ");
+	}
+
+	@FXML
+	void delete4(ActionEvent event) {
+		ziel4.setStyle("-fx-background-color: #000000;");
+		ziel4.setText(" ");
+	}
+
+	@FXML
+	void delete5(ActionEvent event) {
+		ziel5.setStyle("-fx-background-color: #000000;");
+		ziel5.setText(" ");
+	}
+
+	@FXML
+	void delete6(ActionEvent event) {
+		ziel6.setStyle("-fx-background-color: #000000;");
+		ziel6.setText(" ");
+	}
+
+	@FXML
+	void delete7(ActionEvent event) {
+		ziel7.setStyle("-fx-background-color: #000000;");
+		ziel7.setText(" ");
+	}
+
+	@FXML
+	void loescheneinleiten(ActionEvent event) {
+		ok.toFront();
+		delete_btn1.toFront();
+
+		delete_btn2.toFront();
+
+		delete_btn3.toFront();
+		delete_btn4.toFront();
+
+		delete_btn5.toFront();
+
+		delete_btn6.toFront();
+		delete_btn7.toFront();
+
+	}
+
+	@FXML
+	void loeschenbeenden(ActionEvent event) {
+		ok.toBack();
+		delete_btn1.toBack();
+
+		delete_btn2.toBack();
+
+		delete_btn3.toBack();
+		delete_btn4.toBack();
+
+		delete_btn5.toBack();
+
+		delete_btn6.toBack();
+		delete_btn7.toBack();
+
 	}
 }
 /**
