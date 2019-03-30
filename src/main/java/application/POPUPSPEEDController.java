@@ -12,7 +12,7 @@ import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class POPUPSPEEDController implements Initializable {
@@ -29,9 +29,14 @@ public class POPUPSPEEDController implements Initializable {
 
 	@FXML
 	private JFXSlider slider126;
-
+	@FXML
+	private JFXSlider dauer;
+	@FXML
+	private Text zeit;
 	@FXML
 	private JFXButton submit;
+	@FXML
+	private JFXButton ok_btn;
 
 	public void fahrstufenlesen() {
 		if (fahrstufen == 14) {
@@ -64,6 +69,17 @@ public class POPUPSPEEDController implements Initializable {
 		Stage stage = (Stage) submit.getScene().getWindow();
 		stage.close();
 		return i;
+
+	}
+
+	@FXML
+	void ok(ActionEvent event) {
+		double s = dauer.getValue();
+
+		int ergebnis = (int) (s);
+
+		String numberAsString = Double.toString(ergebnis);
+		zeit.setText(numberAsString + "min");
 
 	}
 
