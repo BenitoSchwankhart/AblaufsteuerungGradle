@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="menu_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RMXFehlerController">
+   <children>
+      <Text layoutX="307.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anwendungs-Fehler">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Text>
+      <Text layoutX="155.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte laden Sie sich die RMX-PC Zentrale unter: " wrappingWidth="455.205078125" />
+      <Hyperlink layoutX="155.0" layoutY="129.0" text="https://www.rautenhaus-digital.de/download/send/7-rmx-pc-zentrale-2/57-rmx-pc-zentrale2.html" />
+      <Text layoutX="155.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Falls Sie bereits die RMX-Zentrale 2.0 installiert haben, vergewissern Sie sich, dass Sie in dem von rauthaus standardmäßig gewählten Ordner gespeichert wurde. Für Windows 64 bit: C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe" wrappingWidth="506.99999809265137" />
+   </children>
+</AnchorPane>

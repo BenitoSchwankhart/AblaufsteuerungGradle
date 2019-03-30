@@ -122,6 +122,8 @@ public class LokAuswahlController implements Initializable{
 			zugNr = s[i];
 			int j = i+2;
 			zugFS = s[j];
+		System.out.println(zugNr);
+		System.out.println(zugNr);
 		}
 	}
 	
