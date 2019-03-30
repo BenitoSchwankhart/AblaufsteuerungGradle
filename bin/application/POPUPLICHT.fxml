@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -7,24 +8,44 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.POPUPLICHT">
    <children>
-      <Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;" />
-      <Text layoutX="220.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timer (in Min)" wrappingWidth="160.7578125">
+      <Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;">
+         <children>
+            <JFXButton fx:id="submit_btn" layoutX="535.0" layoutY="34.0" onAction="#submit" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="Submit" />
+         </children></Pane>
+      <Text layoutX="55.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" wrappingWidth="160.7578125">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
-      <JFXToggleButton layoutX="177.0" layoutY="235.0" prefHeight="115.0" prefWidth="246.0" text="Dauerlicht">
+      <JFXToggleButton layoutX="340.0" layoutY="271.0" prefHeight="115.0" prefWidth="246.0" text="Dauerlicht">
          <font>
             <Font size="25.0" />
          </font>
       </JFXToggleButton>
-      <JFXSlider layoutX="135.0" layoutY="180.0" prefHeight="40.0" prefWidth="329.0" />
+      <JFXSlider fx:id="start" layoutX="51.0" layoutY="175.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
       <Text layoutX="218.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtsteuerung">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
+      <Text layoutX="55.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ende" wrappingWidth="160.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXSlider fx:id="ende" layoutX="54.0" layoutY="251.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <Text layoutX="55.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv:" wrappingWidth="67.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="zeit" layoutX="135.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0min" wrappingWidth="124.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="ok_btn" layoutX="437.0" layoutY="221.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
    </children>
 </AnchorPane>
