@@ -466,42 +466,49 @@ public class AblaufController implements Initializable {
 
 		ziel.setStyle("-fx-background-color: #000000;");
 		ziel.setText(" ");
+		delete_btn1.toBack();
 	}
 
 	@FXML
 	void delete2(ActionEvent event) {
 		ziel2.setStyle("-fx-background-color: #000000;");
 		ziel2.setText(" ");
+		delete_btn2.toBack();
 	}
 
 	@FXML
 	void delete3(ActionEvent event) {
 		ziel3.setStyle("-fx-background-color: #000000;");
 		ziel3.setText(" ");
+		delete_btn3.toBack();
 	}
 
 	@FXML
 	void delete4(ActionEvent event) {
 		ziel4.setStyle("-fx-background-color: #000000;");
 		ziel4.setText(" ");
+		delete_btn4.toBack();
 	}
 
 	@FXML
 	void delete5(ActionEvent event) {
 		ziel5.setStyle("-fx-background-color: #000000;");
 		ziel5.setText(" ");
+		delete_btn5.toBack();
 	}
 
 	@FXML
 	void delete6(ActionEvent event) {
 		ziel6.setStyle("-fx-background-color: #000000;");
 		ziel6.setText(" ");
+		delete_btn6.toBack();
 	}
 
 	@FXML
 	void delete7(ActionEvent event) {
 		ziel7.setStyle("-fx-background-color: #000000;");
 		ziel7.setText(" ");
+		delete_btn7.toBack();
 	}
 
 	@FXML
