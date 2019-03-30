@@ -12,42 +12,6 @@
 
 <AnchorPane fx:id="menu_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="904.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TestController">
    <children>
-      <AnchorPane layoutX="-3.0" layoutY="-1.0" prefHeight="430.0" prefWidth="209.0" style="-fx-background-color: #F0F7FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <JFXButton fx:id="settings" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="265.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Einstellungen" textAlignment="CENTER">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <graphic>
-                  <MaterialDesignIconView glyphName="MORE" size="30" />
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="zuege" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="105.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Züge" textAlignment="CENTER">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <graphic>
-                  <MaterialDesignIconView glyphName="TRAIN" size="25" />
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="ablauf" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="185.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Ablauf" textAlignment="CENTER">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <graphic>
-                  <MaterialDesignIconView glyphName="VIEW_MODULE" size="30" />
-               </graphic>
-            </JFXButton>
-            <AnchorPane prefHeight="430.0" prefWidth="50.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <effect>
-                  <DropShadow />
-               </effect>
-            </AnchorPane>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </AnchorPane>
       <AnchorPane layoutX="191.0" layoutY="-1.0" prefHeight="450.0" prefWidth="712.0">
          <effect>
             <DropShadow />
@@ -113,6 +77,42 @@
                </children>
             </Pane>
          </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-3.0" layoutY="-1.0" prefHeight="430.0" prefWidth="209.0" style="-fx-background-color: #F0F7FF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="430.0" prefWidth="50.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+            <JFXButton fx:id="ablauf" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="185.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Ablauf" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="VIEW_MODULE" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="settings" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="265.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Einstellungen" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="MORE" size="30" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="zuege" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutY="105.0" onAction="#menuOnClick" prefHeight="80.0" prefWidth="216.0" text="Züge" textAlignment="CENTER">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView glyphName="TRAIN" size="25" />
+               </graphic>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
       </AnchorPane>
    </children>
 </AnchorPane>
