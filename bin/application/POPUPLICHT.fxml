@@ -24,7 +24,7 @@
             <Font size="25.0" />
          </font>
       </JFXToggleButton>
-      <JFXSlider fx:id="start" layoutX="51.0" layoutY="175.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="start" layoutX="51.0" layoutY="175.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" />
       <Text layoutX="218.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtsteuerung">
          <font>
             <Font size="25.0" />
@@ -35,7 +35,7 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <JFXSlider fx:id="ende" layoutX="54.0" layoutY="251.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+      <JFXSlider fx:id="ende" layoutX="54.0" layoutY="251.0" majorTickUnit="10.0" max="60.0" minorTickCount="2" prefHeight="40.0" prefWidth="329.0" showTickLabels="true" showTickMarks="true" />
       <Text layoutX="55.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv:" wrappingWidth="67.7578125">
          <font>
             <Font size="25.0" />

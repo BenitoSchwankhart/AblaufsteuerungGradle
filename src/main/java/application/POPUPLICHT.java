@@ -1,5 +1,8 @@
 package application;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 
@@ -31,9 +34,19 @@ public class POPUPLICHT {
 			String numberAsString = Double.toString(ergebnis);
 			zeit.setText(numberAsString + "min");
 		} else {
-			zeit.setStyle("-fx-background-color:  #4f474c;");
 			zeit.setText("Wert negativ!");
 		}
+
+		Timer timer = new Timer();
+		timer.schedule(new TimerTask() {
+
+			@Override
+			public void run() {
+				System.out.println("Hello");
+
+			}
+		}, ergebnis * 1000);
+		
 
 	}
 
