@@ -26,7 +26,7 @@
                      </font>
                   </JFXButton>
                   <MaterialDesignIconView glyphName="THUMB_UP" layoutX="229.0" layoutY="171.0" size="30" text="" />
-                  <JFXButton fx:id="start_btn1" layoutX="196.0" layoutY="250.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Default Ablauf">
+                  <JFXButton fx:id="defaultabflauf_btn" layoutX="196.0" layoutY="250.0" onAction="#defaultstarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Default Ablauf">
                      <font>
                         <Font size="20.0" />
                      </font>
