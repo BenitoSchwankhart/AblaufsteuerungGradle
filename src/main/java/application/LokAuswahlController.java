@@ -127,6 +127,7 @@ public class LokAuswahlController implements Initializable{
 		}
 	}
 	
+	System.out.println(zugNr);
 	int aktuellerZug = Integer.parseInt(zugNr);
 	int aktuelleFS = Integer.parseInt(zugFS);
 	
