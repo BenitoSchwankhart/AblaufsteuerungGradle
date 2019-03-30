@@ -335,7 +335,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel2.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel2) {
 					popuprw();
 
 				}
@@ -358,7 +358,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel3.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel3) {
 					popuprw();
 
 				}
@@ -381,7 +381,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel4.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel4) {
 					popuprw();
 
 				}
@@ -404,7 +404,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel5.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel5) {
 					popuprw();
 
 				}
@@ -427,7 +427,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel6.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel6) {
 					popuprw();
 
 				}
@@ -451,7 +451,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 				}
 			} else if (ziel7.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+				if (event.getSource() == ziel7) {
 					popuprw();
 
 				}
