@@ -81,7 +81,7 @@ if(RMXAppTest.isRmxRunning() == true) {
 				primaryStage.setScene(scene);
 				primaryStage.show();
 				//Open RMX Net
-				Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
+				//Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
 			}
 	}
 

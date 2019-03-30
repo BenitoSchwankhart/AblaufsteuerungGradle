@@ -241,10 +241,11 @@ public class AblaufController implements Initializable {
 		RmxCalls r = new RmxCalls();
 		ReadFromTable f = new ReadFromTable();
 		POPUPSPEEDController p = new POPUPSPEEDController();
+		ReadFromTable t = new ReadFromTable();
+		String l = t.getZugNrAktiverZug();
 		String b = f.getFSAktiverZug();
-		String[] s = b.split(";");
-
-		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
+		
+		byte ZUGNR = r.intToByte(Integer.parseInt(l));
 		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
 		// TODO
 		// Noch anpassen

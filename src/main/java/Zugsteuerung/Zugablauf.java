@@ -19,7 +19,6 @@ public class Zugablauf {
 	static byte DIR = 0x00;
 */
 	
-	
 	public static void ZugFahrEinstellungen(byte ZUGNR, byte SPEED, byte DIR) throws IOException {
 		  byte[] ICE = new byte[] { 0x7c, 0x07, 0x24, 0x00, ZUGNR, SPEED, DIR};
 	      int port = 9090;
