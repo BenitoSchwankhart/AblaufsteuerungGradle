@@ -98,7 +98,7 @@ public class AblaufController implements Initializable {
 	private JFXButton richtungswechsel;
 
 	@FXML
-	private JFXButton funktion4;
+	private JFXButton warten;
 
 	@FXML
 	private JFXButton back;
@@ -128,7 +128,7 @@ public class AblaufController implements Initializable {
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
-			
+
 		}
 	}
 
@@ -172,11 +172,11 @@ public class AblaufController implements Initializable {
 	}
 
 	@FXML
-	void handleDragRichtungFunktion4(MouseEvent event) {
-		Dragboard db = funktion4.startDragAndDrop(TransferMode.ANY);
+	void handleDragRichtungwarten(MouseEvent event) {
+		Dragboard db = warten.startDragAndDrop(TransferMode.ANY);
 
 		ClipboardContent cb = new ClipboardContent();
-		cb.putString(funktion4.getText());
+		cb.putString(warten.getText());
 
 		db.setContent(cb);
 		event.consume();
@@ -300,6 +300,18 @@ public class AblaufController implements Initializable {
 		stage.initOwner(ziel1.getScene().getWindow());
 		stage.showAndWait();
 
+	}// Öffnet Warten-POPUP
+
+	public void popupwarten() throws IOException {
+		Stage stage;
+		Parent root;
+		stage = new Stage();
+		root = FXMLLoader.load(getClass().getResource("POPUPWARTEN.fxml"));
+		stage.setScene(new Scene(root));
+		stage.initModality(Modality.APPLICATION_MODAL);
+		stage.initOwner(ziel1.getScene().getWindow());
+		stage.showAndWait();
+
 	}
 	// Hier POPUP implementieren
 
@@ -320,6 +332,10 @@ public class AblaufController implements Initializable {
 			} else if (ziel1.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel1) {
 					popuprw();
+				}
+			} else if (ziel1.getText().equals("Warten")) {
+				if (event.getSource() == ziel1) {
+					popupwarten();
 
 				}
 			} else {
@@ -343,11 +359,15 @@ public class AblaufController implements Initializable {
 			} else if (ziel2.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel2) {
 					popuprw();
+				}
+			} else if (ziel2.getText().equals("Warten")) {
+				if (event.getSource() == ziel2) {
+					popupwarten();
 
 				}
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -366,11 +386,15 @@ public class AblaufController implements Initializable {
 			} else if (ziel3.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel3) {
 					popuprw();
+				}
+			} else if (ziel3.getText().equals("Warten")) {
+				if (event.getSource() == ziel3) {
+					popupwarten();
 
 				}
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -389,11 +413,15 @@ public class AblaufController implements Initializable {
 			} else if (ziel4.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel4) {
 					popuprw();
+				}
+			} else if (ziel4.getText().equals("Warten")) {
+				if (event.getSource() == ziel4) {
+					popupwarten();
 
 				}
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -412,11 +440,15 @@ public class AblaufController implements Initializable {
 			} else if (ziel5.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel5) {
 					popuprw();
+				}
+			} else if (ziel5.getText().equals("Warten")) {
+				if (event.getSource() == ziel5) {
+					popupwarten();
 
 				}
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -435,12 +467,16 @@ public class AblaufController implements Initializable {
 			} else if (ziel6.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel6) {
 					popuprw();
+				}
+			} else if (ziel6.getText().equals("Warten")) {
+				if (event.getSource() == ziel6) {
+					popupwarten();
 
 				}
-
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
@@ -459,11 +495,15 @@ public class AblaufController implements Initializable {
 			} else if (ziel7.getText().equals("Richtungswechsel")) {
 				if (event.getSource() == ziel7) {
 					popuprw();
+				}
+			} else if (ziel7.getText().equals("Warten")) {
+				if (event.getSource() == ziel7) {
+					popupwarten();
 
 				}
-			} else {
-				System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 			}
+		} else {
+			System.out.println("Ziehe erst ein Element in die Ablaufsteuerung");
 		}
 	}
 
