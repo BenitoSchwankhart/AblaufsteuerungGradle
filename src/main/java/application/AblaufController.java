@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXNodesList;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
 
@@ -17,15 +18,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import javafx.stage.Modality;
@@ -61,7 +64,7 @@ public class AblaufController implements Initializable {
 	@FXML
 	private JFXButton delete;
 	@FXML
-	private JFXButton ziel;
+	private JFXButton ziel1;
 
 	@FXML
 	private JFXButton ziel4;
@@ -180,8 +183,8 @@ public class AblaufController implements Initializable {
 	@FXML
 	void handledenDrop(DragEvent event) {
 		String str = event.getDragboard().getString();
-		ziel.setStyle("-fx-background-color:  #4f474c;");
-		ziel.setText(str);
+		ziel1.setStyle("-fx-background-color:  #4f474c;");
+		ziel1.setText(str);
 	}
 
 	@FXML
@@ -241,8 +244,8 @@ public class AblaufController implements Initializable {
 
 		byte ZUGNR = r.intToByte(Integer.parseInt(s[0]));
 		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
-		//TODO
-		//Noch anpassen
+		// TODO
+		// Noch anpassen
 		byte DIR = r.intToByte(1);
 		Zugablauf z = new Zugablauf();
 		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
@@ -266,7 +269,7 @@ public class AblaufController implements Initializable {
 		root = FXMLLoader.load(getClass().getResource("POPUPSPEED.fxml"));
 		stage.setScene(new Scene(root));
 		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initOwner(ziel.getScene().getWindow());
+		stage.initOwner(ziel1.getScene().getWindow());
 		stage.showAndWait();
 	}
 
@@ -278,7 +281,7 @@ public class AblaufController implements Initializable {
 		root = FXMLLoader.load(getClass().getResource("POPUPLICHT.fxml"));
 		stage.setScene(new Scene(root));
 		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initOwner(ziel.getScene().getWindow());
+		stage.initOwner(ziel1.getScene().getWindow());
 		stage.showAndWait();
 
 	}
@@ -291,7 +294,7 @@ public class AblaufController implements Initializable {
 		root = FXMLLoader.load(getClass().getResource("POPUPRW.fxml"));
 		stage.setScene(new Scene(root));
 		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.initOwner(ziel.getScene().getWindow());
+		stage.initOwner(ziel1.getScene().getWindow());
 		stage.showAndWait();
 
 	}
@@ -300,19 +303,19 @@ public class AblaufController implements Initializable {
 	@FXML
 	void popup1(ActionEvent event) throws IOException {
 
-		if (!ziel.getText().equals(" ")) {
-			if (ziel.getText().equals("Licht")) {
-				if (event.getSource() == ziel) {
+		if (!ziel1.getText().equals(" ")) {
+			if (ziel1.getText().equals("Licht")) {
+				if (event.getSource() == ziel1) {
 					popuplicht();
 
 				}
-			} else if (ziel.getText().equals("Speed")) {
-				if (event.getSource() == ziel) {
+			} else if (ziel1.getText().equals("Speed")) {
+				if (event.getSource() == ziel1) {
 					popupspeed();
 
 				}
-			} else if (ziel.getText().equals("Richtungswechsel")) {
-				if (event.getSource() == ziel) {
+			} else if (ziel1.getText().equals("Richtungswechsel")) {
+				if (event.getSource() == ziel1) {
 					popuprw();
 
 				}
@@ -463,10 +466,10 @@ public class AblaufController implements Initializable {
 
 	@FXML
 	void delete1(ActionEvent event) {
-
-		ziel.setStyle("-fx-background-color: #000000;");
-		ziel.setText(" ");
+		ziel1.setStyle("-fx-background-color: #000000;");
+		ziel1.setText(" ");
 		delete_btn1.toBack();
+
 	}
 
 	@FXML
@@ -511,31 +514,43 @@ public class AblaufController implements Initializable {
 		delete_btn7.toBack();
 	}
 
+//Schaut ob alle Ziele leer sind
+	public boolean zieleleer() {
+		if ((!ziel1.getText().equals(" ")) || (!ziel2.getText().equals(" ")) || (!ziel3.getText().equals(" "))
+				|| (!ziel4.getText().equals(" ")) || (!ziel5.getText().equals(" ")) || (!ziel6.getText().equals(" "))
+				|| (!ziel7.getText().equals(" "))) {
+			return false;
+		}
+		return true;
+	}
+
 	@FXML
 	void loescheneinleiten(ActionEvent event) {
-		ok.toFront();
-		if (!ziel.getText().equals(" ")) {
-			delete_btn1.toFront();
-		}
-		if (!ziel2.getText().equals(" ")) {
-			delete_btn2.toFront();
-		}
-		if (!ziel3.getText().equals(" ")) {
-			delete_btn3.toFront();
-		}
-		if (!ziel4.getText().equals(" ")) {
-			delete_btn4.toFront();
-		}
-		if (!ziel5.getText().equals(" ")) {
-			delete_btn5.toFront();
-		}
-		if (!ziel6.getText().equals(" ")) {
-			delete_btn6.toFront();
-		}
-		if (!ziel7.getText().equals(" ")) {
-			delete_btn7.toFront();
-		}
+		if (zieleleer() == false) {
 
+			ok.toFront();
+			if (!ziel1.getText().equals(" ")) {
+				delete_btn1.toFront();
+			}
+			if (!ziel2.getText().equals(" ")) {
+				delete_btn2.toFront();
+			}
+			if (!ziel3.getText().equals(" ")) {
+				delete_btn3.toFront();
+			}
+			if (!ziel4.getText().equals(" ")) {
+				delete_btn4.toFront();
+			}
+			if (!ziel5.getText().equals(" ")) {
+				delete_btn5.toFront();
+			}
+			if (!ziel6.getText().equals(" ")) {
+				delete_btn6.toFront();
+			}
+			if (!ziel7.getText().equals(" ")) {
+				delete_btn7.toFront();
+			}
+		}
 	}
 
 	@FXML
@@ -552,6 +567,14 @@ public class AblaufController implements Initializable {
 
 		delete_btn6.toBack();
 		delete_btn7.toBack();
+
+	}
+
+	@FXML
+	private JFXButton neu;
+
+	@FXML
+	void neuerbtn(ActionEvent event) throws IOException {
 
 	}
 }
@@ -573,7 +596,7 @@ public class AblaufController implements Initializable {
  * stage.initOwner(ziel5.getScene().getWindow()); stage.showAndWait(); } } else
  * { System.out.println("Ziehe erst ein Element in die Ablaufsteuerung"); } } }
  * 
- * /* stage = (Stage) ziel.getScene().getWindow(); root =
+ * /* stage = (Stage) ziel1.getScene().getWindow(); root =
  * FXMLLoader.load(getClass().getResource("POPUP.fxml")); Scene scene = new
  * Scene(root); stage.setScene(scene);
  * stage.initModality(Modality.APPLICATION_MODAL); stage.show();
