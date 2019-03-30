@@ -13,7 +13,7 @@ public class Initialisierung {
 	    }
 	    else {
 	    f.createNewFile();
-	    System.out.println("Erster!");
+	    System.out.println("Willkommen!");
 		return false;
 	  }
 	}

@@ -12,8 +12,13 @@
             <Font size="34.0" />
          </font>
       </Text>
-      <Text layoutX="155.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte laden Sie sich die RMX-PC Zentrale unter: " wrappingWidth="455.205078125" />
-      <Hyperlink layoutX="155.0" layoutY="129.0" text="https://www.rautenhaus-digital.de/download/send/7-rmx-pc-zentrale-2/57-rmx-pc-zentrale2.html" />
-      <Text layoutX="155.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Falls Sie bereits die RMX-Zentrale 2.0 installiert haben, vergewissern Sie sich, dass Sie in dem von rauthaus standardmäßig gewählten Ordner gespeichert wurde. Für Windows 64 bit: C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe" wrappingWidth="506.99999809265137" />
+      <Text layoutX="134.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wenn sie &quot;RMX-Zentrale 2.0&quot; nicht installiert haben, downloaden und installieren Sie sich die RMX-PC Zentrale: " wrappingWidth="455.205078125" />
+      <Hyperlink layoutX="128.0" layoutY="300.0" text="https://www.rautenhaus-digital.de/download/send/7-rmx-pc-zentrale-2/57-rmx-pc-zentrale2.html" />
+      <Text layoutX="11.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Falls Sie bereits die RMX-Zentrale 2.0 installiert haben, vergewissern Sie sich, dass Sie in dem von rauthaus standardmäßig gewählten Ordner gespeichert wurde. Für Windows 64 bit: C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe" wrappingWidth="891.9999980926514" />
+      <Text layoutX="155.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="131.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte öffnen Sie die Anwendung &quot;RMX-Zentrale 2.0. Und vergewissern Sie sich das folgende Punkte erfolgt sind:" wrappingWidth="666.38720703125" />
+      <Text layoutX="134.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. RMX-System ist auf Start (grünes Licht leuchtet)" />
+      <Text layoutX="134.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. RMXnet-Server ist auf Start (grünes Licht leuchtet)" />
+      <Text layoutX="134.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Unter &quot;Einstellungen&quot; --&gt; &quot;RMXnet-Server&quot; ist Port 9090 eingestellt. " />
    </children>
 </AnchorPane>

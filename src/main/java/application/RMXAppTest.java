@@ -1,26 +1,34 @@
 package application;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class RMXAppTest {
-	public boolean isOtherInstanceRunning(String filename) {
-		try {
-			File f = new File(System.getProperty("java.io.tmpdir") + "/" + filename + ".lock");
-			FileOutputStream fos = new FileOutputStream(f);
-			FileChannel fc = fos.getChannel();
-			FileLock lock = fc.tryLock();
-			if (lock == null) {
-				fc.close();
-				fos.close();
-				return true;
-			}
-			f.deleteOnExit();
-		} catch (Exception e) {
+	public static boolean isRmxRunning() throws IOException {
+		String line;
+		String pidInfo ="";
+
+		Process p =Runtime.getRuntime().exec(System.getenv("windir") +"\\system32\\"+"tasklist.exe");
+
+		BufferedReader input =  new BufferedReader(new InputStreamReader(p.getInputStream()));
+
+		while ((line = input.readLine()) != null) {
+		    pidInfo+=line; 
+		    //System.out.println(line);
+		}
+
+		input.close();
+
+		if(pidInfo.contains("RMXPCZ2.exe"))
+		{
+			return true;
+		}
+		else {
+			
 			return false;
 		}
-		return false;
-	}
+}
+
 }

@@ -1,14 +1,7 @@
 package application;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
-
-import javax.naming.NameNotFoundException;
-
 import clientServerConnection.ClientConnection;
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
@@ -24,10 +17,9 @@ public class Main extends Application {
 	@Override
 	
 
-	public void start(Stage primaryStage) throws UnknownHostException, IOException {
+public void start(Stage primaryStage) throws UnknownHostException, IOException {
 		
-//Testen ob RMX bereits läuft return true falls bereits läuft
-RMXAppTest a = new RMXAppTest();
+//Tabellen anlegen bei erstem Start
 Initialisierung g = new Initialisierung();
 if(g.neuesProgramm() == true) {
 	System.out.println("Datenbank vorhanden !");
@@ -45,12 +37,28 @@ else {
 	d.createFSSave();
 }
 
-String rmxapp = "RMX-PC-Zentrale 2.0";
-if(a.isOtherInstanceRunning(rmxapp) == true) {
-		try {
+RMXAppTest a = new RMXAppTest();
+//Falls RMX-Server läuft wird main gestartet
+if(RMXAppTest.isRmxRunning() == true) {
 			// Checking if Server is connected
 			ClientConnection c = new ClientConnection();
-			c.main(null);
+			try {
+			c.main(null);	
+			}
+			catch(Exception o) {
+				try {
+					AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXunaktiv.fxml"));
+					Scene scene = new Scene(root, 900, 450);
+					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+					primaryStage.setScene(scene);
+					primaryStage.show();
+					//Open RMX Net
+				} 
+				catch (Exception t) {
+					t.printStackTrace();
+									}
+				
+			}
 			RmxCalls rmx = new RmxCalls();
 			if (rmx.getVerbindung() == 2) {
 			primaryStage.setResizable(false);
@@ -66,30 +74,21 @@ if(a.isOtherInstanceRunning(rmxapp) == true) {
 					t.printStackTrace();
 									}
 		}
-			
-	}
-	catch (IOException e) {
-		try {
-		//Open RMX Net
-		Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
-		}
-		catch (IOException h) {
-			try {
-				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXFehler.fxml"));
+			else {
+				AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXunaktiv.fxml"));
 				Scene scene = new Scene(root, 900, 450);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
-			} 
-			catch (Exception t) {
-				t.printStackTrace();
-								}
+				//Open RMX Net
+				Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
 			}
-		}
 	}
+
+//Wenn RMX-Server nicht ausgeführt Fehlermeldung
 else {
 	try {
-		AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXunaktiv.fxml"));
+		AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXFehler.fxml"));
 		Scene scene = new Scene(root, 900, 450);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
