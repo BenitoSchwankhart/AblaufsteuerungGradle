@@ -10,8 +10,8 @@ import javafx.stage.Stage;
 
 public class POPUPLICHT {
 
-    @FXML
-    private JFXButton submit_btn;
+	@FXML
+	private JFXButton submit_btn;
 	@FXML
 	private JFXSlider start;
 
@@ -28,17 +28,18 @@ public class POPUPLICHT {
 		double e = ende.getValue();
 		int ergebnis = (int) (e - s);
 		if (ergebnis > 0) {
-		String numberAsString = Double.toString(ergebnis);
-		zeit.setText(numberAsString + "min");}
-		else {
+			String numberAsString = Double.toString(ergebnis);
+			zeit.setText(numberAsString + "min");
+		} else {
+			zeit.setStyle("-fx-background-color:  #4f474c;");
 			zeit.setText("Wert negativ!");
 		}
 
 	}
 
-    @FXML
-    void submit(ActionEvent event) {
-    	Stage stage = (Stage) submit_btn.getScene().getWindow();
+	@FXML
+	void submit(ActionEvent event) {
+		Stage stage = (Stage) submit_btn.getScene().getWindow();
 		stage.close();
-    }
+	}
 }
