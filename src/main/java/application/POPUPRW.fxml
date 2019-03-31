@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXSlider?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -16,26 +15,9 @@
       				<Font size="25.0" />
       			</font>
       		</Text>
-            <JFXButton fx:id="submit" layoutX="535.0" layoutY="34.0" style="-fx-background-color: #7ddf64;" text="Submit" />
+            <JFXButton fx:id="submit_btn" layoutX="535.0" layoutY="34.0" onAction="#submit" style="-fx-background-color: #7ddf64;" text="Submit" />
          </children></Pane>
-		<JFXButton fx:id="ruekwaerts_btn" layoutX="416.0" layoutY="118.0" onAction="#ruekwaerts" style="-fx-background-color: #FA5858;" text="Rückwarts" />
-		<JFXButton fx:id="vorwaerts_btn" layoutX="94.0" layoutY="118.0" onAction="#vorwaerts" style="-fx-background-color: #7ddf64;" text="Vorwärts" />
-      <Text layoutX="18.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv für:" wrappingWidth="106.7578125">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <Text fx:id="zeit" layoutX="125.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0min" wrappingWidth="124.7578125">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <JFXSlider fx:id="dauerslider" layoutX="2.0" layoutY="222.0" majorTickUnit="10.0" max="120.0" minorTickCount="5" prefHeight="14.0" prefWidth="589.0" showTickLabels="true" showTickMarks="true" />
-      <Text layoutX="263.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <JFXButton fx:id="ok_btn" layoutX="266.0" layoutY="260.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
+		<JFXButton fx:id="ruekwaerts_btn" layoutX="363.0" layoutY="200.0" onAction="#ruekwaerts" prefHeight="63.0" prefWidth="138.0" style="-fx-background-color: #FA5858;" text="Rückwarts" />
+		<JFXButton fx:id="vorwaerts_btn" layoutX="106.0" layoutY="200.0" onAction="#vorwaerts" prefHeight="63.0" prefWidth="138.0" style="-fx-background-color: #7ddf64;" text="Vorwärts" />
 	</children>
 </AnchorPane>

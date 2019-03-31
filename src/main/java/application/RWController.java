@@ -11,6 +11,7 @@ import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 
 public class RWController implements Initializable {
 
@@ -19,12 +20,14 @@ public class RWController implements Initializable {
 
 	@FXML
 	private JFXButton vorwaerts_btn;
+	@FXML
+	private JFXButton submit_btn;
 
 	@FXML
 	void ok(ActionEvent event) {
 
-	    }
-	
+	}
+
 	@FXML
 	public void ruekwaerts(ActionEvent event) {
 		ReadFromTable r = new ReadFromTable();
@@ -41,6 +44,12 @@ public class RWController implements Initializable {
 		DeleteFromTable d = new DeleteFromTable();
 		d.deleteDir(r.getZugNrAktiverZug());
 		t.setDir(0);
+	}
+
+	@FXML
+	void submit(ActionEvent event) {
+		Stage stage = (Stage) submit_btn.getScene().getWindow();
+		stage.close();
 	}
 
 	@Override
