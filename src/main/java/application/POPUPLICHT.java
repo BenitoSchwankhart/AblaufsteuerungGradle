@@ -3,6 +3,9 @@ package application;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 
+import datenbank.DeleteFromTable;
+import datenbank.InsertIntoTable;
+import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Spinner;
@@ -40,5 +43,13 @@ public class POPUPLICHT {
 	void submit(ActionEvent event) {
 		Stage stage = (Stage) submit_btn.getScene().getWindow();
 		stage.close();
+		
+		//Für An und Aus
+		ReadFromTable r = new ReadFromTable();
+		InsertIntoTable t = new InsertIntoTable();
+		DeleteFromTable d = new DeleteFromTable();
+		d.deleteLicht(r.getZugNrAktiverZug());
+		t.setLicht(0);
+		
 	}
 }
