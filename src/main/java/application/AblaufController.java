@@ -265,6 +265,7 @@ public class AblaufController implements Initializable {
 		String TIME = f.getTempTime();
 		String LICHT = f.getTempLicht();
 		m.Ablauffolge(SPEED, DIR, TIME, LICHT);
+		
 
 	}
 
