@@ -11,11 +11,12 @@
 	<children>
 		<Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;">
          <children>
-      		<Text layoutX="251.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Richtung">
+      		<Text layoutX="190.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Richtungssteuerung">
       			<font>
       				<Font size="25.0" />
       			</font>
       		</Text>
+            <JFXButton fx:id="submit" layoutX="535.0" layoutY="34.0" onAction="#submitfahrstufen" style="-fx-background-color: #7ddf64;" text="Submit" />
          </children></Pane>
 		<JFXButton fx:id="ruekwaerts_btn" layoutX="416.0" layoutY="118.0" onAction="#ruekwaerts" style="-fx-background-color: #FA5858;" text="Rückwarts" />
 		<JFXButton fx:id="vorwaerts_btn" layoutX="94.0" layoutY="118.0" onAction="#vorwaerts" style="-fx-background-color: #7ddf64;" text="Vorwärts" />
