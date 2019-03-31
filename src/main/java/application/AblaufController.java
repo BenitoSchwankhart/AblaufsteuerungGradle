@@ -266,24 +266,13 @@ this.label.setText(this.dauer.getValue().toString());
 		String warten = "5"; //noch ändern
 		String licht = "1";
 		
-		//Reihenfolge ermitteln
+		//Reihenfolge ermitteln Hier kommen die werte von Den button an
 		AblaufMuster m = new AblaufMuster();
 		String SPEED = f.getTempFS();
-		m.Ablauffolge(SPEED, f.getAblaufRichtung(), warten, licht);
-		
-		/*byte ZUGNR = r.intToByte(Integer.parseInt(l));
-		POPUPSPEEDController p = new POPUPSPEEDController();
-		ReadFromTable t = new ReadFromTable();
-		String l = t.getZugNrAktiverZug();
-		String b = f.getFSAktiverZug();
-
-		byte ZUGNR = r.intToByte(Integer.parseInt(l));
-		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
-		// TODO
-		// Noch anpassen
-		byte DIR = r.intToByte(1);
-		Zugablauf z = new Zugablauf();
-		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);*/
+		String DIR = f.getTempDir();
+		String TIME = f.getTempTime();
+		String LICHT = f.getTempLicht();
+		m.Ablauffolge(SPEED, DIR, TIME, LICHT);
 
 	}
 
