@@ -9,6 +9,7 @@ import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 public class POPUPWARTENController {
 
@@ -41,5 +42,7 @@ public class POPUPWARTENController {
 
 	@FXML
 	void submit(ActionEvent event) {
+		Stage stage = (Stage) submit_btn.getScene().getWindow();
+		stage.close();
 	}
 }
