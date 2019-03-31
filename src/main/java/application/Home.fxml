@@ -17,6 +17,19 @@
             <DropShadow />
          </effect>
          <children>
+            <Pane fx:id="pane_settings" layoutX="27.0" prefHeight="450.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Text fill="WHITE" layoutX="201.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzerhandbuch">
+                     <font>
+                        <Font name="Calibri Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="handbuch_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="291.0" layoutY="185.0" onAction="#open" prefHeight="80.0" prefWidth="104.0" style="-fx-background-color: #FFFFFF;" text="Öffnen">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </JFXButton>
+               </children></Pane>
             <Pane fx:id="pane_ablauf" layoutX="26.0" prefHeight="450.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="start_btn" layoutX="196.0" layoutY="122.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="295.0" style="-fx-background-color: #FFFFFF;" text="    Ablaufsteuerung">
@@ -38,19 +51,6 @@
                   </Text>
                </children>
             </Pane>
-            <Pane fx:id="pane_settings" layoutX="27.0" prefHeight="450.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <Text fill="WHITE" layoutX="230.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzerhandbuch">
-                     <font>
-                        <Font name="Calibri Bold" size="36.0" />
-                     </font>
-                  </Text>
-                  <JFXButton fx:id="handbuch_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="196.0" layoutY="200.0" onAction="#open" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Öffnen" textAlignment="CENTER">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </JFXButton>
-               </children></Pane>
             <Pane fx:id="neuelok" layoutX="27.0" prefHeight="457.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="196.0" layoutY="251.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Zug-Editor" textAlignment="CENTER">
