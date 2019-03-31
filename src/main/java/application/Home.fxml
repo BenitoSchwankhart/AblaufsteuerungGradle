@@ -38,12 +38,6 @@
                      </font>
                   </JFXButton>
                   <MaterialDesignIconView glyphName="THUMB_UP" layoutX="220.0" layoutY="171.0" size="30" text="" />
-                  <JFXButton fx:id="defaultabflauf_btn" layoutX="196.0" layoutY="251.0" onAction="#defaultstarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Default-Ablauf">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </JFXButton>
-                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="221.0" layoutY="301.0" size="30" text="" />
                   <Text fill="WHITE" layoutX="244.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablauf-Menü">
                      <font>
                         <Font name="Calibri Bold" size="36.0" />

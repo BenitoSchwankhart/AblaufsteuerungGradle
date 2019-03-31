@@ -63,9 +63,6 @@ public class TestController implements Initializable {
 	private JFXButton settings;
 	
 	@FXML
-	private JFXButton defaultabflauf_btn;
-	
-	@FXML
 	private JFXButton handbuch_btn;
 
 	@FXML
@@ -83,24 +80,6 @@ public class TestController implements Initializable {
             ex.printStackTrace();
         }
 
-	}
-
-	@FXML
-	void defaultstarten(ActionEvent event) throws IOException {
-		String Bedingung = null;
-		String Erfüllt = null;
-		if (Bedingung == Erfüllt) {
-
-			Stage stage;
-			Parent root;
-			if (event.getSource() == defaultabflauf_btn) {
-				stage = (Stage) defaultabflauf_btn.getScene().getWindow();
-				root = FXMLLoader.load(getClass().getResource("DemoAblauf.fxml"));
-				Scene scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
-			}
-		}
 	}
 
 	@Override
