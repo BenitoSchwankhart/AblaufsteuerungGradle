@@ -1,5 +1,7 @@
 package application;
 
+import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -59,14 +61,27 @@ public class TestController implements Initializable {
 
 	@FXML
 	private JFXButton settings;
+	
 	@FXML
 	private JFXButton defaultabflauf_btn;
+	
 	@FXML
 	private JFXButton handbuch_btn;
 
 	@FXML
 	void open(ActionEvent event) {
 		// Hier Pdf öffnen
+		try {
+            Desktop desktop = Desktop.getDesktop();
+            if (desktop != null && desktop.isSupported(Desktop.Action.OPEN)) {
+                desktop.open(new File(System.getProperty("user.home")
+                        + "/Benutzerhandbuch.pdf"));
+            } else {
+                System.err.println("PDF-Datei kann nicht angezeigt werden!");
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
 	}
 
