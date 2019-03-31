@@ -25,7 +25,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
@@ -113,10 +116,21 @@ public class AblaufController implements Initializable {
 
 	@FXML
 	private JFXToggleButton poweroff_btn;
+	@FXML
+	private Spinner<Integer> dauer;
+	@FXML
+	private Label label;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 120);
+		this.dauer.setValueFactory(valueFactory);
+	}
 
+	@FXML
+	void loggezeit(ActionEvent event) {
+this.label.setVisible(true);
+this.label.setText(this.dauer.getValue().toString());
 	}
 
 	// Zurueck Button
@@ -258,6 +272,12 @@ public class AblaufController implements Initializable {
 		m.Ablauffolge(SPEED, f.getAblaufRichtung(), warten, licht);
 		
 		/*byte ZUGNR = r.intToByte(Integer.parseInt(l));
+		POPUPSPEEDController p = new POPUPSPEEDController();
+		ReadFromTable t = new ReadFromTable();
+		String l = t.getZugNrAktiverZug();
+		String b = f.getFSAktiverZug();
+
+		byte ZUGNR = r.intToByte(Integer.parseInt(l));
 		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
 		// TODO
 		// Noch anpassen
