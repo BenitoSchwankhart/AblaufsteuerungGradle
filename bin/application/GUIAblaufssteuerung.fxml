@@ -83,7 +83,7 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="richtungswechsel" alignment="CENTER" layoutX="8.0" layoutY="158.0" onDragDetected="#handleDragRichtungrichtungswechsel" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Richtungswechsel" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton fx:id="richtungswechsel" alignment="CENTER" layoutX="8.0" layoutY="158.0" onDragDetected="#handleDragRichtungrichtungswechsel" prefHeight="59.0" prefWidth="168.0" style="-fx-background-color: #4f474c;" text="Direction" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Calibri Bold" size="18.0" />
                </font>

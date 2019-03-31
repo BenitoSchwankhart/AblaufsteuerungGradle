@@ -302,7 +302,7 @@ public class AblaufController implements Initializable {
 
 	}
 
-//Öffnet Richtungswechsel-POPUP
+//Öffnet Direction-POPUP
 	public void popuprw() throws IOException {
 		Stage stage;
 		Parent root;
@@ -342,7 +342,7 @@ public class AblaufController implements Initializable {
 					popupspeed();
 
 				}
-			} else if (ziel1.getText().equals("Richtungswechsel")) {
+			} else if (ziel1.getText().equals("Direction")) {
 				if (event.getSource() == ziel1) {
 					popuprw();
 				}
@@ -369,7 +369,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel2) {
 					popupspeed();
 				}
-			} else if (ziel2.getText().equals("Richtungswechsel")) {
+			} else if (ziel2.getText().equals("Direction")) {
 				if (event.getSource() == ziel2) {
 					popuprw();
 				}
@@ -396,7 +396,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel3) {
 					popupspeed();
 				}
-			} else if (ziel3.getText().equals("Richtungswechsel")) {
+			} else if (ziel3.getText().equals("Direction")) {
 				if (event.getSource() == ziel3) {
 					popuprw();
 				}
@@ -423,7 +423,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel4) {
 					popupspeed();
 				}
-			} else if (ziel4.getText().equals("Richtungswechsel")) {
+			} else if (ziel4.getText().equals("Direction")) {
 				if (event.getSource() == ziel4) {
 					popuprw();
 				}
@@ -450,7 +450,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel5) {
 					popupspeed();
 				}
-			} else if (ziel5.getText().equals("Richtungswechsel")) {
+			} else if (ziel5.getText().equals("Direction")) {
 				if (event.getSource() == ziel5) {
 					popuprw();
 				}
@@ -477,7 +477,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel6) {
 					popupspeed();
 				}
-			} else if (ziel6.getText().equals("Richtungswechsel")) {
+			} else if (ziel6.getText().equals("Direction")) {
 				if (event.getSource() == ziel6) {
 					popuprw();
 				}
@@ -505,7 +505,7 @@ public class AblaufController implements Initializable {
 				if (event.getSource() == ziel7) {
 					popupspeed();
 				}
-			} else if (ziel7.getText().equals("Richtungswechsel")) {
+			} else if (ziel7.getText().equals("Direction")) {
 				if (event.getSource() == ziel7) {
 					popuprw();
 				}
