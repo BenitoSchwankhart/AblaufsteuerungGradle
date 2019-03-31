@@ -36,8 +36,6 @@ public class POPUPSPEEDController implements Initializable {
 	private Text zeit;
 	@FXML
 	private JFXButton submit;
-	@FXML
-	private JFXButton ok_btn;
 
 	public void fahrstufenlesen() {
 		if (fahrstufen == 14) {
@@ -69,20 +67,21 @@ public class POPUPSPEEDController implements Initializable {
 		DeleteFromTable d = new DeleteFromTable();
 		d.deleteFS(r.getZugNrAktiverZug());
 		t.setFS(i);
-		Stage stage = (Stage) submit.getScene().getWindow();
-		stage.close();
-		return i;
-
-	}
-
-	@FXML
-	void ok(ActionEvent event) {
+		
 		double s = dauer.getValue();
 
 		int ergebnis = (int) (s);
 
 		String numberAsString = Double.toString(ergebnis);
 		zeit.setText(numberAsString + "min");
+		
+		ReadFromTable r = new ReadFromTable();
+		d.deleteTempSpeed();
+		t.setTempSpeed(ergebnis);
+		
+		Stage stage = (Stage) submit.getScene().getWindow();
+		stage.close();
+		return i;
 
 	}
 

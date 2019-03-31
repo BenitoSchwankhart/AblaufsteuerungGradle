@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXSlider?>
-<?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -12,29 +11,13 @@
    <children>
       <Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;">
          <children>
-            <JFXButton fx:id="submit_btn" layoutX="535.0" layoutY="34.0" onAction="#submit" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="Submit" />
+            <JFXButton fx:id="submit_btn" layoutX="493.0" layoutY="16.0" onAction="#submit" prefHeight="31.0" prefWidth="84.0" style="-fx-background-color: #7ddf64;" text="Submit" />
             <Text layoutX="218.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lichtsteuerung">
                <font>
                   <Font size="25.0" />
                </font>
             </Text>
          </children></Pane>
-      <JFXToggleButton layoutX="354.0" layoutY="331.0" prefHeight="17.0" prefWidth="246.0" text="Dauerlicht">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </JFXToggleButton>
-      
-      <Text layoutX="18.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv für:" wrappingWidth="106.7578125">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <Text fx:id="zeit" layoutX="125.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0min" wrappingWidth="124.7578125">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
       <Text layoutX="274.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licht">
          <font>
             <Font size="25.0" />
@@ -48,6 +31,5 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <JFXButton fx:id="ok_btn" layoutX="266.0" layoutY="260.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
    </children>
 </AnchorPane>

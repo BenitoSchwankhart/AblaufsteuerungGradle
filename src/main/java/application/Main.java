@@ -40,6 +40,8 @@ else {
 	CreateTable.createLichtSave();
 	CreateTable.createDirSave();
 	CreateTable.createAblauf();
+	CreateTable.createTempSpeedSave();
+	CreateTable.createTempLichtSave();
 	i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), 0, 0, 1, 1);
 	CreateTable.createReihe();
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));

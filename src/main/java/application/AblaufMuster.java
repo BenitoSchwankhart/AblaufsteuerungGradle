@@ -37,12 +37,16 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
@@ -51,6 +55,8 @@ public class AblaufMuster {
 	byte s = c.intToByte(Integer.parseInt(speed));
 	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
 	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
 	break;
 	
 	case "Direction":
@@ -79,21 +85,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();
@@ -121,21 +133,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();
@@ -164,21 +182,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();
@@ -206,21 +230,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();
@@ -248,21 +278,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();
@@ -290,21 +326,27 @@ public class AblaufMuster {
 	case "Licht":
 		if(licht.equals("1")) {
 		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
-		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		System.out.println("Licht AN");
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		else {
-		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));	
 		System.out.println("Licht AUS");
 		System.out.println(licht);
+		thread.sleep(1000* Integer.parseInt(r.getTempLichtTime()));
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
 		}
 		break;
 	
 	case "Speed":
-	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-	Zugablauf.ZugFahrEinstellungen(nr, s , y);
-	break;
+		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+		byte s = c.intToByte(Integer.parseInt(speed));
+		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+		Zugablauf.ZugFahrEinstellungen(nr, s , y);
+		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+		break;
 	
 	case "Direction":
 		String b = r.getAblaufData();

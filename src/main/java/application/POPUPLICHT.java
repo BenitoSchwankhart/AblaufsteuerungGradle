@@ -52,20 +52,25 @@ public class POPUPLICHT {
 
 	@FXML
 	void submit(ActionEvent event) {
-		Stage stage = (Stage) submit_btn.getScene().getWindow();
-		stage.close();
-		
-		//Für An und Aus
-		
-		
-	}
-	   @FXML
-	    void ok(ActionEvent event) {
-		   double s = dauerslider.getValue();
+		 double s = dauerslider.getValue();
 
 			int ergebnis = (int) (s);
 
 			String numberAsString = Double.toString(ergebnis);
 			zeit.setText(numberAsString + "min");
-	    }
+			
+			ReadFromTable r = new ReadFromTable();
+			InsertIntoTable t = new InsertIntoTable();
+			DeleteFromTable d = new DeleteFromTable();
+			d.deleteTempLicht();
+			t.setTempLicht(ergebnis);
+		
+		
+		Stage stage = (Stage) submit_btn.getScene().getWindow();
+		stage.close();
+		
+		
+		
+	}
+
 }

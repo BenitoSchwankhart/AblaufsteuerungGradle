@@ -23,9 +23,6 @@ public class POPUPWARTENController {
 	private Text zeit;
 
 	@FXML
-	private JFXButton ok_btn;
-
-	@FXML
 	void ok(ActionEvent event) {
 		double s = dauer.getValue();
 

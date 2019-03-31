@@ -21,17 +21,6 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <JFXButton fx:id="ok_btn" layoutX="267.0" layoutY="310.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
-            <Text layoutX="18.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv für:" wrappingWidth="106.7578125">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Text>
-            <Text fx:id="zeit" layoutX="125.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0min" wrappingWidth="124.7578125">
-               <font>
-                  <Font size="25.0" />
-               </font>
-            </Text>
             <Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;">
                <children>
             		<Text layoutX="242.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fahrstufen">
@@ -39,9 +28,9 @@
             				<Font size="25.0" />
             			</font>
             		</Text>
+      				<JFXButton fx:id="submit" layoutX="512.0" layoutY="16.0" onAction="#submitfahrstufen" style="-fx-background-color: #7ddf64;" text="Submit" />
                </children>
             </Pane>
-				<JFXButton fx:id="submit" layoutX="535.0" layoutY="34.0" onAction="#submitfahrstufen" style="-fx-background-color: #7ddf64;" text="Submit" />
 			</children>
 		</Pane>
 	</children>

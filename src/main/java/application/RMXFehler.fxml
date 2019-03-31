@@ -20,5 +20,6 @@
       <Text layoutX="134.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. RMX-System ist auf Start (grünes Licht leuchtet)" />
       <Text layoutX="134.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. RMXnet-Server ist auf Start (grünes Licht leuchtet)" />
       <Text layoutX="134.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Unter &quot;Einstellungen&quot; --&gt; &quot;RMXnet-Server&quot; ist Port 9090 eingestellt. " />
+      <Text layoutX="128.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programm nochmal starten nachdem die unten gennannten Punkte erfolgt sind." wrappingWidth="659.0000220537186" />
    </children>
 </AnchorPane>
