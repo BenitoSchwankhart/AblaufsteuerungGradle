@@ -173,7 +173,7 @@ public class CreateTable {
          String sql =  "CREATE TABLE   ablauf" + 
             "(zugnummer INTEGER not NULL, " + 
             " SPEED INTEGER, " +  
-            " WARTEN INTEGER, " +
+            " WARTE INTEGER, " +
             " LICHT INTEGER, " + 
             " RICHTUNG INTEGER, " + 
             " PRIMARY KEY ( zugnummer ))";  
@@ -391,8 +391,6 @@ public class CreateTable {
 //---------------------------------------------------MAIN--------------------------------------------
   
    public static void main(String[] args) { 
-	   createTimeSave();
-	   createLichtSave();
-	   createDirSave();
+	   createAblauf();
    }
 }

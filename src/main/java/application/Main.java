@@ -71,9 +71,6 @@ if(RMXAppTest.isRmxRunning() == true) {
 			primaryStage.setResizable(false);
 
 				try {
-					DeleteFromTable d = new DeleteFromTable();
-					ReadFromTable r = new ReadFromTable();
-					d.deleteAblauf(r.getZugNrAktiverZug());
 					AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Home.fxml"));
 					Scene scene = new Scene(root, 900, 450);
 					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
