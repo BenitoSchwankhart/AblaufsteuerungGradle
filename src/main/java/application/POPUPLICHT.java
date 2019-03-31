@@ -8,17 +8,12 @@ import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class POPUPLICHT {
 
 	@FXML
 	private JFXButton submit_btn;
-
-	@FXML
-	private Text zeit;
 
 	@FXML
 	private JFXButton an_btn;
@@ -53,9 +48,6 @@ public class POPUPLICHT {
 		 double s = dauerslider.getValue();
 
 			int ergebnis = (int) (s);
-
-			String numberAsString = Double.toString(ergebnis);
-			zeit.setText(numberAsString + "min");
 			
 			InsertIntoTable t = new InsertIntoTable();
 			DeleteFromTable d = new DeleteFromTable();

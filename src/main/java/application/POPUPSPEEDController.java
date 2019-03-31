@@ -13,7 +13,6 @@ import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class POPUPSPEEDController implements Initializable {
@@ -32,8 +31,6 @@ public class POPUPSPEEDController implements Initializable {
 	private JFXSlider slider126;
 	@FXML
 	private JFXSlider dauer;
-	@FXML
-	private Text zeit;
 	@FXML
 	private JFXButton submit;
 
@@ -71,9 +68,6 @@ public class POPUPSPEEDController implements Initializable {
 		double s = dauer.getValue();
 
 		int ergebnis = (int) (s);
-
-		String numberAsString = Double.toString(ergebnis);
-		zeit.setText(numberAsString + "min");
 		
 		ReadFromTable r = new ReadFromTable();
 		d.deleteTempSpeed();

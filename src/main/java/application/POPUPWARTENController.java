@@ -8,7 +8,6 @@ import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class POPUPWARTENController {
@@ -20,25 +19,18 @@ public class POPUPWARTENController {
 	private JFXSlider dauer;
 
 	@FXML
-	private Text zeit;
-
-	@FXML
-	void ok(ActionEvent event) {
+	void submit(ActionEvent event) {
+		
 		double s = dauer.getValue();
 
 		int ergebnis = (int) (s);
 
-		String numberAsString = Double.toString(ergebnis);
 		ReadFromTable r = new ReadFromTable();
-		zeit.setText(numberAsString + "min");
 		InsertIntoTable t = new InsertIntoTable();
 		DeleteFromTable d = new DeleteFromTable();
 		d.deleteTime(r.getZugNrAktiverZug());
 		t.setWarten(ergebnis);
-	}
-
-	@FXML
-	void submit(ActionEvent event) {
+		
 		Stage stage = (Stage) submit_btn.getScene().getWindow();
 		stage.close();
 	}
