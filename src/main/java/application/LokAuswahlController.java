@@ -116,7 +116,7 @@ public class LokAuswahlController implements Initializable{
 	String b = r.getAllData();
 	String[] s = b.split(";");
 	
-	for(int i=1;i<s.length;i+=2){
+	for(int i=1;i<s.length;i+=3){
 		String a = s[i];
 		if(a.equals(TrainBox.getValue())) {
 			i --;
