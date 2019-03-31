@@ -21,6 +21,11 @@ public class RWController implements Initializable {
 	private JFXButton vorwaerts_btn;
 
 	@FXML
+	void ok(ActionEvent event) {
+
+	    }
+	
+	@FXML
 	public void ruekwaerts(ActionEvent event) {
 		ReadFromTable r = new ReadFromTable();
 		InsertIntoTable t = new InsertIntoTable();

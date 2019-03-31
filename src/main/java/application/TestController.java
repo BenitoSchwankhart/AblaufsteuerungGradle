@@ -61,6 +61,14 @@ public class TestController implements Initializable {
 	private JFXButton settings;
 	@FXML
 	private JFXButton defaultabflauf_btn;
+	@FXML
+	private JFXButton handbuch_btn;
+
+	@FXML
+	void open(ActionEvent event) {
+		// Hier Pdf öffnen
+
+	}
 
 	@FXML
 	void defaultstarten(ActionEvent event) throws IOException {
