@@ -116,23 +116,15 @@ public class AblaufController implements Initializable {
 
 	@FXML
 	private JFXToggleButton poweroff_btn;
-	@FXML
-	private Spinner<Integer> dauer;
-	@FXML
-	private Label label;
+
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 120);
-		this.dauer.setValueFactory(valueFactory);
+		
 	}
 
-	@FXML
-	void loggezeit(ActionEvent event) {
-this.label.setVisible(true);
-this.label.setText(this.dauer.getValue().toString());
-	}
-
+	
 	// Zurueck Button
 	@FXML
 	void backonstart(ActionEvent event) throws IOException {
@@ -634,13 +626,7 @@ this.label.setText(this.dauer.getValue().toString());
 
 	}
 
-	@FXML
-	private JFXButton neu;
-
-	@FXML
-	void neuerbtn(ActionEvent event) throws IOException {
-
-	}
+	
 }
 /**
  * } } else if (!ziel3.getText().equals(" ")) { if (event.getSource() == ziel3)

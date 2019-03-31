@@ -2,8 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -25,6 +23,11 @@
       <JFXButton fx:id="delete_btn5" layoutX="423.0" layoutY="150.0" onAction="#delete5" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
       <JFXButton fx:id="delete_btn6" layoutX="515.0" layoutY="150.0" onAction="#delete6" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
       <JFXButton fx:id="delete_btn7" layoutX="607.0" layoutY="150.0" onAction="#delete7" style="-fx-background-color: #FF0000;" text="Löschen" textFill="WHITE" />
+      <JFXButton fx:id="ok" layoutX="607.0" layoutY="300.0" onAction="#loeschenbeenden" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #9FF781;" text="OK">
+         <font>
+            <Font name="Calibri" size="20.0" />
+         </font>
+      </JFXButton>
       <Pane fx:id="black_pane" layoutX="-3.0" layoutY="39.0" prefHeight="357.0" prefWidth="724.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <JFXButton fx:id="ziel1" alignment="CENTER" layoutX="51.0" layoutY="154.0" onAction="#popup1" onDragDropped="#handledenDrop" onDragOver="#handleDragOver" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #000000;" text=" " textAlignment="CENTER" textFill="WHITE">
@@ -63,18 +66,6 @@
                   <Font name="Calibri Bold" size="18.0" />
                </font>
             </JFXButton>
-            <Spinner fx:id="dauer" editable="true" layoutX="507.0" layoutY="29.0" />
-            <Text layoutX="411.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <JFXButton fx:id="ok" layoutX="507.0" layoutY="57.0" onAction="#loggezeit" prefHeight="39.0" prefWidth="80.0" style="-fx-background-color: #9FF781;" text="OK">
-               <font>
-                  <Font name="Calibri" size="20.0" />
-               </font>
-            </JFXButton>
-            <Label fx:id="label" layoutX="617.0" layoutY="68.0" prefHeight="17.0" prefWidth="40.0" text="Label" />
          </children>
       </Pane>
       <Pane layoutX="717.0" layoutY="50.0" prefHeight="400.0" prefWidth="183.0" style="-fx-background-color: #FFFFFF;">
