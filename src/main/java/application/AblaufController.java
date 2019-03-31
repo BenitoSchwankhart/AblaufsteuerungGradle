@@ -10,7 +10,9 @@ import com.jfoenix.controls.JFXNodesList;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
 
+import Zugsteuerung.Funktionssteuerung;
 import Zugsteuerung.Zugablauf;
+import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
 import datenbank.ReadFromTable;
 import datenbank.UpdateTable;
@@ -259,21 +261,22 @@ public class AblaufController implements Initializable {
 		String licht = "1";
 		
 		//Reihenfolge ermitteln Hier kommen die werte von Den button an
+		Funktionssteuerung.StromAn();
 		AblaufMuster m = new AblaufMuster();
 		String SPEED = f.getTempFS();
 		String DIR = f.getTempDir();
 		String TIME = f.getTempTime();
 		String LICHT = f.getTempLicht();
 		m.Ablauffolge(SPEED, DIR, TIME, LICHT);
-		
+		Funktionssteuerung.StromAus();
 
 	}
 
 	// Hier Nothalt Funktion implementieren
 	@FXML
 	void nothalt(ActionEvent event) throws IOException {
-		// ConnectionCalls c = new ConnectionCalls();
-		// c.Notfall();
+		ConnectionCalls c = new ConnectionCalls();
+		c.Notfall();
 		zeiger.setFill(javafx.scene.paint.Color.RED);
 		System.out.println("Nothalt");
 	}
