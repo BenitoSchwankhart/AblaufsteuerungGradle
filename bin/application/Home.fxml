@@ -30,27 +30,6 @@
                      </font>
                   </JFXButton>
                </children></Pane>
-            <Pane fx:id="pane_ablauf" layoutX="26.0" prefHeight="450.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <JFXButton fx:id="start_btn" layoutX="196.0" layoutY="122.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="295.0" style="-fx-background-color: #FFFFFF;" text="    Ablaufsteuerung">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </JFXButton>
-                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="220.0" layoutY="171.0" size="30" text="" />
-                  <JFXButton fx:id="defaultabflauf_btn" layoutX="196.0" layoutY="251.0" onAction="#defaultstarten" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Default-Ablauf">
-                     <font>
-                        <Font name="Calibri" size="24.0" />
-                     </font>
-                  </JFXButton>
-                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="221.0" layoutY="301.0" size="30" text="" />
-                  <Text fill="WHITE" layoutX="244.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablauf-Menü">
-                     <font>
-                        <Font name="Calibri Bold" size="36.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
             <Pane fx:id="neuelok" layoutX="27.0" prefHeight="457.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="neuelok_btn" alignment="BASELINE_LEFT" graphicTextGap="40.0" layoutX="196.0" layoutY="251.0" onAction="#neuelok" prefHeight="80.0" prefWidth="294.0" style="-fx-background-color: #FFFFFF;" text="Zug-Editor" textAlignment="CENTER">
@@ -91,6 +70,21 @@
                         </Text>
                      </children>
                   </HBox>
+               </children>
+            </Pane>
+            <Pane fx:id="pane_ablauf" layoutX="26.0" prefHeight="450.0" prefWidth="686.0" style="-fx-background-color: #4f474c;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="start_btn" layoutX="196.0" layoutY="122.0" onAction="#bittestarten" prefHeight="80.0" prefWidth="295.0" style="-fx-background-color: #FFFFFF;" text="    Ablaufsteuerung">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </JFXButton>
+                  <MaterialDesignIconView glyphName="THUMB_UP" layoutX="220.0" layoutY="171.0" size="30" text="" />
+                  <Text fill="WHITE" layoutX="244.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ablauf-Menü">
+                     <font>
+                        <Font name="Calibri Bold" size="36.0" />
+                     </font>
+                  </Text>
                </children>
             </Pane>
          </children>
