@@ -11,7 +11,7 @@
    <children>
       <Pane prefHeight="63.0" prefWidth="600.0" style="-fx-background-color: #bec4bf;">
          <children>
-            <JFXButton fx:id="submit_btn" layoutX="496.0" layoutY="16.0" onAction="#submit" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #7ddf64;" text="Submit" />
+            <JFXButton fx:id="submit_btn" layoutX="535.0" layoutY="34.0" onAction="#submit" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="Submit" />
             <Text layoutX="260.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warten">
                <font>
                   <Font size="25.0" />
@@ -24,5 +24,16 @@
          </font>
       </Text>
       <JFXSlider fx:id="dauer" layoutX="15.0" layoutY="203.0" majorTickUnit="10.0" minorTickCount="2" prefHeight="37.0" prefWidth="564.0" showTickLabels="true" showTickMarks="true" />
+      <Text layoutX="18.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aktiv für:" wrappingWidth="106.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="zeit" layoutX="125.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0min" wrappingWidth="124.7578125">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="ok_btn" layoutX="267.0" layoutY="256.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
    </children>
 </AnchorPane>
