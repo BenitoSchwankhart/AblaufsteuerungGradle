@@ -16,7 +16,7 @@
       				<Font size="25.0" />
       			</font>
       		</Text>
-            <JFXButton fx:id="submit" layoutX="535.0" layoutY="34.0" onAction="#submitfahrstufen" style="-fx-background-color: #7ddf64;" text="Submit" />
+            <JFXButton fx:id="submit" layoutX="535.0" layoutY="34.0" style="-fx-background-color: #7ddf64;" text="Submit" />
          </children></Pane>
 		<JFXButton fx:id="ruekwaerts_btn" layoutX="416.0" layoutY="118.0" onAction="#ruekwaerts" style="-fx-background-color: #FA5858;" text="Rückwarts" />
 		<JFXButton fx:id="vorwaerts_btn" layoutX="94.0" layoutY="118.0" onAction="#vorwaerts" style="-fx-background-color: #7ddf64;" text="Vorwärts" />
