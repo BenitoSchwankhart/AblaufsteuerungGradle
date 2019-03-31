@@ -18,16 +18,21 @@ public class POPUPLICHT {
 	private Text zeit;
 
 	@FXML
-	private JFXButton ok_btn;
+	private JFXButton an_btn;
 
 	@FXML
-	private Spinner<Integer> start;
+	private JFXButton aus;
 
 	@FXML
-	private Spinner<Integer> ende;
+	private JFXSlider dauerslider;
 
 	@FXML
-	void ok(ActionEvent event) {
+	void lichtan(ActionEvent event) {
+
+	}
+
+	@FXML
+	void lichtaus(ActionEvent event) {
 
 	}
 

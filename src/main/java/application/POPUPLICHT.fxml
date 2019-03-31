@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXToggleButton?>
-<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
@@ -35,18 +35,13 @@
             <Font size="25.0" />
          </font>
       </Text>
-      <JFXButton fx:id="ok_btn" layoutX="270.0" layoutY="156.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
-      <Text layoutX="18.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" wrappingWidth="75.7578125">
+      <Text layoutX="274.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Licht">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
-      <Text layoutX="354.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ende" wrappingWidth="75.7578125">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Text>
-      <Spinner fx:id="start" editable="true" layoutX="72.0" layoutY="69.0" prefHeight="25.0" prefWidth="61.0" />
-      <Spinner fx:id="ende" editable="true" layoutX="416.0" layoutY="69.0" prefHeight="25.0" prefWidth="61.0" />
+      <JFXButton fx:id="an_btn" layoutX="94.0" layoutY="137.0" onAction="#lichtan" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="AN" />
+      <JFXButton fx:id="aus" layoutX="416.0" layoutY="137.0" onAction="#lichtaus" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #FA5858;" text="AUS" />
+      <JFXSlider fx:id="dauerslider" layoutX="2.0" layoutY="222.0" majorTickUnit="10.0" max="120.0" minorTickCount="5" prefHeight="14.0" prefWidth="589.0" showTickLabels="true" showTickMarks="true" />
    </children>
 </AnchorPane>
