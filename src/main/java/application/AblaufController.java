@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
@@ -12,6 +13,7 @@ import com.jfoenix.controls.JFXToggleButton;
 import Zugsteuerung.Zugablauf;
 import clientServerConnection.RmxCalls;
 import datenbank.ReadFromTable;
+import datenbank.UpdateTable;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
 
 import javafx.event.ActionEvent;
@@ -182,11 +184,16 @@ public class AblaufController implements Initializable {
 		event.consume();
 	}
 
+	
+//Drops -------------------------------------------------------
+	UpdateTable u = new UpdateTable();
+	ReadFromTable r = new ReadFromTable();
 	@FXML
 	void handledenDrop(DragEvent event) {
 		String str = event.getDragboard().getString();
 		ziel1.setStyle("-fx-background-color:  #4f474c;");
 		ziel1.setText(str);
+		UpdateTable.setDrop1(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -194,6 +201,7 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel2.setStyle("-fx-background-color:  #4f474c;");
 		ziel2.setText(str);
+		UpdateTable.setDrop2(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -201,6 +209,7 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel3.setStyle("-fx-background-color:  #4f474c;");
 		ziel3.setText(str);
+		UpdateTable.setDrop3(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -208,7 +217,7 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel4.setStyle("-fx-background-color:  #4f474c;");
 		ziel4.setText(str);
-
+		UpdateTable.setDrop4(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -216,7 +225,7 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel5.setStyle("-fx-background-color:  #4f474c;");
 		ziel5.setText(str);
-
+		UpdateTable.setDrop5(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -224,7 +233,7 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel6.setStyle("-fx-background-color:  #4f474c;");
 		ziel6.setText(str);
-
+		UpdateTable.setDrop6(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
@@ -232,26 +241,29 @@ public class AblaufController implements Initializable {
 		String str = event.getDragboard().getString();
 		ziel7.setStyle("-fx-background-color:  #4f474c;");
 		ziel7.setText(str);
-
+		UpdateTable.setDrop7(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
 	@FXML
 	void starteAblauf(ActionEvent event) throws IOException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
-		RmxCalls r = new RmxCalls();
 		ReadFromTable f = new ReadFromTable();
-		POPUPSPEEDController p = new POPUPSPEEDController();
-		ReadFromTable t = new ReadFromTable();
-		String l = t.getZugNrAktiverZug();
-		String b = f.getFSAktiverZug();
+		//POPUPSPEEDController p = new POPUPSPEEDController();
+		String warten = "5"; //noch ändern
+		String licht = "1";
 		
-		byte ZUGNR = r.intToByte(Integer.parseInt(l));
+		//Reihenfolge ermitteln
+		AblaufMuster m = new AblaufMuster();
+		String SPEED = f.getTempFS();
+		m.Ablauffolge(SPEED, f.getAblaufRichtung(), warten, licht);
+		
+		/*byte ZUGNR = r.intToByte(Integer.parseInt(l));
 		byte SPEED = r.intToByte(Integer.parseInt(f.getTempFS()));
 		// TODO
 		// Noch anpassen
 		byte DIR = r.intToByte(1);
 		Zugablauf z = new Zugablauf();
-		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);
+		z.ZugFahrEinstellungen(ZUGNR, SPEED, DIR);*/
 
 	}
 

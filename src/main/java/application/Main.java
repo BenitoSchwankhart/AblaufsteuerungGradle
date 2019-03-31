@@ -6,7 +6,9 @@ import clientServerConnection.ClientConnection;
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
 import datenbank.CreateTable;
+import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
+import datenbank.ReadFromTable;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -25,19 +27,21 @@ if(g.neuesProgramm() == true) {
 	System.out.println("Datenbank vorhanden !");
 }
 else {
-	//-->Sicherstellen das Tabellen da sind
-	CreateTable d = new CreateTable();
 	RmxCalls rmx = new RmxCalls();
 	InsertIntoTable i = new InsertIntoTable();
-	d.createZug();
-	i.zugData(222, "DEMO-ZUG", 14);
+	ReadFromTable r = new ReadFromTable();
+	CreateTable.createZug();
+	InsertIntoTable.zugData(222, "DEMO-ZUG", 14);
 	ConnectionCalls.ZugErstellen(rmx.intToByte("DEMO-ZUG".length()+7), rmx.intToByte(222), rmx.intToByte(14), "DEMO-Zug".getBytes());
-	d.createAktuellZug();
+	CreateTable.createAktuellZug();
 	i.setAktuellZug(222, "DEMO-ZUG", 14);
-	d.createFSSave();
+	CreateTable.createFSSave();
+	CreateTable.createAblauf();
+	i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), 0, 0, 1, 1);
+	CreateTable.createReihe();
+	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
 }
 
-RMXAppTest a = new RMXAppTest();
 //Falls RMX-Server läuft wird main gestartet
 if(RMXAppTest.isRmxRunning() == true) {
 			// Checking if Server is connected
@@ -64,6 +68,9 @@ if(RMXAppTest.isRmxRunning() == true) {
 			primaryStage.setResizable(false);
 
 				try {
+					DeleteFromTable d = new DeleteFromTable();
+					ReadFromTable r = new ReadFromTable();
+					d.deleteAblauf(r.getZugNrAktiverZug());
 					AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Home.fxml"));
 					Scene scene = new Scene(root, 900, 450);
 					scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

@@ -376,7 +376,7 @@ public class ReadFromTable {
 	    return z;
 	   } 
    
-   //Gibt den namen des aktuellen Zug aus
+   //Gibt die FS des aktuellen Zug aus
    @SuppressWarnings("null")  
    public String getTempFS() {
 	   String fs = "";
@@ -430,6 +430,209 @@ public class ReadFromTable {
 	    return fs;
 	   
    }
+   
+   //Gibt Alle Daten aus Ablauf aus
+   @SuppressWarnings("null")
+   public String getAblaufData() {
+	   String z = "";
+       
+	   Connection conn = null; 
+	   Statement stmt = null; 
+	      try { 
+	    	  
+	         // STEP 1: Register JDBC driver 
+	         Class.forName(JDBC_DRIVER); 
+	         
+	         // STEP 2: Open a connection 
+	         System.out.println("Connecting to database..."); 
+	         conn = DriverManager.getConnection(DB_URL,USER,PASS);  
+	         
+	         // STEP 3: Execute a query 
+	         System.out.println("Connected database successfully..."); 
+	         stmt = conn.createStatement(); 
+	         String sql = "SELECT zugnummer, speed, warte, licht, richtung FROM ablauf"; 
+	         ResultSet rs = stmt.executeQuery(sql); 
+	         
+	         // STEP 4: Extract data from result set 
+	         while(rs.next()) { 
+	            // Retrieve by column name 
+	            int zugnummer  = rs.getInt("zugnummer"); 
+	            int speed = rs.getInt("speed"); 
+	            int warte  = rs.getInt("warte"); 
+	            int licht  = rs.getInt("licht"); 
+	            int richtung  = rs.getInt("richtung"); 
+	            
+	            // Display values 
+	            System.out.print(zugnummer + "-"); 
+	            System.out.print(speed + "-"); 
+	            System.out.print(warte + "-"); 
+	            System.out.print(licht + "-"); 
+	            System.out.print(richtung + "\n");
+
+	            //z wird mit Zugbezeichnungen gefüllt
+	            z = zugnummer + ";"+ speed + ";" + warte + ";" + licht + ";" + richtung + ";";
+	            
+	         }
+	         
+	         // STEP 5: Clean-up environment 
+	         rs.close(); 
+	      }catch(SQLException se) { 
+	         // Handle errors for JDBC 
+	         se.printStackTrace(); 
+	      } catch(Exception e) { 
+	         // Handle errors for Class.forName 
+	         e.printStackTrace(); 
+	      } finally { 
+	         // finally block used to close resources 
+	         try { 
+	            if(stmt!=null) stmt.close();  
+	         } catch(SQLException se2) { 
+	         } // nothing we can do 
+	         try { 
+	            if(conn!=null) conn.close(); 
+	         } catch(SQLException se) { 
+	            se.printStackTrace(); 
+	         } // end finally try 
+	         
+	      } // end try 
+	      
+	      System.out.println("End of Reading!");
+	    return z;
+	   } 
+   
+   //Gibt die Richtung des Ablauf aus
+   @SuppressWarnings("null")
+   public String getAblaufRichtung() {
+	   String z = null;
+       
+	   Connection conn = null; 
+	   Statement stmt = null; 
+	      try { 
+	         // STEP 1: Register JDBC driver 
+	         Class.forName(JDBC_DRIVER); 
+	         
+	         // STEP 2: Open a connection 
+	         System.out.println("Connecting to database..."); 
+	         conn = DriverManager.getConnection(DB_URL,USER,PASS);  
+	         
+	         // STEP 3: Execute a query 
+	         System.out.println("Connected database successfully..."); 
+	         stmt = conn.createStatement(); 
+	         String sql = "SELECT richtung FROM ablauf"; 
+	         ResultSet rs = stmt.executeQuery(sql); 
+	         
+	         // STEP 4: Extract data from result set 
+	         while(rs.next()) { 
+	            // Retrieve by column name 
+	            String richtung  = rs.getString("richtung"); 
+	            
+	            // Display values 
+	            System.out.print(richtung + "\n");
+
+	            //z wird mit Zugbezeichnungen gefüllt
+	            z = richtung ;
+	            
+	         }
+	         
+	         // STEP 5: Clean-up environment 
+	         rs.close(); 
+	      }catch(SQLException se) { 
+	         // Handle errors for JDBC 
+	         se.printStackTrace(); 
+	      } catch(Exception e) { 
+	         // Handle errors for Class.forName 
+	         e.printStackTrace(); 
+	      } finally { 
+	         // finally block used to close resources 
+	         try { 
+	            if(stmt!=null) stmt.close();  
+	         } catch(SQLException se2) { 
+	         } // nothing we can do 
+	         try { 
+	            if(conn!=null) conn.close(); 
+	         } catch(SQLException se) { 
+	            se.printStackTrace(); 
+	         } // end finally try 
+	         
+	      } // end try 
+	      
+	      System.out.println("End of Reading!");
+	    return z;
+	   } 
+   
+ //Gibt Alle Züge mit Daten aus
+   @SuppressWarnings("null")
+   public String getAblaufReihe(String zugnummer) {
+	   String z = "";
+       
+	   Connection conn = null; 
+	   Statement stmt = null; 
+	      try { 
+	    	  
+	         // STEP 1: Register JDBC driver 
+	         Class.forName(JDBC_DRIVER); 
+	         
+	         // STEP 2: Open a connection 
+	         System.out.println("Connecting to database..."); 
+	         conn = DriverManager.getConnection(DB_URL,USER,PASS);  
+	         
+	         // STEP 3: Execute a query 
+	         System.out.println("Connected database successfully..."); 
+	         stmt = conn.createStatement(); 
+	         String sql = "SELECT drop1,drop2,drop3,drop4,drop5,drop6,drop7 FROM reihe"; 
+	         ResultSet rs = stmt.executeQuery(sql); 
+	         
+	         // STEP 4: Extract data from result set 
+	         while(rs.next()) { 
+	            // Retrieve by column name 
+	            String drop1 = rs.getString("drop1"); 
+	            String drop2 = rs.getString("drop2"); 
+	            String drop3 = rs.getString("drop3");   
+	            String drop4 = rs.getString("drop4");
+	            String drop5 = rs.getString("drop5");
+	            String drop6 = rs.getString("drop6");
+	            String drop7 = rs.getString("drop7");
+	            
+	            // Display values 
+	            System.out.print(drop1 + "-"); 
+	            System.out.print(drop2 + "-"); 
+	            System.out.print(drop3 + "-");
+	            System.out.print(drop4 + "-"); 
+	            System.out.print(drop5 + "-");
+	            System.out.print(drop6 + "-"); 
+	            System.out.print(drop7 + "-"); 
+
+	            //z wird mit Zugbezeichnungen gefüllt
+	            z = drop1 + ";"+ drop2 + ";"+ drop3 + ";"+ drop4 + ";"+ drop5 + ";"+ drop6 + ";"+ drop7+ ";" ;
+	            
+	         }
+	         
+	         // STEP 5: Clean-up environment 
+	         rs.close(); 
+	      }catch(SQLException se) { 
+	         // Handle errors for JDBC 
+	         se.printStackTrace(); 
+	      } catch(Exception e) { 
+	         // Handle errors for Class.forName 
+	         e.printStackTrace(); 
+	      } finally { 
+	         // finally block used to close resources 
+	         try { 
+	            if(stmt!=null) stmt.close();  
+	         } catch(SQLException se2) { 
+	         } // nothing we can do 
+	         try { 
+	            if(conn!=null) conn.close(); 
+	         } catch(SQLException se) { 
+	            se.printStackTrace(); 
+	         } // end finally try 
+	         
+	      } // end try 
+	      
+	      System.out.println("End of Reading!");
+	    return z;
+	   } 
+   
    
    public static void main(String[] args) { 
 
