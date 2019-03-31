@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 
+import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 
@@ -65,6 +66,8 @@ public class POPUPSPEEDController implements Initializable {
 			System.out.println(slider126.getValue());
 		}
 		InsertIntoTable t = new InsertIntoTable();
+		DeleteFromTable d = new DeleteFromTable();
+		d.deleteFS(r.getZugNrAktiverZug());
 		t.setFS(i);
 		Stage stage = (Stage) submit.getScene().getWindow();
 		stage.close();

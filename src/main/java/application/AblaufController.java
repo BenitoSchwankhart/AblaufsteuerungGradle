@@ -259,7 +259,7 @@ this.label.setText(this.dauer.getValue().toString());
 	}
 
 	@FXML
-	void starteAblauf(ActionEvent event) throws IOException {
+	void starteAblauf(ActionEvent event) throws IOException, NumberFormatException, InterruptedException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
 		ReadFromTable f = new ReadFromTable();
 		//POPUPSPEEDController p = new POPUPSPEEDController();

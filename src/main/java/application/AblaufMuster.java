@@ -1,11 +1,14 @@
 package application;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import Zugsteuerung.Funktionssteuerung;
 import Zugsteuerung.Zugablauf;
 import clientServerConnection.RmxCalls;
+import clientServerConnection.thread;
+import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 
@@ -15,18 +18,19 @@ public class AblaufMuster {
 
 //Licht, Speed, Warten, Richtungswechsel
 	public void Ablauffolge(String speed, String dir, String warten, String licht) throws IOException {
+	try {
 	ReadFromTable r = new ReadFromTable();
 	RmxCalls c = new RmxCalls();
 	InsertIntoTable i = new InsertIntoTable();
 	String k = r.getAblaufReihe(r.getAblaufReihe(r.getNameAktiverZug()));
 	String[] u = k.split(";");	
-		
-		
+	
 	System.out.println(u[0]);
 	switch(u[0]) {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -61,6 +65,7 @@ public class AblaufMuster {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -95,6 +100,7 @@ public class AblaufMuster {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -127,8 +133,10 @@ public class AblaufMuster {
 	
 	switch(u[3]) {
 	
+		
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -163,6 +171,7 @@ public class AblaufMuster {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -197,6 +206,7 @@ public class AblaufMuster {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -231,6 +241,7 @@ public class AblaufMuster {
 	
 	case "Warten":
 	AblaufTime.time(Integer.parseInt(warten));
+	thread.sleep(1000* Integer.parseInt(warten));
 	System.out.println("Ende");
 	break;
 	
@@ -260,7 +271,12 @@ public class AblaufMuster {
 		System.out.println("7 Nicht aktiv");
 	break;
 	}
-
-	
+	DeleteFromTable d = new DeleteFromTable();
+	d.deleteReihe(r.getZugNrAktiverZug());
+	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
+	}
+	catch(Exception e) {
+		System.out.println("Ablauffehler!");
+	}
 }
 }

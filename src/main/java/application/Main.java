@@ -31,11 +31,14 @@ else {
 	InsertIntoTable i = new InsertIntoTable();
 	ReadFromTable r = new ReadFromTable();
 	CreateTable.createZug();
-	InsertIntoTable.zugData(222, "DEMO-ZUG", 14);
-	ConnectionCalls.ZugErstellen(rmx.intToByte("DEMO-ZUG".length()+7), rmx.intToByte(222), rmx.intToByte(14), "DEMO-Zug".getBytes());
+	InsertIntoTable.zugData(111, "DEMO-ZUG", 14);
+	ConnectionCalls.ZugErstellen(rmx.intToByte("DEMO-ZUG".length()+7), rmx.intToByte(111), rmx.intToByte(14), "DEMO-Zug".getBytes());
 	CreateTable.createAktuellZug();
-	i.setAktuellZug(222, "DEMO-ZUG", 14);
+	i.setAktuellZug(111, "DEMO-ZUG", 14);
 	CreateTable.createFSSave();
+	CreateTable.createTimeSave();
+	CreateTable.createLichtSave();
+	CreateTable.createDirSave();
 	CreateTable.createAblauf();
 	i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), 0, 0, 1, 1);
 	CreateTable.createReihe();

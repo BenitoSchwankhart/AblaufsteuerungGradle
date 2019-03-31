@@ -22,7 +22,7 @@ public class AblaufTime {
 	    }, delay, period);
 	}
 
-private static final int setInterval() {
+private static final int setInterval() throws NullPointerException{
     if (interval == 1)
         timer.cancel();
     return --interval;
