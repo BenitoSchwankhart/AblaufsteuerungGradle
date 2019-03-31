@@ -23,7 +23,12 @@ public class POPUPWARTENController {
 
 	@FXML
 	void ok(ActionEvent event) {
+		double s = dauer.getValue();
 
+		int ergebnis = (int) (s);
+
+		String numberAsString = Double.toString(ergebnis);
+		zeit.setText(numberAsString + "min");
 	}
 
 	@FXML
