@@ -43,5 +43,11 @@
       <JFXButton fx:id="an_btn" layoutX="94.0" layoutY="137.0" onAction="#lichtan" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="AN" />
       <JFXButton fx:id="aus" layoutX="416.0" layoutY="137.0" onAction="#lichtaus" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #FA5858;" text="AUS" />
       <JFXSlider fx:id="dauerslider" layoutX="2.0" layoutY="222.0" majorTickUnit="10.0" max="120.0" minorTickCount="5" prefHeight="14.0" prefWidth="589.0" showTickLabels="true" showTickMarks="true" />
+      <Text layoutX="263.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dauer">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="ok_btn" layoutX="266.0" layoutY="260.0" onAction="#ok" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #7ddf64;" text="OK" />
    </children>
 </AnchorPane>

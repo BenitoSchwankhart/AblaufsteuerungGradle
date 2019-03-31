@@ -29,14 +29,25 @@ public class POPUPLICHT {
 	@FXML
 	private JFXSlider dauerslider;
 
+    @FXML
+    private JFXButton ok_btn;
+
 	@FXML
 	void lichtan(ActionEvent event) {
-
+		ReadFromTable r = new ReadFromTable();
+		InsertIntoTable t = new InsertIntoTable();
+		DeleteFromTable d = new DeleteFromTable();
+		d.deleteLicht(r.getZugNrAktiverZug());
+		t.setLicht(0);
 	}
 
 	@FXML
 	void lichtaus(ActionEvent event) {
-
+		ReadFromTable r = new ReadFromTable();
+		InsertIntoTable t = new InsertIntoTable();
+		DeleteFromTable d = new DeleteFromTable();
+		d.deleteLicht(r.getZugNrAktiverZug());
+		t.setLicht(1);
 	}
 
 	@FXML
@@ -45,11 +56,16 @@ public class POPUPLICHT {
 		stage.close();
 		
 		//Für An und Aus
-		ReadFromTable r = new ReadFromTable();
-		InsertIntoTable t = new InsertIntoTable();
-		DeleteFromTable d = new DeleteFromTable();
-		d.deleteLicht(r.getZugNrAktiverZug());
-		t.setLicht(0);
+		
 		
 	}
+	   @FXML
+	    void ok(ActionEvent event) {
+		   double s = dauerslider.getValue();
+
+			int ergebnis = (int) (s);
+
+			String numberAsString = Double.toString(ergebnis);
+			zeit.setText(numberAsString + "min");
+	    }
 }
