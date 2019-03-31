@@ -38,7 +38,7 @@ public class POPUPLICHT {
 		InsertIntoTable t = new InsertIntoTable();
 		DeleteFromTable d = new DeleteFromTable();
 		d.deleteLicht(r.getZugNrAktiverZug());
-		t.setLicht(0);
+		t.setLicht(1);
 	}
 
 	@FXML
@@ -47,7 +47,7 @@ public class POPUPLICHT {
 		InsertIntoTable t = new InsertIntoTable();
 		DeleteFromTable d = new DeleteFromTable();
 		d.deleteLicht(r.getZugNrAktiverZug());
-		t.setLicht(1);
+		t.setLicht(0);
 	}
 
 	@FXML

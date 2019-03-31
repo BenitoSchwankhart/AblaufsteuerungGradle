@@ -35,11 +35,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -74,11 +77,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -113,11 +119,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -153,11 +162,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -192,11 +204,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -231,11 +246,14 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-		if(licht == "1") {
-		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
 		}
 		else {
 		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
 		}
 		break;
 	
@@ -270,13 +288,16 @@ public class AblaufMuster {
 	break;
 	
 	case "Licht":
-	if(licht == "1") {
-	Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen	
-	}
-	else {
-	Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
-	}
-	break;
+		if(licht.equals("1")) {
+		Funktionssteuerung.LichtAn(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug())));
+		System.out.println("Licht AN");// Noch in Funktionssteuerung anpassen	
+		}
+		else {
+		Funktionssteuerung.LichtAus(c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()))); // Noch in Funktionssteuerung anpassen		
+		System.out.println("Licht AUS");
+		System.out.println(licht);
+		}
+		break;
 	
 	case "Speed":
 	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
