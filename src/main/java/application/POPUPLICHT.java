@@ -8,7 +8,7 @@ import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Spinner;
+
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -29,8 +29,8 @@ public class POPUPLICHT {
 	@FXML
 	private JFXSlider dauerslider;
 
-    @FXML
-    private JFXButton ok_btn;
+	@FXML
+	private JFXButton ok_btn;
 
 	@FXML
 	void lichtan(ActionEvent event) {
@@ -54,18 +54,18 @@ public class POPUPLICHT {
 	void submit(ActionEvent event) {
 		Stage stage = (Stage) submit_btn.getScene().getWindow();
 		stage.close();
-		
-		//Für An und Aus
-		
-		
+
+		// Für An und Aus
+
 	}
-	   @FXML
-	    void ok(ActionEvent event) {
-		   double s = dauerslider.getValue();
 
-			int ergebnis = (int) (s);
+	@FXML
+	void ok(ActionEvent event) {
+		double s = dauerslider.getValue();
 
-			String numberAsString = Double.toString(ergebnis);
-			zeit.setText(numberAsString + "min");
-	    }
+		int ergebnis = (int) (s);
+
+		String numberAsString = Double.toString(ergebnis);
+		zeit.setText(numberAsString + "min");
+	}
 }
