@@ -3,13 +3,10 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
-
 import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
-import datenbank.UpdateTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -78,7 +75,6 @@ public class LokAuswahlController implements Initializable{
 
 	}
 	// SubmitButton Funktion
-
 	private int getChoice(ChoiceBox<String> TrainBox) {
 		String Fahrstufen = TrainBox.getValue();
 		int FS = Integer.parseInt(Fahrstufen);
@@ -139,12 +135,11 @@ public class LokAuswahlController implements Initializable{
 	InsertIntoTable i = new InsertIntoTable();
 	i.setAktuellZug(aktuellerZug,TrainBox.getValue(), aktuelleFS);
 	
-	//Deafault Werte für den Zug-Ablauf werden generiert
+	//Default Werte für den Zug-Ablauf werden generiert
 	d.deleteAblauf(zugNr);
 	d.deleteReihe(zugNr);
 	i.setAktuellAblauf(aktuellerZug, 0, 0, 1, 1);
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
-	
 	
 	
 	Stage stage;

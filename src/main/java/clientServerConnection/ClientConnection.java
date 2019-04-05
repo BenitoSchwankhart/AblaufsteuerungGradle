@@ -4,7 +4,6 @@ import java.net.*;
 import java.util.Arrays;
 import org.apache.commons.io.IOUtils;
 import java.io.*;
-import java.util.*;
 
 public class ClientConnection {
 public void main(String[]args) throws UnknownHostException, IOException{
@@ -18,7 +17,7 @@ public void main(String[]args) throws UnknownHostException, IOException{
 
       System.out.println("Start...");
       RmxCalls rmx = new RmxCalls();
-      answer = rmx.Positivquittung;
+      answer = RmxCalls.Positivquittung;
 
       sendMessage = answer;
       DataOutputStream bw = new DataOutputStream(os);

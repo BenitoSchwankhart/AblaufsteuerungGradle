@@ -82,6 +82,7 @@ public class TestController implements Initializable {
 
 	}
 
+	//Im Home Bildschirm entweder aktuellen Zug oder keinen Zug anzeigen
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		ReadFromTable r = new ReadFromTable();
@@ -106,6 +107,7 @@ public class TestController implements Initializable {
 	 */
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+	//Button zur Lokauswahl
 	@FXML
 	void lokauswahl_btn(ActionEvent event) throws IOException {
 		Stage stage;
@@ -121,6 +123,7 @@ public class TestController implements Initializable {
 
 	}
 
+	//Button um Ablaufsteuerung aufzurufen
 	@FXML
 	void bittestarten(ActionEvent event) throws IOException {
 		String Bedingung = null;
@@ -150,8 +153,8 @@ public class TestController implements Initializable {
 		}
 	}
 
-//Neue Lok Fenster
 
+//Button um eine neue Lok anzulegen
 	@FXML
 	void neuelok(ActionEvent event) throws IOException {
 		Stage stage;

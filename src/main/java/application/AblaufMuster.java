@@ -1,9 +1,6 @@
 package application;
 
-import java.io.EOFException;
 import java.io.IOException;
-import java.util.ArrayList;
-
 import Zugsteuerung.Funktionssteuerung;
 import Zugsteuerung.Zugablauf;
 import clientServerConnection.RmxCalls;

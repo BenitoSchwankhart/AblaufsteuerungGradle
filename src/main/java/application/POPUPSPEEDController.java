@@ -69,7 +69,6 @@ public class POPUPSPEEDController implements Initializable {
 
 		int ergebnis = (int) (s);
 		
-		ReadFromTable r = new ReadFromTable();
 		d.deleteTempSpeed();
 		t.setTempSpeed(ergebnis);
 		

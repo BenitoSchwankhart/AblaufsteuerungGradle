@@ -6,7 +6,6 @@ import clientServerConnection.ClientConnection;
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
 import datenbank.CreateTable;
-import datenbank.DeleteFromTable;
 import datenbank.InsertIntoTable;
 import datenbank.ReadFromTable;
 import javafx.application.Application;
@@ -49,7 +48,7 @@ else {
 
 //Falls RMX-Server läuft wird main gestartet
 if(RMXAppTest.isRmxRunning() == true) {
-			// Checking if Server is connected
+			//Überprüft ob Server richtig verbunden ist
 			ClientConnection c = new ClientConnection();
 			try {
 			c.main(null);	
@@ -68,6 +67,7 @@ if(RMXAppTest.isRmxRunning() == true) {
 									}
 				
 			}
+			//Wenn Server verbunden ist
 			RmxCalls rmx = new RmxCalls();
 			if (rmx.getVerbindung() == 2) {
 			primaryStage.setResizable(false);
@@ -90,11 +90,10 @@ if(RMXAppTest.isRmxRunning() == true) {
 				primaryStage.setScene(scene);
 				primaryStage.show();
 				//Open RMX Net
-				//Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
 			}
 	}
 
-//Wenn RMX-Server nicht ausgeführt Fehlermeldung
+//Wenn RMX-Server nicht ausgeführt wird --> Fehlermeldung
 else {
 	try {
 		AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXFehler.fxml"));

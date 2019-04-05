@@ -42,16 +42,13 @@ public class ReadFromTable {
 	         while(rs.next()) { 
 	            // Retrieve by column name 
 	            int zugnummer  = rs.getInt("zugnummer"); 
-	            String zugname = rs.getString("zugname"); 
-	            int fahrstufen = rs.getInt("fahrstufen");   
+	            String zugname = rs.getString("zugname");  
 	            
 	            // Display values 
 	            System.out.print(zugnummer + "-"); 
 	            System.out.print(zugname + "\n"); 
-	            //System.out.print(fahrstufen); 
 	            
 	            String zn = Integer.toString(zugnummer);
-	            //String fs = Integer.toString(fahrstufen);
 
 	            //z wird mit Zugbezeichnungen gefüllt
 	            z += zn + ";"+ zugname + ";";

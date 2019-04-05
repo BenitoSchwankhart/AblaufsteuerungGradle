@@ -6,12 +6,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 import java.util.Scanner;
-
 import com.jfoenix.controls.JFXButton;
-
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
-
 import clientServerConnection.ConnectionCalls;
 import clientServerConnection.RmxCalls;
 import datenbank.DeleteFromTable;
@@ -35,9 +32,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-
-import java.sql.ResultSet;
 
 public class NeueLokController implements Initializable {
 	// Neue Lok
@@ -196,7 +190,7 @@ public class NeueLokController implements Initializable {
 	}
 
 	// Füllt die Typ ChoiceBox
-	ObservableList listtyp = FXCollections.observableArrayList();
+	ObservableList<String> listtyp = FXCollections.observableArrayList();
 
 	private void loaddata() {
 		// Typ
@@ -254,9 +248,6 @@ public class NeueLokController implements Initializable {
 		int zugnummer = getAdresse(adressespinner);
 		int sub = getChoice(TypBox);
 		String zugname = getName(Namebox);
-		ConnectionCalls c = new ConnectionCalls();
-		InsertIntoTable t = new InsertIntoTable();
-		RmxCalls rmx = new RmxCalls();
 		byte OPMODE = 0;
 
 		// Test welche Fahrstufe in TextBox ausgwählt wurde

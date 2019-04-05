@@ -2,41 +2,25 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXNodesList;
-import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXToggleButton;
-
 import Zugsteuerung.Funktionssteuerung;
-import Zugsteuerung.Zugablauf;
 import clientServerConnection.ConnectionCalls;
-import clientServerConnection.RmxCalls;
 import datenbank.ReadFromTable;
 import datenbank.UpdateTable;
 import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import javafx.stage.Modality;
@@ -256,9 +240,6 @@ public class AblaufController implements Initializable {
 	void starteAblauf(ActionEvent event) throws IOException, NumberFormatException, InterruptedException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
 		ReadFromTable f = new ReadFromTable();
-		//POPUPSPEEDController p = new POPUPSPEEDController();
-		String warten = "5"; //noch ändern
-		String licht = "1";
 		
 		//Reihenfolge ermitteln Hier kommen die werte von Den button an
 		Funktionssteuerung.StromAn();
@@ -275,8 +256,7 @@ public class AblaufController implements Initializable {
 	// Hier Nothalt Funktion implementieren
 	@FXML
 	void nothalt(ActionEvent event) throws IOException {
-		ConnectionCalls c = new ConnectionCalls();
-		c.Notfall();
+		ConnectionCalls.Notfall();
 		zeiger.setFill(javafx.scene.paint.Color.RED);
 		System.out.println("Nothalt");
 	}

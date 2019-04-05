@@ -1,15 +1,8 @@
 package clientServerConnection;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 public class RmxCalls {
-
-	private final static Charset CHARSET = Charset.forName("UTF-8");
 
 	// Konstanten des RMX-Protokolls
 
@@ -31,9 +24,7 @@ public class RmxCalls {
 	// Konstanten des Verbindungsstatus
 
 	private static final int NULL = 0;
-	private static final int CONNECTING = 1;
 	private static final int CONNECTED = 2;
-	private static final int DISCONNECTING = 3;
 	private static final int DISCONNECTED = 4;
 
 	private static int Verbindung = DISCONNECTED;
@@ -46,16 +37,8 @@ public class RmxCalls {
 		return Verbindung = NULL;
 	}
 
-	public int setVerbindungCONNECTING() {
-		return Verbindung = CONNECTING;
-	}
-
 	public int setVerbindungCONNECTED() {
 		return Verbindung = CONNECTED;
-	}
-
-	public int setVerbindungDISCONNECTING() {
-		return Verbindung = DISCONNECTING;
 	}
 
 	public int setVerbindungDISCONNECTED() {

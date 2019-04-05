@@ -21,7 +21,7 @@ public class Funktionssteuerung {
 	static byte F16F23a = 0x01;//Funktionen 16 bis 23 an 
 	static byte F16F23b = 0x00;//Funktionen 16 bis 23 aus
 
-	//public static final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, F0F7a, F8F15a, F16F23a};
+	public static final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, F0F7a, F8F15a, F16F23a};
 	public static final byte[] FKTAUS = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, F0F7b, F8F15b, F16F23b};
 	
 	static byte[] FahrstromEin = new byte[] {0x7c,0x04,0x03,(byte) 0x80}; 
@@ -181,7 +181,7 @@ public class Funktionssteuerung {
 
 	      System.out.println("\nStart...");
 	      RmxCalls rmx = new RmxCalls();
-	      answer = FKTAUS;
+	      answer = FKTAN;
 
 	      sendMessage = answer;
 	      DataOutputStream bw = new DataOutputStream(os);
