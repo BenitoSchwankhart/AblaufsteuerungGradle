@@ -367,6 +367,7 @@ public class AblaufMuster {
 	ReadFromTable r = new ReadFromTable();
 	DeleteFromTable d = new DeleteFromTable();
 	InsertIntoTable i = new InsertIntoTable();
+	d.deleteAblauf(r.getZugNrAktiverZug());
 	d.deleteReihe(r.getZugNrAktiverZug());
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
 }

@@ -25,6 +25,7 @@ if(g.neuesProgramm() == true) {
 	System.out.println("Datenbank vorhanden !");
 }
 else {
+	if(RMXAppTest.isRmxRunning() == true) {
 	RmxCalls rmx = new RmxCalls();
 	InsertIntoTable i = new InsertIntoTable();
 	ReadFromTable r = new ReadFromTable();
@@ -40,9 +41,24 @@ else {
 	CreateTable.createAblauf();
 	CreateTable.createTempSpeedSave();
 	CreateTable.createTempLichtSave();
-	i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), 0, 0, 1, 1);
 	CreateTable.createReihe();
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
+	}
+	else {
+		try {
+			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("RMXFehler.fxml"));
+			Scene scene = new Scene(root, 900, 450);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			//Open RMX Net
+			Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
+			DeleteInitialisierung.main(null);
+		} 
+		catch (Exception t) {
+			t.printStackTrace();
+							}
+		}
 }
 
 //Falls RMX-Server läuft wird main gestartet
