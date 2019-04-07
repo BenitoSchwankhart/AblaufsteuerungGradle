@@ -236,6 +236,7 @@ public class AblaufController implements Initializable {
 		UpdateTable.setDrop7(Integer.parseInt(r.getZugNrAktiverZug()), str);
 	}
 
+//-----------------------------------------------------------------------------------------------------------
 	@FXML
 	void starteAblauf(ActionEvent event) throws IOException, NumberFormatException, InterruptedException {
 		zeiger.setFill(javafx.scene.paint.Color.GREEN);
@@ -252,7 +253,7 @@ public class AblaufController implements Initializable {
 		Funktionssteuerung.StromAus();
 
 	}
-
+//---------------------------------------------------------------------------------------------------------------
 	// Hier Nothalt Funktion implementieren
 	@FXML
 	void nothalt(ActionEvent event) throws IOException {

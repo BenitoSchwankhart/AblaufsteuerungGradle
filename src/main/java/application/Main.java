@@ -39,10 +39,12 @@ else {
 	CreateTable.createLichtSave();
 	CreateTable.createDirSave();
 	CreateTable.createAblauf();
+	//i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), 0, 0, 0, 0);
 	CreateTable.createTempSpeedSave();
 	CreateTable.createTempLichtSave();
 	CreateTable.createReihe();
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
+	i.setDir(0);
 	}
 	else {
 		try {

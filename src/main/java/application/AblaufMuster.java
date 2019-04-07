@@ -18,7 +18,6 @@ public class AblaufMuster {
 	try {
 	ReadFromTable r = new ReadFromTable();
 	RmxCalls c = new RmxCalls();
-	InsertIntoTable i = new InsertIntoTable();
 	String k = r.getAblaufReihe(r.getAblaufReihe(r.getNameAktiverZug()));
 	String[] u = k.split(";");	
 	
@@ -50,18 +49,13 @@ public class AblaufMuster {
 	case "Speed":
 	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
 	byte s = c.intToByte(Integer.parseInt(speed));
-	byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
+	byte y = c.intToByte(Integer.parseInt(dir));
 	Zugablauf.ZugFahrEinstellungen(nr, s , y);
 	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
 	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
 	break;
 	
 	case "Direction":
-	String b = r.getAblaufData();
-	String[] j = b.split(";");
-	j[4] = dir;
-	i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-										Integer.parseInt(dir));
 	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
 	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
 	byte direction = c.intToByte(Integer.parseInt(dir));
@@ -96,26 +90,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o , direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("2 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -144,26 +133,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o , direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("3 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -193,26 +177,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o , direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("4 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -241,26 +220,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o , direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("5 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -289,26 +263,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o , direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("6 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -337,26 +306,21 @@ public class AblaufMuster {
 		break;
 	
 	case "Speed":
-		byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte s = c.intToByte(Integer.parseInt(speed));
-		byte y = c.intToByte(Integer.parseInt(r.getAblaufRichtung()));
-		Zugablauf.ZugFahrEinstellungen(nr, s , y);
-		thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
-		Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
-		break;
+	byte nr = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte s = c.intToByte(Integer.parseInt(speed));
+	byte y = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugFahrEinstellungen(nr, s , y);
+	thread.sleep(1000* Integer.parseInt(r.getTempSpeedTime()));
+	Zugablauf.ZugFahrEinstellungen(nr, c.intToByte(0) , y);
+	break;
 	
 	case "Direction":
-		String b = r.getAblaufData();
-		String[] j = b.split(";");
-		j[4] = dir;
-		i.setAktuellAblauf(Integer.parseInt(r.getZugNrAktiverZug()), Integer.parseInt(j[1]), Integer.parseInt(j[2]), Integer.parseInt(j[3]), 
-											Integer.parseInt(dir));
-		byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
-		byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
-		byte direction = c.intToByte(Integer.parseInt(dir));
-		Zugablauf.ZugRichtung(p, o, direction);
+	byte p = c.intToByte(Integer.parseInt(r.getZugNrAktiverZug()));
+	byte o = c.intToByte(Integer.parseInt(r.getTempFS()));
+	byte direction = c.intToByte(Integer.parseInt(dir));
+	Zugablauf.ZugRichtung(p, o , direction);
 	default:
-		System.out.println("7 Nicht aktiv");
+		System.out.println("1 Nicht aktiv");
 	break;
 	}
 	
@@ -364,5 +328,10 @@ public class AblaufMuster {
 	catch(Exception e) {
 		System.out.println("Ablauffehler!");
 	}
+	ReadFromTable r = new ReadFromTable();
+	DeleteFromTable d = new DeleteFromTable();
+	d.deleteReihe(r.getZugNrAktiverZug());
+	InsertIntoTable i = new InsertIntoTable();
+	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
 }
 }

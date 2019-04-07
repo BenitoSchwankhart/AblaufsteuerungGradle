@@ -139,6 +139,8 @@ public class LokAuswahlController implements Initializable{
 	//Default Werte für den Zug-Ablauf werden generiert
 	UpdateTable.setZugNr(aktuellerZug);
 	i.setDefaultReihe(Integer.parseInt(r.getZugNrAktiverZug()));
+	//InsertIntoTable i1 = new InsertIntoTable();
+	//i1.setAktuellAblauf(aktuellerZug, 0, 0, 0, 0);
 	
 	
 	Stage stage;
