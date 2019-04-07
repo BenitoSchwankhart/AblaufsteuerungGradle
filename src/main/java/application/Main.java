@@ -19,7 +19,6 @@ public class Main extends Application {
 	
 
 public void start(Stage primaryStage) throws UnknownHostException, IOException {
-		
 //Tabellen anlegen bei erstem Start
 Initialisierung g = new Initialisierung();
 if(g.neuesProgramm() == true) {

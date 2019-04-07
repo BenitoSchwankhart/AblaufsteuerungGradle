@@ -113,7 +113,7 @@ public class Funktionssteuerung {
 	      }
 	
 	public static void LichtAn(byte ZUGNR) throws IOException {
-		final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, 0x03, 0x00, 0x00};
+		final byte[] FKTAN = new byte[] {0x7c, 0x08, 0x28, 0x00, ZUGNR, 0x01, 0x00, 0x00};
 	      int port = 9090;
 	      byte[] answer; 
 	      byte[] sendMessage;
