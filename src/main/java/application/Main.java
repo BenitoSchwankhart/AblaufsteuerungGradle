@@ -53,7 +53,8 @@ else {
 			primaryStage.show();
 			//Open RMX Net
 			Process p = Runtime.getRuntime().exec("C:\\Program Files (x86)\\rautenhaus digital\\RMX-PC-Zentrale 2.0\\RMXPCZ2.exe");
-			DeleteInitialisierung.main(null);
+			DeleteInitialisierung j = new DeleteInitialisierung();
+			j.delete();
 		} 
 		catch (Exception t) {
 			t.printStackTrace();
